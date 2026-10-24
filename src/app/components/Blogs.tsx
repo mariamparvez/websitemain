@@ -50,8 +50,8 @@ export function Blogs() {
             backgroundRepeat: 'no-repeat'
           }}
         >
-          {/* #fdfdfd 50% overlay ONLY on mobile */}
-          <div className="absolute inset-0 bg-[#121212]/50 md:bg-transparent" />
+          {/* Dark scrim keeps text readable over the bright banner */}
+          <div className="absolute inset-0 bg-[#121212]/80 md:bg-gradient-to-r md:from-[#121212] md:via-[#121212]/85 md:to-[#121212]/10" />
 
           {/* Content - VISIBLE on all screens */}
           <div className="max-w-2xl relative z-10">
