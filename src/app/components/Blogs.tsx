@@ -50,15 +50,15 @@ export function Blogs() {
             backgroundRepeat: 'no-repeat'
           }}
         >
-          {/* Dark scrim keeps text readable over the bright banner */}
-          <div className="absolute inset-0 bg-[#121212]/80 md:bg-gradient-to-r md:from-[#121212] md:via-[#121212]/85 md:to-[#121212]/10" />
+          {/* Soft light veil on mobile only, so dark text stays legible over the full image */}
+          <div className="absolute inset-0 bg-[#fdfdfd]/55 md:bg-transparent" />
 
           {/* Content - VISIBLE on all screens */}
           <div className="max-w-2xl relative z-10">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-[#fdfdfd] italic leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-[#121212] italic leading-tight">
               Why Color is Important in Graphic Design and Fashion Design
             </h1>
-            <p className="text-[#d6d6d6] text-base md:text-lg mb-6 leading-relaxed">
+            <p className="text-[#121212] font-medium text-base md:text-lg mb-6 leading-relaxed">
               Explore how color shapes our emotions and decisions in both graphic design and fashion, and see how the right colors can bring life and meaning to your creations.
             </p>
             <a
