@@ -117,7 +117,7 @@ export function Testimonials() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="relative p-4 md:p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-blue-500/30 transition-all duration-300 min-h-[280px] md:min-h-0"
+                  className="relative p-4 md:p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-blue-500/30 transition-all duration-300"
                 >
                   {/* Header with Image, Name, and Role */}
                   <div className="flex items-start gap-4 mb-3 md:mb-6">
