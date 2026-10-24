@@ -39,7 +39,8 @@ export function ArtCallout() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-white text-left"
+                className="text-5xl md:text-6xl lg:text-7xl font-black mb-4 text-white text-left leading-tight"
+                style={{ fontWeight: 900 }}
               >
                 I also paint, sculpt and sketch!
               </motion.h2>
