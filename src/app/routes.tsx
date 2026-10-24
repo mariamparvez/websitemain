@@ -1,24 +1,39 @@
 import { createBrowserRouter } from "react-router";
-import { PublicHomePage } from "./pages/PublicHomePage";
-import { LoginPage } from "./pages/admin/LoginPage";
-import { DashboardPage } from "./pages/admin/DashboardPage";
-import { TestimonialsManagePage } from "./pages/admin/TestimonialsManagePage";
+import { HomePage } from "./pages/HomePage";
+import { ArtPage } from "./pages/ArtPage";
+import { TermsPage } from "./pages/TermsPage";
+import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage";
+import { DisclaimerPage } from "./pages/DisclaimerPage";
+import { CopyrightPage } from "./pages/CopyrightPage";
+import { CSRPage } from "./pages/CSRPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: PublicHomePage,
+    Component: HomePage,
   },
   {
-    path: "/admin/login",
-    Component: LoginPage,
+    path: "/art",
+    Component: ArtPage,
   },
   {
-    path: "/admin/dashboard",
-    Component: DashboardPage,
+    path: "/terms",
+    Component: TermsPage,
   },
   {
-    path: "/admin/testimonials",
-    Component: TestimonialsManagePage,
+    path: "/privacy",
+    Component: PrivacyPolicyPage,
+  },
+  {
+    path: "/disclaimer",
+    Component: DisclaimerPage,
+  },
+  {
+    path: "/copyright",
+    Component: CopyrightPage,
+  },
+  {
+    path: "/csr",
+    Component: CSRPage,
   },
 ]);
