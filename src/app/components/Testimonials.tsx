@@ -7,7 +7,7 @@ import { ParticlesBackground } from "./ParticlesBackground";
 // Import testimonial images
 import rajeevImg from "figma:asset/c36a1a4faf91b7365b04df6f3a9bed203a782d09.png";
 import bhoopathiImg from "figma:asset/3e0732befcb3a9a58cfb483d474aac3938c36983.png";
-import ireneImg from "../../imports/image-40.png";
+import ireneImg from "../../imports/Irene-1.jpg";
 import joshuaImg from "figma:asset/a85c44b66329e34735f33144351eb2acc86109d7.png";
 import koteeshwarImg from "figma:asset/e44b0a4bddd410f54e633051ffd90fd6c14be3ec.png";
 import manojImg from "figma:asset/1015908ea8bd5c3f8e0662f071bc71125795d7a4.png";
