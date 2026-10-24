@@ -1,14 +1,23 @@
 import { motion } from "motion/react";
 import { Heart } from "lucide-react";
+import { useLocation } from "react-router";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const isArtPage = location.pathname === "/art";
 
   return (
-    <footer className="relative py-12 border-t border-blue-900/20 overflow-hidden bg-[#010408]">
+    <footer className={`relative py-12 overflow-hidden ${
+      isArtPage 
+        ? "border-t border-purple-900/20 bg-[#0a0515]" 
+        : "border-t border-blue-900/20 bg-[#010408]"
+    }`}>
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/5 rounded-full blur-3xl" />
+        <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] ${
+          isArtPage ? "bg-purple-600/5" : "bg-blue-600/5"
+        } rounded-full blur-3xl`} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +28,11 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-500 bg-clip-text text-transparent">
+            <h3 className={`text-2xl md:text-3xl font-bold mb-4 ${
+              isArtPage
+                ? "bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 bg-clip-text text-transparent"
+                : "bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-500 bg-clip-text text-transparent"
+            }`}>
               Mariam Parvez
             </h3>
             <p className="text-gray-400 mb-6">
@@ -37,7 +50,9 @@ export function Footer() {
                 href="https://www.linkedin.com/in/themariamparvez/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors"
+                className={`transition-colors ${
+                  isArtPage ? "hover:text-purple-400" : "hover:text-blue-400"
+                }`}
               >
                 LinkedIn
               </a>
@@ -46,7 +61,9 @@ export function Footer() {
                 href="https://www.behance.net/themariamparvez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors"
+                className={`transition-colors ${
+                  isArtPage ? "hover:text-purple-400" : "hover:text-blue-400"
+                }`}
               >
                 Behance
               </a>
@@ -55,7 +72,9 @@ export function Footer() {
                 href="https://dribbble.com/themariamparvez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors"
+                className={`transition-colors ${
+                  isArtPage ? "hover:text-purple-400" : "hover:text-blue-400"
+                }`}
               >
                 Dribbble
               </a>
@@ -64,7 +83,9 @@ export function Footer() {
                 href="https://www.instagram.com/themimpact/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors"
+                className={`transition-colors ${
+                  isArtPage ? "hover:text-purple-400" : "hover:text-blue-400"
+                }`}
               >
                 Instagram
               </a>
@@ -73,7 +94,9 @@ export function Footer() {
                 href="https://medium.com/@themariamparvez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors"
+                className={`transition-colors ${
+                  isArtPage ? "hover:text-purple-400" : "hover:text-blue-400"
+                }`}
               >
                 Medium
               </a>
