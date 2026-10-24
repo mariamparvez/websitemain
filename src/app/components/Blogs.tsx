@@ -41,9 +41,16 @@ export function Blogs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden mb-8 bg-gradient-to-br from-[#3d38f5] to-[#6b63f7] p-8 md:p-12"
+          className="relative rounded-3xl overflow-hidden mb-8 p-8 md:p-12"
+          style={{
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
         >
-          <div className="max-w-3xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#3d38f5]/90 to-[#6b63f7]/90" />
+          <div className="relative max-w-3xl">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
               Why Color is Important in Graphic Design and Fashion Design
             </h1>
