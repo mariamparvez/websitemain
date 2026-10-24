@@ -5,12 +5,7 @@ import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png"
 
 export function WhyChooseMe() {
   return (
-    <section className="relative py-8 md:py-10 overflow-hidden bg-white" style={{ position: 'relative' }}>
-      {/* Background Decoration */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-[#3d38f5]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#3d38f5]/5 rounded-full blur-3xl" />
-      </div>
+    <section className="relative py-8 md:py-10 overflow-hidden bg-[#f8f9fa]" style={{ position: 'relative' }}>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Image LEFT - Content RIGHT Layout */}
@@ -24,11 +19,10 @@ export function WhyChooseMe() {
             className="flex-shrink-0"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] rounded-full blur-xl opacity-30" />
               <img
                 src={profileImg}
                 alt="Mariam Parvez"
-                className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-[#3d38f5]/30 shadow-2xl shadow-[#3d38f5]/20"
+                className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-[#3d38f5] shadow-xl"
               />
             </div>
           </motion.div>

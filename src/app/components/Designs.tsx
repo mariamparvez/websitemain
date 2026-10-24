@@ -44,8 +44,6 @@ export function Designs() {
     <section id="designs" className="py-16 lg:py-20 relative overflow-hidden bg-white">
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#3d38f5] rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#3d38f5] rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

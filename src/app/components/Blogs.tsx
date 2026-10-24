@@ -11,7 +11,6 @@ export function Blogs() {
     <section id="blogs" className="py-16 lg:py-20 relative overflow-hidden bg-white">
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,7 +60,7 @@ export function Blogs() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
                 whileHover={{ x: 5 }}
-                className="inline-flex items-center text-gray-900 font-bold text-lg hover:text-[#3d38f5]transition-colors"
+                className="inline-flex items-center text-gray-900 font-bold text-lg hover:text-[#3d38f5] transition-colors"
               >
                 Continue reading
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -85,7 +84,7 @@ export function Blogs() {
                 <span className="inline-block px-3 py-1 bg-[#3d38f5] text-[#3d38f5] text-sm font-semibold rounded-full mb-3 w-fit">
                   Rebranding
                 </span>
-                <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-[#3d38f5]transition-colors">
+                <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-[#3d38f5] transition-colors">
                   🛑‼ Most Wanted ‼🛑: The Ice Cream Project
                 </h3>
                 <p className="text-gray-500 text-sm mb-2">Sep 26</p>
@@ -96,7 +95,7 @@ export function Blogs() {
                   href="https://themariamparvez.medium.com/most-wanted-the-ice-cream-project-adb3c1431972"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-[#3d38f5] font-semibold hover:text-[#3d38f5]transition-colors group-hover:translate-x-2 transition-transform"
+                  className="inline-flex items-center text-[#3d38f5] font-semibold hover:text-[#3d38f5] transition-colors group-hover:translate-x-2 transition-transform"
                 >
                   Continue reading
                   <ArrowRight className="ml-2 w-4 h-4" />

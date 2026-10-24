@@ -82,7 +82,6 @@ export function Testimonials() {
     <section id="testimonials" className="relative py-16 md:py-20 overflow-hidden bg-white">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#3d38f5] rounded-full blur-3xl" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,7 +100,7 @@ export function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-[#3d38f5]/60 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
             What people say about working with me
           </motion.p>
@@ -117,7 +116,7 @@ export function Testimonials() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="relative p-4 md:p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-[#3d38f5]/20 transition-all duration-300"
+                  className="relative p-4 md:p-10 rounded-3xl bg-white border-2 border-gray-200 hover:border-[#3d38f5] shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   {/* Header with Image, Name, and Role */}
                   <div className="flex items-start gap-4 mb-3 md:mb-6">
@@ -133,14 +132,14 @@ export function Testimonials() {
                       <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-1 break-words">
                         {testimonial.name}
                       </h4>
-                      <p className="text-[#3d38f5]/70 text-xs md:text-sm break-words">
+                      <p className="text-gray-600 text-xs md:text-sm break-words">
                         {testimonial.role}
                       </p>
                     </div>
                   </div>
 
                   {/* Testimonial Text */}
-                  <p className="text-[#3d38f5]/80 text-sm md:text-lg leading-relaxed text-left break-words">
+                  <p className="text-gray-700 text-sm md:text-lg leading-relaxed text-left break-words">
                     {testimonial.text}
                   </p>
                 </motion.div>

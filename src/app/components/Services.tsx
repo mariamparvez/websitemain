@@ -80,8 +80,6 @@ export function Services() {
 
       {/* Background Decoration */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#3d38f5] rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#3d38f5] rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto mb-0 px-[32px] py-[24px]">

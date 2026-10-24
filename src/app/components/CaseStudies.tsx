@@ -46,7 +46,6 @@ export function CaseStudies() {
       {/* Animated Background Orbs */}
       <div className="absolute inset-0 pointer-events-none relative">{/* Added relative positioning */}
         <motion.div 
-          className="absolute top-1/4 left-1/4 w-[800px] h-[800px] rounded-full blur-3xl"
           style={{ backgroundColor: 'rgba(37, 99, 235, 0.1)' }}
           animate={{
             scale: [1, 1.2, 1],
@@ -59,7 +58,6 @@ export function CaseStudies() {
           }}
         />
         <motion.div 
-          className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] rounded-full blur-3xl"
           style={{ backgroundColor: 'rgba(8, 145, 178, 0.1)' }}
           animate={{
             scale: [1.2, 1, 1.2],

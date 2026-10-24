@@ -23,14 +23,8 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-[50vh] sm:min-h-[70vh] lg:min-h-[85vh] flex items-center justify-center relative overflow-hidden pt-24 pb-12 px-4 bg-[#fdfdfd]"
+      className="min-h-[50vh] sm:min-h-[70vh] lg:min-h-[85vh] flex items-center justify-center relative overflow-hidden pt-32 pb-12 px-4 bg-white"
     >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden px-[0px] py-[66px]">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#3d38f5]/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#3d38f5]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#3d38f5]/3 rounded-full blur-3xl" />
-      </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto text-center">
         <motion.div

@@ -8,18 +8,7 @@ export function Footer() {
   const isArtPage = location.pathname === "/art";
 
   return (
-    <footer className={`relative py-12 overflow-hidden ${
-      isArtPage 
-        ? "border-t border-purple-900/20 bg-white" 
-        : "border-t border-[#3d38f5]/20 bg-white"
-    }`}>
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] ${
-          isArtPage ? "bg-purple-600/5" : "bg-[#3d38f5]"
-        } rounded-full blur-3xl`} />
-      </div>
-
+    <footer className="relative py-12 overflow-hidden border-t border-gray-200 bg-[#f8f9fa]">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <motion.div
@@ -28,14 +17,10 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className={`text-2xl md:text-3xl font-bold mb-4 ${
-              isArtPage
-                ? "bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 bg-clip-text text-transparent"
-                : "bg-gradient-to-r from-[#3d38f5] via-[#3d38f5] to-indigo-500 bg-clip-text text-transparent"
-            }`}>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] bg-clip-text text-transparent">
               Mariam Parvez
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 font-medium">
               Web Designer | UI/UX Expert | Graphic Designer | Artist | Coach
             </p>
 
@@ -50,9 +35,7 @@ export function Footer() {
                 href="https://www.linkedin.com/in/themariamparvez/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`transition-colors ${
-                  isArtPage ? "hover:text-purple-400" : "hover:text-[#3d38f5]"
-                }`}
+                className="hover:text-[#3d38f5] transition-colors"
               >
                 LinkedIn
               </a>
@@ -61,9 +44,7 @@ export function Footer() {
                 href="https://www.behance.net/themariamparvez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`transition-colors ${
-                  isArtPage ? "hover:text-purple-400" : "hover:text-[#3d38f5]"
-                }`}
+                className="hover:text-[#3d38f5] transition-colors"
               >
                 Behance
               </a>
@@ -72,9 +53,7 @@ export function Footer() {
                 href="https://dribbble.com/themariamparvez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`transition-colors ${
-                  isArtPage ? "hover:text-purple-400" : "hover:text-[#3d38f5]"
-                }`}
+                className="hover:text-[#3d38f5] transition-colors"
               >
                 Dribbble
               </a>
@@ -83,9 +62,7 @@ export function Footer() {
                 href="https://www.instagram.com/themimpact/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`transition-colors ${
-                  isArtPage ? "hover:text-purple-400" : "hover:text-[#3d38f5]"
-                }`}
+                className="hover:text-[#3d38f5] transition-colors"
               >
                 Instagram
               </a>
@@ -94,9 +71,7 @@ export function Footer() {
                 href="https://medium.com/@themariamparvez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`transition-colors ${
-                  isArtPage ? "hover:text-purple-400" : "hover:text-[#3d38f5]"
-                }`}
+                className="hover:text-[#3d38f5] transition-colors"
               >
                 Medium
               </a>
@@ -105,45 +80,35 @@ export function Footer() {
             <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
               <Link
                 to="/terms"
-                className={`transition-colors ${
-                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-[#3d38f5]"
-                }`}
+                className="text-gray-500 hover:text-[#3d38f5] transition-colors"
               >
                 Terms & Conditions
               </Link>
-              <span className="text-gray-700">•</span>
+              <span className="text-gray-400">•</span>
               <Link
                 to="/privacy"
-                className={`transition-colors ${
-                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-[#3d38f5]"
-                }`}
+                className="text-gray-500 hover:text-[#3d38f5] transition-colors"
               >
                 Privacy Policy
               </Link>
-              <span className="text-gray-700">•</span>
+              <span className="text-gray-400">•</span>
               <Link
                 to="/disclaimer"
-                className={`transition-colors ${
-                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-[#3d38f5]"
-                }`}
+                className="text-gray-500 hover:text-[#3d38f5] transition-colors"
               >
                 Disclaimer
               </Link>
-              <span className="text-gray-700">•</span>
+              <span className="text-gray-400">•</span>
               <Link
                 to="/copyright"
-                className={`transition-colors ${
-                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-[#3d38f5]"
-                }`}
+                className="text-gray-500 hover:text-[#3d38f5] transition-colors"
               >
                 Copyright
               </Link>
-              <span className="text-gray-700">•</span>
+              <span className="text-gray-400">•</span>
               <Link
                 to="/csr"
-                className={`transition-colors ${
-                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-[#3d38f5]"
-                }`}
+                className="text-gray-500 hover:text-[#3d38f5] transition-colors"
               >
                 CSR Policy
               </Link>
