@@ -3,6 +3,7 @@ import { ArrowLeft, Instagram, ExternalLink, ChevronLeft, ChevronRight } from "l
 import { Link } from "react-router";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
+import { SEO } from "../components/SEO";
 import { useRef } from "react";
 import art1 from "figma:asset/44bc4ae49779224ab35cf09963389b8c58f729aa.png";
 import art2 from "figma:asset/b0ab5f894f83d2851c3736ef69232cb7974cb671.png";
@@ -52,6 +53,13 @@ export function ArtPage() {
 
   return (
     <>
+      <SEO 
+        title="Art Gallery - Mariam Parvez | Acrylic Paintings, Watercolor & Mandala Art"
+        description="Explore Mariam Parvez's stunning art collection featuring acrylic paintings, watercolor art, sketches, and intricate mandala designs. Browse and purchase original artwork by a talented UI/UX designer and artist from India & Pakistan."
+        keywords="Mariam Parvez Art, Mariam Artist, Art by Mariam, Acrylic Paintings India, Watercolor Art Pakistan, Mandala Art, The M Impact Art, Original Art for Sale, Indian Artist, Pakistani Artist, Designer Artist, UI Designer Art, Mariam Paintings"
+        canonicalUrl="https://mariamparvez.in/art"
+        isArtPage={true}
+      />
       <Navigation />
       <div className="relative bg-[#0a0515] min-h-screen text-white overflow-x-hidden" style={{ position: 'relative' }}>
         {/* Background Effects */}

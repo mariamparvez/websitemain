@@ -9,21 +9,25 @@ import { Testimonials } from "../components/Testimonials";
 import { Blogs } from "../components/Blogs";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
+import { SEO } from "../components/SEO";
 
 export function HomePage() {
   return (
-    <div className="relative bg-[#010408] min-h-screen text-white overflow-x-hidden" style={{ position: 'relative' }}>
-      <Navigation />
-      <Hero />
-      <WhyChooseMe />
-      <Services />
-      <CaseStudies />
-      <ArtCallout />
-      <Designs />
-      <Testimonials />
-      <Blogs />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      <SEO />
+      <div className="relative bg-[#010408] min-h-screen text-white overflow-x-hidden" style={{ position: 'relative' }}>
+        <Navigation />
+        <Hero />
+        <WhyChooseMe />
+        <Services />
+        <CaseStudies />
+        <ArtCallout />
+        <Designs />
+        <Testimonials />
+        <Blogs />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   );
 }
