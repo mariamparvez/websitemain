@@ -1,11 +1,17 @@
 import { RouterProvider } from "react-router";
 import { router } from "./routes";
 import { HelmetProvider } from "react-helmet-async";
+import { AuthProvider } from "./contexts/AuthContext";
+import { CMSProvider } from "./contexts/CMSContext";
 
 export default function App() {
   return (
     <HelmetProvider>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <CMSProvider>
+          <RouterProvider router={router} />
+        </CMSProvider>
+      </AuthProvider>
     </HelmetProvider>
   );
 }
