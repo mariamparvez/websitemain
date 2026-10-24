@@ -5,7 +5,7 @@ import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png"
 
 export function WhyChooseMe() {
   return (
-    <section className="relative py-8 md:py-10 overflow-hidden bg-[#010408]" style={{ position: 'relative' }}>
+    <section className="relative py-8 md:py-10 overflow-hidden bg-[#030815]" style={{ position: 'relative' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <img 
@@ -28,15 +28,15 @@ export function WhyChooseMe() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-left mb-8 max-w-5xl"
+          className="text-left mb-8"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white max-w-5xl mx-auto">
             Why Choose Me?
           </h2>
         </motion.div>
 
         {/* Image LEFT - Content RIGHT Layout */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-start gap-8 lg:gap-12 max-w-5xl">
+        <div className="flex flex-col lg:flex-row items-start lg:items-start gap-8 lg:gap-12 max-w-5xl mx-auto">
           {/* Profile Image - LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
