@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { FloatingShapes } from "./FloatingShapes";
 import img1 from "figma:asset/3a6fd584cba573c439db70b5abacd46376caf688.png";
 import img2 from "figma:asset/d98cf614ccdae81c7dbebc1fe013460fe19bdb11.png";
 import img3 from "figma:asset/a21bc0583f5a3b8e2007b7c18d61fe7cf9973a63.png";
@@ -42,10 +43,7 @@ const designs = [
 export function Designs() {
   return (
     <section id="designs" className="py-10 relative overflow-hidden bg-white border-t-2 border-gray-200">
-      {/* Background */}
-      <div className="absolute inset-0">
-      </div>
-
+      <FloatingShapes density="medium" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

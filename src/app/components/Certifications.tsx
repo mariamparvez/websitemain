@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Award, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { CertificateModal } from "./CertificateModal";
+import { FloatingShapes } from "./FloatingShapes";
 
 const certifications = [
   {
@@ -59,34 +60,7 @@ export function Certifications() {
 
   return (
     <section id="certifications" className="relative py-10 overflow-hidden bg-[#f8f9fa] border-t-2 border-gray-200">
-      {/* Floating Elements Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-20 left-10 w-20 h-20 bg-[#3d38f5]/10 rounded-full"
-          animate={{
-            y: [0, -20, 0],
-            x: [0, 10, 0],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-20 w-32 h-32 bg-purple-500/10 rounded-full"
-          animate={{
-            y: [0, 20, 0],
-            x: [0, -10, 0],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      </div>
-
+      <FloatingShapes density="heavy" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
