@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { useLocation, Link } from "react-router";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isArtPage = location.pathname === "/art";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,14 +21,27 @@ export function Navigation() {
     { label: "Home", href: "#home" },
     { label: "Services", href: "#services" },
     { label: "Case Studies", href: "#case-studies" },
+    { label: "Art", href: "/art", isRoute: true },
     { label: "Designs", href: "#designs" },
     { label: "Testimonials", href: "#testimonials" },
     { label: "Blogs", href: "#blogs" },
     { label: "Contact", href: "#contact" },
   ];
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute?: boolean) => {
+    if (isRoute) {
+      setIsOpen(false);
+      return;
+    }
+    
     e.preventDefault();
+    
+    // If we're on a different page, navigate to home first
+    if (location.pathname !== "/") {
+      window.location.href = "/" + href;
+      return;
+    }
+    
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -45,30 +61,41 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
-          <motion.a
-            href="#home"
-            onClick={(e) => handleNavClick(e, "#home")}
-            className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Mariam Parvez
-          </motion.a>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              to="/"
+              className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent"
+            >
+              Mariam Parvez
+            </Link>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="text-gray-300 hover:text-white transition-colors relative group"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300" />
-              </motion.a>
+              item.isRoute ? (
+                <motion.div key={item.href} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link
+                    to={item.href}
+                    className="text-gray-300 hover:text-white transition-colors relative group"
+                  >
+                    {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300" />
+                  </Link>
+                </motion.div>
+              ) : (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
+                  className="text-gray-300 hover:text-white transition-colors relative group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300" />
+                </motion.a>
+              )
             ))}
           </div>
 
@@ -93,14 +120,25 @@ export function Navigation() {
           >
             <div className="px-4 py-4 space-y-3">
               {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-blue-900/20 rounded-lg transition-colors"
-                >
-                  {item.label}
-                </a>
+                item.isRoute ? (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-blue-900/20 rounded-lg transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-blue-900/20 rounded-lg transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                )
               ))}
             </div>
           </motion.div>

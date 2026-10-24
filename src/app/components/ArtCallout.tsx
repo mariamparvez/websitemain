@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Sparkles, ArrowRight } from "lucide-react";
+import { Link } from "react-router";
 import bgImage from "figma:asset/aa43f793764a7490f8c87793750a0fd36b5286f5.png";
 
 export function ArtCallout() {
@@ -52,7 +53,7 @@ export function ArtCallout() {
                 transition={{ delay: 0.4 }}
                 className="text-white text-lg leading-relaxed mb-6 text-left"
               >
-                Check out my Art Pieces on my e-commerce Website. I create{" "}
+                Check out my Art Pieces on my art gallery. I create{" "}
                 <span className="text-cyan-300 font-semibold">Acrylic Painting</span>,{" "}
                 <span className="text-cyan-300 font-semibold">Watercolor Painting</span>,{" "}
                 <span className="text-cyan-300 font-semibold">Russian Sculpture Art</span>,{" "}
@@ -61,19 +62,22 @@ export function ArtCallout() {
               </motion.p>
             </div>
 
-            <motion.a
-              href="themimpact/index.html"
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group flex items-center gap-3 px-8 py-4 bg-white text-blue-900 rounded-full font-medium text-lg hover:shadow-2xl hover:shadow-white/30 transition-all border-2 border-white"
             >
-              <span>Shop My Art</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
+              <Link
+                to="/art"
+                className="group flex items-center gap-3 px-8 py-4 bg-white text-blue-900 rounded-full font-medium text-lg hover:shadow-2xl hover:shadow-white/30 transition-all border-2 border-white"
+              >
+                <span>View My Art</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </div>

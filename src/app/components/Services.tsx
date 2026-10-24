@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { Globe, Palette, Paintbrush, GraduationCap, ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import { Link } from "react-router";
 import parallaxBg from 'figma:asset/089d4811ef31488112e1cf08c729f30084a51a92.png';
 
 const services = [
@@ -24,9 +25,10 @@ const services = [
     icon: Paintbrush,
     title: "Art",
     description: "Creating unique Acrylic, Watercolor, Mandala, and Abstract Art pieces. Commissions available to bring your ideas to life.",
-    link: "https://www.instagram.com/themimpact/",
+    link: "/art",
     linkText: "Explore Art",
-    gradient: "from-teal-500 to-emerald-500"
+    gradient: "from-teal-500 to-emerald-500",
+    isRoute: true
   },
   {
     icon: GraduationCap,
@@ -132,17 +134,33 @@ export function Services() {
                   </p>
 
                   {/* Link */}
-                  <motion.a
-                    href={service.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.gradient} rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-shadow group/btn mt-auto`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {service.linkText}
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </motion.a>
+                  {service.isRoute ? (
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="mt-auto"
+                    >
+                      <Link
+                        to={service.link}
+                        className={`relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.gradient} rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-shadow group/btn`}
+                      >
+                        {service.linkText}
+                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
+                    </motion.div>
+                  ) : (
+                    <motion.a
+                      href={service.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.gradient} rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-shadow group/btn mt-auto`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {service.linkText}
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </motion.a>
+                  )}
                 </div>
               </motion.div>
             );
