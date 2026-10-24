@@ -63,51 +63,31 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-wrap gap-4 justify-center items-center pt-8"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
           >
-            <motion.a
-              href="https://www.behance.net/themariamparvez"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#3d38f5] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2d28d5] transition-all shadow-lg inline-flex items-center gap-2"
-            >
-              Latest Work →
-            </motion.a>
-
-            <motion.a
-              href="https://dribbble.com/themariamparvez"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#3d38f5] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2d28d5] transition-all shadow-lg inline-flex items-center gap-2"
-            >
-              View Designs →
-            </motion.a>
-
-            <motion.a
-              href="/art"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#3d38f5] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2d28d5] transition-all shadow-lg inline-flex items-center gap-2"
-            >
-              Explore Art →
-            </motion.a>
-
             <motion.a
               href="https://www.youtube.com/watch?v=nJ3clNDNu9s"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#3d38f5] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2d28d5] transition-all shadow-lg inline-flex items-center gap-2"
+              className="bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all shadow-lg"
             >
-              Go To Course →
+              Latest Course
+            </motion.a>
+
+            <motion.a
+              href="https://www.youtube.com/watch?v=cs2ySXNG4aU"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all shadow-lg"
+            >
+              About Me
             </motion.a>
           </motion.div>
 

@@ -3,6 +3,7 @@ import { Navigation } from "../components/Navigation";
 import { WhyChooseMe } from "../components/WhyChooseMe";
 import { Services } from "../components/Services";
 import { CaseStudies } from "../components/CaseStudies";
+import { Certifications } from "../components/Certifications";
 import { ArtCallout } from "../components/ArtCallout";
 import { Designs } from "../components/Designs";
 import { Testimonials } from "../components/Testimonials";
@@ -21,6 +22,7 @@ export function HomePage() {
         <WhyChooseMe />
         <Services />
         <CaseStudies />
+        <Certifications />
         <ArtCallout />
         <Designs />
         <Testimonials />
