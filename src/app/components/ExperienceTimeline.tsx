@@ -94,10 +94,10 @@ export function ExperienceTimeline() {
     const offset = info.offset.x;
     const velocity = info.velocity.x;
 
-    if (offset > 100 || velocity > 500) {
+    if (offset > 50 || velocity > 200) {
       // Swipe right - previous
       setCurrentIndex((prev) => Math.max(0, prev - 1));
-    } else if (offset < -100 || velocity < -500) {
+    } else if (offset < -50 || velocity < -200) {
       // Swipe left - next
       setCurrentIndex((prev) => Math.min(experiences.length - 1, prev + 1));
     }
@@ -123,7 +123,7 @@ export function ExperienceTimeline() {
         </motion.div>
 
         {/* Card Stack Container */}
-        <div className="relative h-[400px] md:h-[350px] max-w-4xl mx-auto">
+        <div className="relative h-[400px] md:h-[350px]">
           {experiences.map((exp, index) => {
             const isActive = index === currentIndex;
             const offset = index - currentIndex;

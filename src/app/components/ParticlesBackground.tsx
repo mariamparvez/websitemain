@@ -86,18 +86,18 @@ export function ParticlesBackground() {
               cy: hoveredParticle === particle.id
                 ? `${particle.y}%`
                 : `${particle.y + particle.speedY * 50}%`,
-              r: hoveredParticle === particle.id ? particle.size * 3 : particle.size,
+              r: hoveredParticle === particle.id ? particle.size * 2.5 : particle.size,
             }}
             transition={{
-              duration: hoveredParticle === particle.id ? 0.3 : 20,
+              duration: hoveredParticle === particle.id ? 0.4 : 20,
               repeat: hoveredParticle === particle.id ? 0 : Infinity,
               repeatType: "reverse",
-              ease: "linear",
+              ease: hoveredParticle === particle.id ? "easeOut" : "linear",
             }}
             whileHover={{
-              r: particle.size * 4,
-              fill: "#3b82f6",
-              transition: { duration: 0.2 },
+              r: particle.size * 2.8,
+              fill: "#60a5fa",
+              transition: { duration: 0.3, ease: "easeOut" },
             }}
             onMouseEnter={() => setHoveredParticle(particle.id)}
             onMouseLeave={() => setHoveredParticle(null)}
