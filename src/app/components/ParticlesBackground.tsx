@@ -26,11 +26,15 @@ export function ParticlesBackground() {
       "#c7d2fe", // indigo-200
     ];
 
-    const newParticles: Particle[] = Array.from({ length: 50 }, (_, i) => ({
+    const w = window.innerWidth;
+    const count = Math.round(Math.min(40, Math.max(10, w / 40)));
+    const sizeScale = w < 640 ? 0.7 : 1;
+
+    const newParticles: Particle[] = Array.from({ length: count }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 4 + 2,
+      size: (Math.random() * 4 + 2) * sizeScale,
       color: colors[Math.floor(Math.random() * colors.length)],
       speedX: (Math.random() - 0.5) * 0.5,
       speedY: (Math.random() - 0.5) * 0.5,
