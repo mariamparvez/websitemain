@@ -10,13 +10,13 @@ export function Footer() {
   return (
     <footer className={`relative py-12 overflow-hidden ${
       isArtPage 
-        ? "border-t border-purple-900/20 bg-[#0a0515]" 
-        : "border-t border-blue-900/20 bg-[#010408]"
+        ? "border-t border-purple-900/20 bg-white" 
+        : "border-t border-[#3d38f5]/20 bg-white"
     }`}>
       {/* Background */}
       <div className="absolute inset-0">
         <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] ${
-          isArtPage ? "bg-purple-600/5" : "bg-blue-600/5"
+          isArtPage ? "bg-purple-600/5" : "bg-[#3d38f5]"
         } rounded-full blur-3xl`} />
       </div>
 
@@ -31,15 +31,15 @@ export function Footer() {
             <h3 className={`text-2xl md:text-3xl font-bold mb-4 ${
               isArtPage
                 ? "bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 bg-clip-text text-transparent"
-                : "bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-500 bg-clip-text text-transparent"
+                : "bg-gradient-to-r from-[#3d38f5] via-[#3d38f5] to-indigo-500 bg-clip-text text-transparent"
             }`}>
               Mariam Parvez
             </h3>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               Web Designer | UI/UX Expert | Graphic Designer | Artist | Coach
             </p>
 
-            <div className="hidden md:flex items-center justify-center gap-2 text-gray-400">
+            <div className="hidden md:flex items-center justify-center gap-2 text-gray-600">
               <span>Made with</span>
               <Heart className="w-4 h-4 text-red-400 fill-red-400" />
               <span>© {currentYear} Mariam Parvez. All rights reserved.</span>
@@ -51,7 +51,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`transition-colors ${
-                  isArtPage ? "hover:text-purple-400" : "hover:text-blue-400"
+                  isArtPage ? "hover:text-purple-400" : "hover:text-[#3d38f5]"
                 }`}
               >
                 LinkedIn
@@ -62,7 +62,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`transition-colors ${
-                  isArtPage ? "hover:text-purple-400" : "hover:text-blue-400"
+                  isArtPage ? "hover:text-purple-400" : "hover:text-[#3d38f5]"
                 }`}
               >
                 Behance
@@ -73,7 +73,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`transition-colors ${
-                  isArtPage ? "hover:text-purple-400" : "hover:text-blue-400"
+                  isArtPage ? "hover:text-purple-400" : "hover:text-[#3d38f5]"
                 }`}
               >
                 Dribbble
@@ -84,7 +84,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`transition-colors ${
-                  isArtPage ? "hover:text-purple-400" : "hover:text-blue-400"
+                  isArtPage ? "hover:text-purple-400" : "hover:text-[#3d38f5]"
                 }`}
               >
                 Instagram
@@ -95,7 +95,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`transition-colors ${
-                  isArtPage ? "hover:text-purple-400" : "hover:text-blue-400"
+                  isArtPage ? "hover:text-purple-400" : "hover:text-[#3d38f5]"
                 }`}
               >
                 Medium
@@ -106,7 +106,7 @@ export function Footer() {
               <Link
                 to="/terms"
                 className={`transition-colors ${
-                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-blue-400"
+                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-[#3d38f5]"
                 }`}
               >
                 Terms & Conditions
@@ -115,7 +115,7 @@ export function Footer() {
               <Link
                 to="/privacy"
                 className={`transition-colors ${
-                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-blue-400"
+                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-[#3d38f5]"
                 }`}
               >
                 Privacy Policy
@@ -124,7 +124,7 @@ export function Footer() {
               <Link
                 to="/disclaimer"
                 className={`transition-colors ${
-                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-blue-400"
+                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-[#3d38f5]"
                 }`}
               >
                 Disclaimer
@@ -133,7 +133,7 @@ export function Footer() {
               <Link
                 to="/copyright"
                 className={`transition-colors ${
-                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-blue-400"
+                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-[#3d38f5]"
                 }`}
               >
                 Copyright
@@ -142,7 +142,7 @@ export function Footer() {
               <Link
                 to="/csr"
                 className={`transition-colors ${
-                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-blue-400"
+                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-[#3d38f5]"
                 }`}
               >
                 CSR Policy

@@ -5,11 +5,11 @@ import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png"
 
 export function WhyChooseMe() {
   return (
-    <section className="relative py-8 md:py-10 overflow-hidden bg-[#0a0e1a]" style={{ position: 'relative' }}>
+    <section className="relative py-8 md:py-10 overflow-hidden bg-white" style={{ position: 'relative' }}>
       {/* Background Decoration */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-64 h-64 bg-[#3d38f5]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#3d38f5]/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,11 +24,11 @@ export function WhyChooseMe() {
             className="flex-shrink-0"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-xl opacity-30" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] rounded-full blur-xl opacity-30" />
               <img
                 src={profileImg}
                 alt="Mariam Parvez"
-                className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-cyan-400/30 shadow-2xl shadow-cyan-500/20"
+                className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-[#3d38f5]/30 shadow-2xl shadow-[#3d38f5]/20"
               />
             </div>
           </motion.div>
@@ -42,22 +42,22 @@ export function WhyChooseMe() {
             className="flex-1 text-left space-y-6 max-w-3xl"
           >
             {/* Title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 text-left italic">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-6 text-left italic">
               Why Choose Me?
             </h2>
 
-            <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
               I'm a UI/UX designer and developer with{" "}
-              <span className="text-cyan-300 font-semibold">7.6+ years of experience</span>{" "}
+              <span className="text-[#3d38f5] font-semibold">7.6+ years of experience</span>{" "}
               creating high-retention digital products. As a{" "}
-              <span className="text-cyan-300 font-semibold">Lead Developer Designer at Prodapt</span>, 
-              I design intuitive, user-centered experiences that drive engagement and real impact, 
+              <span className="text-[#3d38f5] font-semibold">Lead Developer Designer at Prodapt</span>,
+              I design intuitive, user-centered experiences that drive engagement and real impact,
               while mentoring aspiring designers through{" "}
-              <a 
-                href="https://muxion.in" 
-                target="_blank" 
+              <a
+                href="https://muxion.in"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-cyan-300 font-semibold hover:text-cyan-200 underline decoration-cyan-400/50 hover:decoration-cyan-300 transition-colors"
+                className="text-[#3d38f5] font-semibold hover:text-[#6b63f7] underline decoration-[#3d38f5]/50 hover:decoration-[#6b63f7] transition-colors"
               >
                 Muxion Academy
               </a>.
@@ -66,32 +66,32 @@ export function WhyChooseMe() {
             {/* Quick Stats */}
             <div className="flex flex-wrap gap-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center">
-                  <Award className="w-5 h-5 text-cyan-400" />
+                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center">
+                  <Award className="w-5 h-5 text-[#3d38f5]" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-white">7.6+</div>
-                  <div className="text-sm text-blue-300/70">Years Experience</div>
+                  <div className="text-2xl font-bold text-gray-900">7.6+</div>
+                  <div className="text-sm text-gray-600">Years Experience</div>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center">
-                  <Code className="w-5 h-5 text-cyan-400" />
+                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center">
+                  <Code className="w-5 h-5 text-[#3d38f5]" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-white">Lead</div>
-                  <div className="text-sm text-blue-300/70">Developer Designer</div>
+                  <div className="text-2xl font-bold text-gray-900">Lead</div>
+                  <div className="text-sm text-gray-600">Developer Designer</div>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center">
-                  <Users className="w-5 h-5 text-cyan-400" />
+                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center">
+                  <Users className="w-5 h-5 text-[#3d38f5]" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-white">Mentor</div>
-                  <div className="text-sm text-blue-300/70">Muxion Academy</div>
+                  <div className="text-2xl font-bold text-gray-900">Mentor</div>
+                  <div className="text-sm text-gray-600">Muxion Academy</div>
                 </div>
               </div>
             </div>

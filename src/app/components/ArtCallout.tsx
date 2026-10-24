@@ -5,14 +5,14 @@ import bgImage from "figma:asset/aa43f793764a7490f8c87793750a0fd36b5286f5.png";
 
 export function ArtCallout() {
   return (
-    <section className="relative overflow-hidden bg-[#0d1219] py-0">
+    <section className="relative overflow-hidden bg-white py-0">
       <div className="max-w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative backdrop-blur-sm border-y border-cyan-500/30 p-6 lg:p-8 overflow-hidden"
+          className="relative backdrop-blur-sm border-y border-[#3d38f5]/20 p-6 lg:p-8 overflow-hidden"
           style={{
             backgroundImage: `url(${bgImage})`,
             backgroundSize: 'cover',
@@ -29,10 +29,10 @@ export function ArtCallout() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-black/40 backdrop-blur-sm rounded-full border border-cyan-400/50"
+                className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-black/40 backdrop-blur-sm rounded-full border border-[#3d38f5]/20"
               >
-                <Sparkles className="w-5 h-5 text-cyan-400" />
-                <span className="text-cyan-400 font-medium">Art Portfolio</span>
+                <Sparkles className="w-5 h-5 text-[#3d38f5]" />
+                <span className="text-[#3d38f5] font-medium">Art Portfolio</span>
               </motion.div>
               
               <motion.h2
@@ -40,7 +40,7 @@ export function ArtCallout() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-black mb-4 text-white text-left leading-tight"
+                className="text-5xl md:text-6xl lg:text-7xl font-black mb-4 text-gray-900 text-left leading-tight"
                 style={{ fontWeight: 900 }}
               >
                 I also paint, sculpt and sketch!
@@ -51,14 +51,14 @@ export function ArtCallout() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="text-white text-lg leading-relaxed mb-6 text-left"
+                className="text-gray-900 text-lg leading-relaxed mb-6 text-left"
               >
                 Check out my Art Pieces on my art gallery. I create{" "}
-                <span className="text-cyan-300 font-semibold">Acrylic Painting</span>,{" "}
-                <span className="text-cyan-300 font-semibold">Watercolor Painting</span>,{" "}
-                <span className="text-cyan-300 font-semibold">Russian Sculpture Art</span>,{" "}
-                <span className="text-cyan-300 font-semibold">Sketching</span>, and{" "}
-                <span className="text-cyan-300 font-semibold">Mandala Art</span>
+                <span className="text-[#3d38f5] font-semibold">Acrylic Painting</span>,{" "}
+                <span className="text-[#3d38f5] font-semibold">Watercolor Painting</span>,{" "}
+                <span className="text-[#3d38f5] font-semibold">Russian Sculpture Art</span>,{" "}
+                <span className="text-[#3d38f5] font-semibold">Sketching</span>, and{" "}
+                <span className="text-[#3d38f5] font-semibold">Mandala Art</span>
               </motion.p>
             </div>
 
@@ -72,7 +72,7 @@ export function ArtCallout() {
             >
               <Link
                 to="/art"
-                className="group flex items-center gap-3 px-8 py-4 bg-white text-blue-900 rounded-full font-medium text-lg hover:shadow-2xl hover:shadow-white/30 transition-all border-2 border-white"
+                className="group flex items-center gap-3 px-8 py-4 bg-white text-[#3d38f5] rounded-full font-medium text-lg hover:shadow-2xl hover:shadow-white/30 transition-all border-2 border-white"
               >
                 <span>View My Art</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

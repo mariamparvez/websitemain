@@ -53,7 +53,7 @@ export function ArtPage() {
 
   return (
     <>
-      <SEO 
+      <SEO
         title="Art Gallery - Mariam Parvez | Acrylic Paintings, Watercolor & Mandala Art"
         description="Explore Mariam Parvez's stunning art collection featuring acrylic paintings, watercolor art, sketches, and intricate mandala designs. Browse and purchase original artwork by a talented UI/UX designer and artist from India & Pakistan."
         keywords="Mariam Parvez Art, Mariam Artist, Art by Mariam, Acrylic Paintings India, Watercolor Art Pakistan, Mandala Art, The M Impact Art, Original Art for Sale, Indian Artist, Pakistani Artist, Designer Artist, UI Designer Art, Mariam Paintings"
@@ -61,359 +61,176 @@ export function ArtPage() {
         isArtPage={true}
       />
       <Navigation />
-      <div className="relative bg-[#0a0515] min-h-screen text-white overflow-x-hidden" style={{ position: 'relative' }}>
+      <div className="relative bg-[#fdfdfd] min-h-screen text-gray-900 overflow-x-hidden max-w-full">
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-20 left-10 w-96 h-96 bg-[#3d38f5]/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#3d38f5]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
         {/* Hero Grid Section */}
-        <section className="relative pt-24 pb-8 px-4">
-          <div className="max-w-7xl mx-auto">
+        <section className="relative pt-24 pb-8 px-4 max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-8"
+          >
+            <Link to="/" className="inline-flex items-center gap-2 text-[#3d38f5] hover:text-[#6b63f7] transition-colors">
+              <ArrowLeft className="w-5 h-5" />
+              Back to Home
+            </Link>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* About Card */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-8"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1 }}
+              className="col-span-2 row-span-2 relative group rounded-3xl overflow-hidden bg-gradient-to-br from-[#3d38f5]/10 to-[#6b63f7]/10 backdrop-blur-sm border border-[#3d38f5]/20 p-8 flex flex-col justify-center items-center text-center hover:border-[#3d38f5]/40 transition-all duration-300"
+              style={{
+                backgroundImage: `url(${art1})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
             >
-              <Link to="/" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors">
-                <ArrowLeft className="w-5 h-5" />
-                Back to Home
-              </Link>
+              <div className="absolute inset-0 bg-white/80 group-hover:bg-white/70 transition-all duration-300" />
+              <div className="relative z-10">
+                <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Get to know me!</h1>
+                <p className="text-gray-700 mb-6">Bringing creativity to life through art and design</p>
+                <a
+                  href="https://www.instagram.com/the.m.impact/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] text-white px-6 py-3 rounded-full hover:shadow-lg transition-all"
+                >
+                  <Instagram className="w-5 h-5" />
+                  Follow on Instagram
+                </a>
+              </div>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {/* About Card */}
+            {/* Quick Art Cards */}
+            {[art2, art3, art4, art5].map((src, idx) => (
               <motion.div
+                key={idx}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.1 }}
-                className="col-span-2 row-span-2 relative group rounded-3xl overflow-hidden bg-gradient-to-br from-purple-900/40 to-purple-800/40 backdrop-blur-sm border border-purple-500/30 p-8 flex flex-col justify-center items-center text-center hover:border-purple-500/60 transition-all duration-300"
-                style={{
-                  backgroundImage: `url(${art1})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
+                transition={{ delay: 0.2 + idx * 0.1 }}
+                className="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-all duration-300" />
-                <div className="relative z-10">
-                  <h1 className="text-3xl md:text-4xl font-bold mb-4">Get to know me!</h1>
-                  <p className="text-gray-300 mb-6">Find me designing websites by day, splashing paints on canvases by night.</p>
-                  <div className="flex flex-wrap gap-3 justify-center">
-                    <a href="#latest-work" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-500 rounded-full font-medium hover:shadow-lg transition-all">
-                      Latest Work
-                    </a>
-                    <Link to="/" className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all">
-                      My Website
-                    </Link>
+                <img src={src} alt={`Art ${idx + 1}`} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#3d38f5]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Latest Work Section */}
+        <section className="relative py-12 px-4 max-w-7xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Latest Work</h2>
+            <div className="flex gap-2">
+              <button
+                onClick={() => scroll(latestScrollRef, 'left')}
+                className="p-2 rounded-full bg-white border-2 border-[#3d38f5]/30 text-[#3d38f5] hover:bg-[#3d38f5] hover:text-white transition-all"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => scroll(latestScrollRef, 'right')}
+                className="p-2 rounded-full bg-white border-2 border-[#3d38f5]/30 text-[#3d38f5] hover:bg-[#3d38f5] hover:text-white transition-all"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          <div ref={latestScrollRef} className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+            {latestWork.map((art) => (
+              <motion.div
+                key={art.id}
+                whileHover={{ scale: 1.05 }}
+                className="flex-shrink-0 w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all snap-start"
+              >
+                <img src={art.src} alt={art.title} className="w-full h-80 object-cover" />
+                <div className="p-6">
+                  <div className="text-sm text-[#3d38f5] font-semibold mb-2">{art.category}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{art.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{art.description}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-[#3d38f5]">{art.price}</span>
+                    <button className="flex items-center gap-2 text-[#3d38f5] hover:text-[#6b63f7] transition-colors">
+                      View <ExternalLink className="w-4 h-4" />
+                    </button>
                   </div>
                 </div>
               </motion.div>
-
-              {/* Acrylic Paintings Card */}
-              <motion.a
-                href="#acrylic-paintings"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="relative group rounded-3xl overflow-hidden bg-gradient-to-br from-purple-900/40 to-purple-700/40 backdrop-blur-sm border border-purple-500/30 p-6 flex flex-col justify-center items-center text-center hover:border-purple-400/60 transition-all duration-300"
-                style={{
-                  backgroundImage: `url(${art3})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-all duration-300" />
-                <div className="relative z-10">
-                  <h4 className="text-xl font-bold">My Acrylic Paintings</h4>
-                  <button className="mt-4 px-4 py-2 bg-white text-purple-900 rounded-full font-medium text-sm hover:bg-purple-100 transition-all">
-                    View
-                  </button>
-                </div>
-              </motion.a>
-
-              {/* Watercolor Paintings Card */}
-              <motion.a
-                href="#watercolor-paintings"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 }}
-                className="relative group rounded-3xl overflow-hidden bg-gradient-to-br from-purple-800/40 to-purple-700/40 backdrop-blur-sm border border-purple-500/30 p-6 flex flex-col justify-center items-center text-center hover:border-purple-400/60 transition-all duration-300"
-                style={{
-                  backgroundImage: `url(${art2})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-all duration-300" />
-                <div className="relative z-10">
-                  <h4 className="text-xl font-bold">My Watercolor Paintings</h4>
-                  <button className="mt-4 px-4 py-2 bg-white text-purple-900 rounded-full font-medium text-sm hover:bg-purple-100 transition-all">
-                    View
-                  </button>
-                </div>
-              </motion.a>
-
-              {/* Sketches Card */}
-              <motion.a
-                href="#sketches"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4 }}
-                className="relative group rounded-3xl overflow-hidden bg-gradient-to-br from-purple-900/40 to-purple-800/40 backdrop-blur-sm border border-purple-500/30 p-6 flex flex-col justify-center items-center text-center hover:border-purple-400/60 transition-all duration-300"
-                style={{
-                  backgroundImage: `url(${art4})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-all duration-300" />
-                <div className="relative z-10">
-                  <h4 className="text-xl font-bold">My Sketches</h4>
-                  <button className="mt-4 px-4 py-2 bg-white text-purple-900 rounded-full font-medium text-sm hover:bg-purple-100 transition-all">
-                    View
-                  </button>
-                </div>
-              </motion.a>
-
-              {/* Mandala Art Card */}
-              <motion.a
-                href="#mandala-art"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5 }}
-                className="relative group rounded-3xl overflow-hidden bg-gradient-to-br from-purple-900/40 to-purple-700/40 backdrop-blur-sm border border-purple-500/30 p-6 flex flex-col justify-center items-center text-center hover:border-purple-400/60 transition-all duration-300"
-                style={{
-                  backgroundImage: `url(${art5})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              >
-                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-all duration-300" />
-                <div className="relative z-10">
-                  <h4 className="text-xl font-bold">Mandala Art</h4>
-                  <button className="mt-4 px-4 py-2 bg-white text-purple-900 rounded-full font-medium text-sm hover:bg-purple-100 transition-all">
-                    View
-                  </button>
-                </div>
-              </motion.a>
-            </div>
+            ))}
           </div>
         </section>
 
-        {/* Latest Work Slider */}
-        <section id="latest-work" className="relative py-16 px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Latest Work</h2>
-              <p className="text-gray-400 text-lg">This is the latest Art I did. Explore, buy and let me know how it is!</p>
-            </motion.div>
-
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none z-10 px-4">
-                <button
-                  onClick={() => scroll(latestScrollRef, 'left')}
-                  className="pointer-events-auto p-4 bg-purple-600 hover:bg-purple-700 rounded-full shadow-lg transition-all"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button
-                  onClick={() => scroll(latestScrollRef, 'right')}
-                  className="pointer-events-auto p-4 bg-purple-600 hover:bg-purple-700 rounded-full shadow-lg transition-all"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </div>
-
-              <div ref={latestScrollRef} className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                {latestWork.map((art, index) => (
-                  <motion.div
-                    key={art.id}
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex-shrink-0 w-80 bg-gradient-to-br from-purple-900/20 to-purple-800/20 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-4 hover:border-purple-400/40 transition-all"
-                  >
-                    <img src={art.src} alt={art.title} className="w-full h-64 object-cover rounded-xl mb-4" />
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-bold">{art.title}</h3>
-                      <p className="text-gray-400 text-sm">{art.description}</p>
-                      <div className="flex items-center justify-between pt-2">
-                        <span className="text-purple-400 font-bold text-lg">{art.price}</span>
-                        <a
-                          href="https://ig.me/m/themimpact"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-500 rounded-full text-sm font-medium hover:shadow-lg transition-all"
-                        >
-                          Enquire on Insta
-                        </a>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+        {/* Acrylic Paintings */}
+        <section className="relative py-12 px-4 bg-white max-w-7xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Acrylic Paintings</h2>
+            <div className="flex gap-2">
+              <button
+                onClick={() => scroll(acrylicScrollRef, 'left')}
+                className="p-2 rounded-full bg-white border-2 border-[#3d38f5]/30 text-[#3d38f5] hover:bg-[#3d38f5] hover:text-white transition-all"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => scroll(acrylicScrollRef, 'right')}
+                className="p-2 rounded-full bg-white border-2 border-[#3d38f5]/30 text-[#3d38f5] hover:bg-[#3d38f5] hover:text-white transition-all"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
             </div>
+          </div>
+
+          <div ref={acrylicScrollRef} className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+            {acrylicPaintings.map((art) => (
+              <motion.div
+                key={art.id}
+                whileHover={{ scale: 1.05 }}
+                className="flex-shrink-0 w-72 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all snap-start border-2 border-gray-100"
+              >
+                <img src={art.src} alt={art.title} className="w-full h-72 object-cover" />
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{art.title}</h3>
+                  <p className="text-gray-600 text-sm mb-3">{art.description}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xl font-bold text-[#3d38f5]">{art.price}</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </section>
 
-        {/* Acrylic Paintings Slider */}
-        <section id="acrylic-paintings" className="relative py-16 px-4 bg-[#0f0820]">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Acrylic Paintings</h2>
-              <p className="text-gray-400 text-lg">You will mostly find me with my acrylics in the weekends. Explore, buy and let me know how it is!</p>
-            </motion.div>
-
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none z-10 px-4">
-                <button
-                  onClick={() => scroll(acrylicScrollRef, 'left')}
-                  className="pointer-events-auto p-4 bg-purple-600 hover:bg-purple-700 rounded-full shadow-lg transition-all"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button
-                  onClick={() => scroll(acrylicScrollRef, 'right')}
-                  className="pointer-events-auto p-4 bg-purple-600 hover:bg-purple-700 rounded-full shadow-lg transition-all"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </div>
-
-              <div ref={acrylicScrollRef} className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                {acrylicPaintings.map((art, index) => (
-                  <motion.div
-                    key={art.id}
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex-shrink-0 w-80 bg-gradient-to-br from-purple-900/20 to-purple-800/20 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-4 hover:border-purple-400/40 transition-all"
-                  >
-                    <img src={art.src} alt={art.title} className="w-full h-64 object-cover rounded-xl mb-4" />
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-bold">{art.title}</h3>
-                      <p className="text-gray-400 text-sm">{art.description}</p>
-                      <div className="flex items-center justify-between pt-2">
-                        <span className="text-purple-400 font-bold text-lg">{art.price}</span>
-                        <a
-                          href="https://ig.me/m/themimpact"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-500 rounded-full text-sm font-medium hover:shadow-lg transition-all"
-                        >
-                          Enquire on Insta
-                        </a>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Mandala Art Slider */}
-        <section id="mandala-art" className="relative py-16 px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-8"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Mandala Art</h2>
-              <p className="text-gray-400 text-lg">Lately, I've been obsessed with Mandala Art. Explore, buy and let me know how it is!</p>
-            </motion.div>
-
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none z-10 px-4">
-                <button
-                  onClick={() => scroll(mandalaScrollRef, 'left')}
-                  className="pointer-events-auto p-4 bg-purple-600 hover:bg-purple-700 rounded-full shadow-lg transition-all"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button
-                  onClick={() => scroll(mandalaScrollRef, 'right')}
-                  className="pointer-events-auto p-4 bg-purple-600 hover:bg-purple-700 rounded-full shadow-lg transition-all"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </div>
-
-              <div ref={mandalaScrollRef} className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                {mandalaArt.map((art, index) => (
-                  <motion.div
-                    key={art.id}
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex-shrink-0 w-80 bg-gradient-to-br from-purple-900/20 to-purple-800/20 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-4 hover:border-purple-400/40 transition-all"
-                  >
-                    <img src={art.src} alt={art.title} className="w-full h-64 object-cover rounded-xl mb-4" />
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-bold">{art.title}</h3>
-                      <p className="text-gray-400 text-sm">{art.description}</p>
-                      <div className="flex items-center justify-between pt-2">
-                        <span className="text-purple-400 font-bold text-lg">{art.price}</span>
-                        <a
-                          href="https://ig.me/m/themimpact"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-2 bg-gradient-to-r from-purple-600 to-purple-500 rounded-full text-sm font-medium hover:shadow-lg transition-all"
-                        >
-                          Enquire on Insta
-                        </a>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="relative py-16 px-4">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-purple-900/30 to-purple-800/30 backdrop-blur-sm border border-purple-500/30 rounded-3xl p-8 md:p-12 text-center"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Love What You See?</h2>
-              <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-                Follow me on Instagram to see more of my artwork and stay updated with my latest creations.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <motion.a
-                  href="https://www.instagram.com/themimpact/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 rounded-full font-medium hover:shadow-2xl hover:shadow-purple-500/30 transition-all"
-                >
-                  <Instagram className="w-6 h-6" />
-                  Follow on Instagram
-                </motion.a>
-              </div>
-            </motion.div>
+        {/* Watercolor & Mandala Sections */}
+        <section className="relative py-12 px-4 max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Watercolor & Mandala Art</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {watercolorPaintings.concat(mandalaArt).map((art, idx) => (
+              <motion.div
+                key={art.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
+              >
+                <img src={art.src} alt={art.title} className="w-full h-96 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{art.title}</h3>
+                  <p className="text-gray-600 mb-4">{art.description}</p>
+                  <span className="text-2xl font-bold text-[#3d38f5]">{art.price}</span>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </section>
       </div>

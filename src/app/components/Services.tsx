@@ -11,7 +11,7 @@ const services = [
     description: "Skilled in creating responsive, user-centric websites using HTML, CSS, and JavaScript. Over 5 years of delivering top-quality web and mobile designs.",
     link: "https://www.behance.net/themariamparvez",
     linkText: "Latest Work",
-    gradient: "from-blue-500 to-cyan-500"
+    gradient: "from-[#3d38f5] to-[#6b63f7]"
   },
   {
     icon: Palette,
@@ -19,7 +19,7 @@ const services = [
     description: "5+ years of experience creating impactful logos, branding, and marketing materials using Adobe Creative Suite.",
     link: "https://dribbble.com/themariamparvez",
     linkText: "View Designs",
-    gradient: "from-cyan-500 to-teal-500"
+    gradient: "from-[#3d38f5] to-teal-500"
   },
   {
     icon: Paintbrush,
@@ -36,7 +36,7 @@ const services = [
     description: "Experienced UI/UX and Graphic Design coach, loved by students for practical and engaging learning.",
     link: "https://muxion.in",
     linkText: "Go To Course",
-    gradient: "from-emerald-500 to-blue-500"
+    gradient: "from-emerald-500 to-[#6b63f7]"
   }
 ];
 
@@ -55,7 +55,7 @@ export function Services() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="services" className="relative pt-16 pb-16 overflow-hidden bg-[#020a15]" style={{ position: 'relative' }}>
+    <section ref={sectionRef} id="services" className="relative pt-16 pb-16 overflow-hidden bg-white" style={{ position: 'relative' }}>
       {/* Parallax Background Image */}
       <motion.div 
         className="absolute inset-0 pointer-events-none"
@@ -80,8 +80,8 @@ export function Services() {
 
       {/* Background Decoration */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#3d38f5] rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#3d38f5] rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto mb-0 px-[32px] py-[24px]">
@@ -94,11 +94,11 @@ export function Services() {
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             What I{" "}
-            <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#3d38f5] via-[#3d38f5] to-indigo-500 bg-clip-text text-transparent">
               Offer
             </span>
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
             Bringing creativity and expertise to every project
           </p>
         </motion.div>
@@ -116,20 +116,20 @@ export function Services() {
                 whileHover={{ y: -10 }}
                 className="group relative"
               >
-                <div className="relative bg-[#010408]/95 backdrop-blur-sm border border-blue-500/20 rounded-3xl p-8 lg:p-10 h-full overflow-hidden transition-all duration-300 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col">
+                <div className="relative bg-white/95 backdrop-blur-sm border border-[#3d38f5]/20 rounded-3xl p-8 lg:p-10 h-full overflow-hidden transition-all duration-300 hover:border-[#3d38f5]/20 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col">
                   {/* Gradient Background on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 to-cyan-600/0 group-hover:from-blue-600/10 group-hover:to-cyan-600/10 transition-all duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#3d38f5]/0 to-[#6b63f7]/0 group-hover:from-[#3d38f5]/10 group-hover:to-[#6b63f7]/10 transition-all duration-300" />
                   
                   {/* Large Background Icon */}
                   <div className="absolute -right-8 -bottom-8 opacity-20 pointer-events-none">
-                    <Icon className="w-48 h-48 lg:w-56 lg:h-56 text-blue-400" />
+                    <Icon className="w-48 h-48 lg:w-56 lg:h-56 text-[#3d38f5]" />
                   </div>
 
                   {/* Content */}
                   <h3 className="relative text-2xl lg:text-3xl font-bold mb-4">
                     {service.title}
                   </h3>
-                  <p className="relative text-gray-400 mb-6 leading-relaxed flex-grow">
+                  <p className="relative text-gray-600 mb-6 leading-relaxed flex-grow">
                     {service.description}
                   </p>
 

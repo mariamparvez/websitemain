@@ -8,7 +8,7 @@ import blog3Img from "figma:asset/5310a1d936833a9c8391005bd7219b7b7b79a6d7.png";
 
 export function Blogs() {
   return (
-    <section id="blogs" className="py-16 lg:py-20 relative overflow-hidden bg-[#0b0f1c]">
+    <section id="blogs" className="py-16 lg:py-20 relative overflow-hidden bg-white">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-3xl" />
@@ -28,7 +28,7 @@ export function Blogs() {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${blog1Img})` }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-900/80 via-blue-800/60 via-blue-700/40 to-blue-950/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#3d38f5]/95 via-[#3d38f5]/80 via-[#3d38f5]/60 via-[#3d38f5]/40 to-[#6b63f7]/20" />
           </div>
 
           {/* Content */}
@@ -48,7 +48,7 @@ export function Blogs() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-gray-300 text-lg mb-6"
+                className="text-gray-600 text-lg mb-6"
               >
                 Explore how color shapes our emotions and decisions in both graphic design and fashion, and see how the right colors can bring life and meaning to your creations.
               </motion.p>
@@ -61,7 +61,7 @@ export function Blogs() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
                 whileHover={{ x: 5 }}
-                className="inline-flex items-center text-white font-bold text-lg hover:text-blue-400 transition-colors"
+                className="inline-flex items-center text-gray-900 font-bold text-lg hover:text-[#3d38f5]transition-colors"
               >
                 Continue reading
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -78,25 +78,25 @@ export function Blogs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 backdrop-blur-sm border border-blue-500/20 rounded-2xl overflow-hidden hover:border-blue-500/40 transition-all group"
+            className="bg-gradient-to-br from-[#3d38f5]/20 to-indigo-900/20 backdrop-blur-sm border border-[#3d38f5]/20 rounded-2xl overflow-hidden hover:border-[#3d38f5]/20 transition-all group"
           >
             <div className="flex flex-col md:flex-row h-full">
               <div className="p-6 flex-1 flex flex-col">
-                <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-300 text-sm font-semibold rounded-full mb-3 w-fit">
+                <span className="inline-block px-3 py-1 bg-[#3d38f5] text-[#3d38f5] text-sm font-semibold rounded-full mb-3 w-fit">
                   Rebranding
                 </span>
-                <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-[#3d38f5]transition-colors">
                   🛑‼ Most Wanted ‼🛑: The Ice Cream Project
                 </h3>
                 <p className="text-gray-500 text-sm mb-2">Sep 26</p>
-                <p className="text-gray-400 mb-4 flex-1">
+                <p className="text-gray-600 mb-4 flex-1">
                   This blog is a gist of my behance Case Study.
                 </p>
                 <a
                   href="https://themariamparvez.medium.com/most-wanted-the-ice-cream-project-adb3c1431972"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-blue-400 font-semibold hover:text-blue-300 transition-colors group-hover:translate-x-2 transition-transform"
+                  className="inline-flex items-center text-[#3d38f5] font-semibold hover:text-[#3d38f5]transition-colors group-hover:translate-x-2 transition-transform"
                 >
                   Continue reading
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -129,7 +129,7 @@ export function Blogs() {
                   My journey as a UI UX Designer
                 </h3>
                 <p className="text-gray-500 text-sm mb-2">Sep 16</p>
-                <p className="text-gray-400 mb-4 flex-1">
+                <p className="text-gray-600 mb-4 flex-1">
                   Trust your instincts and pivot toward your true calling.
                 </p>
                 <a

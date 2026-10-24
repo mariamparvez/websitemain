@@ -16,7 +16,7 @@ const caseStudies = [
     description: "Importance of a website for small businesses with social media ice breakers' platforms integrated",
     bgImage: "https://images.unsplash.com/photo-1551810292-5b30a8a61f48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwZGVzaWduJTIwbGFwdG9wJTIwbW9ja3VwJTIwc29jaWFsJTIwbWVkaWF8ZW58MXx8fHwxNzc1MzQyMzQyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     link: "https://www.behance.net/gallery/152910207/UX-Case-Study-on-MALEO-Updated",
-    gradient: "from-blue-500/20 to-cyan-500/20"
+    gradient: "from-[#3d38f5]/20 to-[#6b63f7]/20"
   },
   {
     title: "MALEO: The Case Study",
@@ -42,7 +42,7 @@ export function CaseStudies() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="case-studies" className="relative py-20 overflow-hidden bg-[#050810]">
+    <section ref={sectionRef} id="case-studies" className="relative py-20 overflow-hidden bg-white">
       {/* Animated Background Orbs */}
       <div className="absolute inset-0 pointer-events-none relative">{/* Added relative positioning */}
         <motion.div 
@@ -83,20 +83,20 @@ export function CaseStudies() {
           transition={{ duration: 0.8 }}
         >
           <motion.div 
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 backdrop-blur-sm mb-6"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#3d38f5]/10 to-[#6b63f7]/10 border border-[#3d38f5]/20 backdrop-blur-sm mb-6"
             whileHover={{ scale: 1.05 }}
           >
-            <Sparkles className="w-5 h-5 text-cyan-400" />
-            <span className="text-cyan-400 font-medium">Featured Work</span>
+            <Sparkles className="w-5 h-5 text-[#3d38f5]" />
+            <span className="text-[#3d38f5] font-medium">Featured Work</span>
           </motion.div>
           
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-cyan-200 via-blue-300 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#3d38f5] via-[#3d38f5] via-sky-300 to-indigo-400 bg-clip-text text-transparent">
               My Behance Case Studies
             </span>
           </h2>
           
-          <p className="text-xl text-blue-200/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#3d38f5]/70 max-w-3xl mx-auto leading-relaxed">
             Real-world UX case studies showcasing user-centered design solutions
           </p>
         </motion.div>
@@ -118,7 +118,7 @@ export function CaseStudies() {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Card Container */}
-              <div className="relative h-[350px] rounded-3xl overflow-hidden bg-gradient-to-br from-blue-900/30 to-cyan-900/20 border border-blue-500/20 backdrop-blur-xl transition-all duration-500 group-hover:border-cyan-400/50 group-hover:shadow-2xl group-hover:shadow-cyan-500/20">
+              <div className="relative h-[350px] rounded-3xl overflow-hidden bg-gradient-to-br from-[#3d38f5]/30 to-[#6b63f7]/20 border border-[#3d38f5]/20 backdrop-blur-xl transition-all duration-500 group-hover:border-[#3d38f5]/20 group-hover:shadow-2xl group-hover:shadow-cyan-500/20">
                 
                 {/* Background Image */}
                 <div className="absolute inset-0">
@@ -141,7 +141,7 @@ export function CaseStudies() {
                   
                   {/* Title */}
                   <motion.h3 
-                    className="text-xl font-bold text-white mb-2 leading-tight"
+                    className="text-xl font-bold text-gray-900 mb-2 leading-tight"
                     animate={{
                       y: hoveredIndex === index ? -10 : 0,
                     }}
@@ -160,13 +160,13 @@ export function CaseStudies() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="text-sm text-blue-100/90 mb-3 leading-relaxed">
+                    <p className="text-sm text-[#3d38f5]/90 mb-3 leading-relaxed">
                       {study.description}
                     </p>
                     
                     {/* CTA Button */}
                     <motion.div
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-600 text-white font-semibold shadow-lg shadow-blue-500/30 text-sm"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#3d38f5] via-[#6b63f7] to-[#6b63f7] text-gray-900 font-semibold shadow-lg shadow-blue-500/30 text-sm"
                       whileHover={{ scale: 1.05, x: 5 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -185,7 +185,7 @@ export function CaseStudies() {
                     className="absolute bottom-5 right-5"
                   >
                     <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-                      <ExternalLink className="w-5 h-5 text-white" />
+                      <ExternalLink className="w-5 h-5 text-gray-900" />
                     </div>
                   </motion.div>
                 </div>
@@ -203,7 +203,7 @@ export function CaseStudies() {
 
               {/* Glow Effect */}
               <motion.div
-                className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-xl -z-10"
+                className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#3d38f5]/20 to-[#6b63f7]/20 blur-xl -z-10"
                 animate={{
                   opacity: hoveredIndex === index ? 1 : 0,
                 }}
@@ -225,7 +225,7 @@ export function CaseStudies() {
             href="https://www.behance.net/themariamparvez"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-indigo-600 text-white font-semibold shadow-lg shadow-blue-500/30 hover:shadow-cyan-500/40 transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#3d38f5] via-[#6b63f7] to-indigo-600 text-gray-900 font-semibold shadow-lg shadow-blue-500/30 hover:shadow-cyan-500/40 transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
           >

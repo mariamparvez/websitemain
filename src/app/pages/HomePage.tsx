@@ -15,7 +15,7 @@ export function HomePage() {
   return (
     <>
       <SEO />
-      <div className="relative bg-[#010408] min-h-screen text-white overflow-x-hidden" style={{ position: 'relative' }}>
+      <div className="relative bg-[#fdfdfd] min-h-screen text-gray-900 overflow-x-hidden max-w-full" style={{ position: 'relative' }}>
         <Navigation />
         <Hero />
         <WhyChooseMe />

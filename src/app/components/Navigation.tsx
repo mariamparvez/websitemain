@@ -55,9 +55,7 @@ export function Navigation() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? isArtPage 
-            ? "bg-[#0a0515]/90 backdrop-blur-lg border-b border-purple-900/20 shadow-lg"
-            : "bg-[#0a0e27]/90 backdrop-blur-lg border-b border-blue-900/20 shadow-lg"
+          ? "bg-white/90 backdrop-blur-lg border-b border-gray-200 shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -66,11 +64,7 @@ export function Navigation() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               to="/"
-              className={`text-xl lg:text-2xl font-bold ${
-                isArtPage
-                  ? "bg-gradient-to-r from-purple-400 via-purple-300 to-purple-500 bg-clip-text text-transparent"
-                  : "bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent"
-              }`}
+              className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-[#3d38f5] via-[#6b63f7] to-[#3d38f5] bg-clip-text text-transparent"
             >
               Mariam Parvez
             </Link>
@@ -83,14 +77,10 @@ export function Navigation() {
                 <motion.div key={item.href} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     to={item.href}
-                    className="text-gray-300 hover:text-white transition-colors relative group"
+                    className="text-gray-600 hover:text-gray-900 transition-colors relative group"
                   >
                     {item.label}
-                    <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${
-                      isArtPage
-                        ? "bg-gradient-to-r from-purple-400 to-purple-500"
-                        : "bg-gradient-to-r from-blue-400 to-cyan-400"
-                    } group-hover:w-full transition-all duration-300`} />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] group-hover:w-full transition-all duration-300" />
                   </Link>
                 </motion.div>
               ) : (
@@ -98,16 +88,12 @@ export function Navigation() {
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
-                  className="text-gray-300 hover:text-white transition-colors relative group"
+                  className="text-gray-600 hover:text-gray-900 transition-colors relative group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   {item.label}
-                  <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${
-                    isArtPage
-                      ? "bg-gradient-to-r from-purple-400 to-purple-500"
-                      : "bg-gradient-to-r from-blue-400 to-cyan-400"
-                  } group-hover:w-full transition-all duration-300`} />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] group-hover:w-full transition-all duration-300" />
                 </motion.a>
               )
             ))}
@@ -116,7 +102,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-gray-300 hover:text-white"
+            className="lg:hidden p-2 text-gray-600 hover:text-gray-900"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -130,11 +116,7 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className={`lg:hidden ${
-              isArtPage
-                ? "bg-[#0a0515]/95 backdrop-blur-lg border-t border-purple-900/20"
-                : "bg-[#0a0e27]/95 backdrop-blur-lg border-t border-blue-900/20"
-            }`}
+            className="lg:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200"
           >
             <div className="px-4 py-4 space-y-3">
               {navItems.map((item) => (
@@ -143,9 +125,7 @@ export function Navigation() {
                     key={item.href}
                     to={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-4 py-2 text-gray-300 hover:text-white ${
-                      isArtPage ? "hover:bg-purple-900/20" : "hover:bg-blue-900/20"
-                    } rounded-lg transition-colors`}
+                    className="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-[#3d38f5]/10 rounded-lg transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -154,9 +134,7 @@ export function Navigation() {
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
-                    className={`block px-4 py-2 text-gray-300 hover:text-white ${
-                      isArtPage ? "hover:bg-purple-900/20" : "hover:bg-blue-900/20"
-                    } rounded-lg transition-colors`}
+                    className="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-[#3d38f5]/10 rounded-lg transition-colors"
                   >
                     {item.label}
                   </a>
