@@ -5,7 +5,7 @@ import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png"
 
 export function WhyChooseMe() {
   return (
-    <section className="relative py-8 md:py-10 overflow-hidden bg-[#020816]" style={{ position: 'relative' }}>
+    <section className="relative py-8 md:py-10 overflow-hidden bg-[#0a1628]" style={{ position: 'relative' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <img 
@@ -50,7 +50,7 @@ export function WhyChooseMe() {
               <img
                 src={profileImg}
                 alt="Mariam Parvez"
-                className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover border-4 border-cyan-400/30 shadow-2xl shadow-cyan-500/20"
+                className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-cyan-400/30 shadow-2xl shadow-cyan-500/20"
               />
             </div>
           </motion.div>
