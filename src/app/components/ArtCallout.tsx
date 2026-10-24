@@ -30,7 +30,8 @@ export function ArtCallout() {
           backgroundImage: `url(${artBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
         }}
       />
 

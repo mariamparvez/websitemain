@@ -125,7 +125,6 @@ export function ExperienceTimeline() {
 
         {/* Card Stack Container */}
         <div className="relative h-[400px] md:h-[350px]">
-          <SwipeGuideAnimation />
           {experiences.map((exp, index) => {
             const isActive = index === currentIndex;
             const offset = index - currentIndex;
@@ -203,14 +202,16 @@ export function ExperienceTimeline() {
               </motion.div>
             );
           })}
+          <SwipeGuideAnimation />
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="relative z-20 flex justify-center gap-2 mt-8">
           {experiences.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
+              aria-label={`Go to experience ${index + 1}`}
               className={`w-2 h-2 rounded-full transition-all ${
                 index === currentIndex ? "bg-[#3d38f5] w-8" : "bg-gray-300"
               }`}

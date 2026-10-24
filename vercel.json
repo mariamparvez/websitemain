@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/PDF_for_students.pdf",
+      "dest": "/PDF_for_students.pdf"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}

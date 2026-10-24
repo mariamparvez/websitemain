@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
-import openHandIcon from "../../imports/openhand.svg";
+import openHandIcon from "../../imports/openhand-1.svg";
 
 const SWIPE_GUIDE_KEY = "hasSeenSwipeGuide";
 
@@ -42,8 +42,8 @@ export function SwipeGuideAnimation() {
           {/* Swipe Hand Animation */}
           <motion.div
             className="relative"
-            initial={{ x: -50 }}
-            animate={{ x: 50 }}
+            initial={{ x: -100 }}
+            animate={{ x: 100 }}
             transition={{
               duration: 1.5,
               repeat: 2,
@@ -55,23 +55,23 @@ export function SwipeGuideAnimation() {
             <img
               src={openHandIcon}
               alt="Swipe hand"
-              className="w-20 h-20"
+              className="w-40 h-40 md:w-48 md:h-48"
               style={{
-                filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3))"
+                filter: "drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4))"
               }}
             />
 
             {/* Swipe Direction Arrows */}
             <motion.div
-              className="absolute -right-12 top-1/2 -translate-y-1/2"
-              animate={{ x: [0, 10, 0] }}
+              className="absolute -right-16 md:-right-20 top-1/2 -translate-y-1/2"
+              animate={{ x: [0, 15, 0] }}
               transition={{
                 duration: 0.8,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M5 12h14m0 0l-6-6m6 6l-6 6"
                   stroke="#3d38f5"
