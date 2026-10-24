@@ -25,7 +25,7 @@ const caseStudies = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="relative py-10 overflow-hidden bg-white">
+    <section id="case-studies" className="relative py-10 overflow-hidden bg-white border-t-2 border-gray-200">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-8"
@@ -54,12 +54,12 @@ export function CaseStudies() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border-2 border-gray-200 hover:border-[#3d38f5]">
+              <div className="bg-white rounded-2xl overflow-hidden transition-all duration-300 border-2 border-gray-200 hover:border-[#3d38f5] hover:scale-105">
                 <div className="relative h-56 overflow-hidden">
                   <img
                     src={study.bgImage}
                     alt={study.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">
@@ -84,7 +84,7 @@ export function CaseStudies() {
             href="https://www.behance.net/themariamparvez"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#3d38f5] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#2d28d5] transition-all shadow-lg"
+            className="inline-flex items-center gap-2 bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold hover:bg-[#2d28d5] hover:scale-105 transition-all"
           >
             View All Projects <ArrowRight className="w-5 h-5" />
           </a>

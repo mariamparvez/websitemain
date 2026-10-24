@@ -74,7 +74,7 @@ export function Hero() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all shadow-lg"
+              className="bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all"
             >
               Latest Course
             </motion.a>
@@ -85,7 +85,7 @@ export function Hero() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all shadow-lg"
+              className="bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all"
             >
               About Me
             </motion.a>

@@ -58,7 +58,7 @@ export function Certifications() {
   };
 
   return (
-    <section id="certifications" className="relative py-10 overflow-hidden bg-white">
+    <section id="certifications" className="relative py-10 overflow-hidden bg-[#f8f9fa] border-t-2 border-gray-200">
       {/* Floating Elements Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -96,7 +96,7 @@ export function Certifications() {
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 bg-white rounded-full shadow-md border-2 border-[#3d38f5]/20"
+            className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 bg-white rounded-full border-2 border-[#3d38f5]/20"
             whileHover={{ scale: 1.05 }}
           >
             <Award className="w-4 h-4 text-[#3d38f5]" />
@@ -120,7 +120,7 @@ export function Certifications() {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <div className="relative bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all border-2 border-gray-100 hover:border-[#3d38f5] h-full">
+              <div className="relative bg-white rounded-2xl p-4 transition-all duration-300 border-2 border-gray-200 hover:border-[#3d38f5] hover:scale-105 h-full">
                 {/* Emoji Icon */}
                 <div className="relative mb-3">
                   <div className="text-3xl mb-2">
@@ -143,10 +143,10 @@ export function Certifications() {
                     onClick={() => openCertificate(cert)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full bg-[#3d38f5] text-white px-3 py-1.5 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-[#2d28d5] transition-all text-xs"
+                    className="w-full bg-[#3d38f5] text-white px-3 py-1.5 rounded-full font-bold flex items-center justify-center gap-1.5 hover:bg-[#2d28d5] transition-all text-xs"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
-                    View Certificate
+                    View
                   </motion.button>
                 </div>
               </div>

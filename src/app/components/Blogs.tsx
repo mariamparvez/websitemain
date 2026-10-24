@@ -8,7 +8,7 @@ import blog3Img from "figma:asset/5310a1d936833a9c8391005bd7219b7b7b79a6d7.png";
 
 export function Blogs() {
   return (
-    <section id="blogs" className="py-10 relative overflow-hidden bg-white">
+    <section id="blogs" className="py-10 relative overflow-hidden bg-white border-t-2 border-gray-200">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export function Blogs() {
               href="https://themariamparvez.medium.com/why-color-is-important-in-graphic-design-and-fashion-design-03096dfe57f9"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-white text-[#3d38f5] font-bold text-lg px-6 py-3 rounded-full hover:shadow-xl transition-all"
+              className="inline-flex items-center bg-white text-[#3d38f5] font-bold text-lg px-6 py-3 rounded-full hover:scale-105 transition-all"
             >
               Continue reading
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -57,7 +57,7 @@ export function Blogs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-[#3d38f5] hover:shadow-lg transition-all group"
+            className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-[#3d38f5] hover:scale-105 transition-all duration-300 group"
           >
             <div className="flex flex-col md:flex-row h-full">
               <div className="p-6 flex-1 flex flex-col">
@@ -97,7 +97,7 @@ export function Blogs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-[#3d38f5] hover:shadow-lg transition-all group"
+            className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-[#3d38f5] hover:scale-105 transition-all duration-300 group"
           >
             <div className="flex flex-col md:flex-row h-full">
               <div className="p-6 flex-1 flex flex-col">
@@ -142,7 +142,7 @@ export function Blogs() {
             href="https://medium.com/@themariamparvez"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#3d38f5] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#2d28d5] transition-all shadow-lg"
+            className="inline-flex items-center gap-2 bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold hover:bg-[#2d28d5] hover:scale-105 transition-all"
           >
             View All Articles <ArrowRight className="w-5 h-5" />
           </a>

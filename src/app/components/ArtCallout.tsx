@@ -62,7 +62,7 @@ export function ArtCallout() {
             >
               <Link
                 to="/art"
-                className="group flex items-center gap-3 px-8 py-4 bg-white text-[#3d38f5] rounded-full font-bold text-lg hover:shadow-2xl transition-all"
+                className="group flex items-center gap-3 px-8 py-4 bg-white text-[#3d38f5] rounded-full font-bold text-lg hover:scale-105 transition-all"
               >
                 <span>View My Art</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

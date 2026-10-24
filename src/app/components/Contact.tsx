@@ -3,7 +3,7 @@ import { Mail, MapPin, Send } from "lucide-react";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-10 relative overflow-hidden bg-[#f8f9fa]">
+    <section id="contact" className="py-10 relative overflow-hidden bg-[#f8f9fa] border-t-2 border-gray-200">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -32,7 +32,7 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 shadow-sm h-full flex flex-col">
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 h-full flex flex-col">
               <h3 className="text-xl font-bold mb-4 text-gray-900">Get in Touch</h3>
 
               <div className="space-y-4">
@@ -106,7 +106,7 @@ export function Contact() {
             <form
               action="https://formsubmit.co/designwithmariam@gmail.com"
               method="POST"
-              className="bg-white border-2 border-gray-200 rounded-2xl p-6 space-y-4 h-full shadow-sm flex flex-col"
+              className="bg-white border-2 border-gray-200 rounded-2xl p-6 space-y-4 h-full flex flex-col"
             >
               {/* Honeypot */}
               <input type="text" name="_honey" style={{ display: 'none' }} />
@@ -166,7 +166,7 @@ export function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#3d38f5] text-white rounded-xl font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all"
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#3d38f5] text-white rounded-xl font-bold hover:bg-[#2d28d5] hover:scale-105 transition-all"
               >
                 <span>Send Message</span>
                 <Send className="w-5 h-5" />

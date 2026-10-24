@@ -51,7 +51,7 @@ export function Services() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="services" className="relative pt-10 pb-10 overflow-hidden bg-white" style={{ position: 'relative' }}>
+    <section ref={sectionRef} id="services" className="relative pt-10 pb-10 overflow-hidden bg-[#f8f9fa] border-t-2 border-gray-200" style={{ position: 'relative' }}>
 
       <div className="relative z-10 max-w-7xl mx-auto mb-0 px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -85,7 +85,7 @@ export function Services() {
                 whileHover={{ y: -10 }}
                 className="group relative"
               >
-                <div className="relative bg-white border-2 border-gray-200 rounded-2xl p-5 h-full overflow-hidden transition-all duration-300 hover:border-[#3d38f5] hover:shadow-lg flex flex-col">
+                <div className="relative bg-white border-2 border-gray-200 rounded-2xl p-5 h-full overflow-hidden transition-all duration-300 hover:border-[#3d38f5] hover:scale-105 flex flex-col">
                   {/* Large Background Icon */}
                   <div className="absolute -right-6 -bottom-6 opacity-5 pointer-events-none">
                     <Icon className="w-40 h-40 lg:w-48 lg:h-48 text-[#3d38f5]" />
@@ -108,7 +108,7 @@ export function Services() {
                     >
                       <Link
                         to={service.link}
-                        className="relative inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn text-xs"
+                        className="relative inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] transition-all group/btn text-xs"
                       >
                         {service.linkText}
                         <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -122,7 +122,7 @@ export function Services() {
                         href={service.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn text-xs"
+                        className="relative inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] transition-all group/btn text-xs"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >

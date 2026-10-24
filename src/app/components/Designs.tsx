@@ -41,7 +41,7 @@ const designs = [
 
 export function Designs() {
   return (
-    <section id="designs" className="py-10 relative overflow-hidden bg-white">
+    <section id="designs" className="py-10 relative overflow-hidden bg-white border-t-2 border-gray-200">
       {/* Background */}
       <div className="absolute inset-0">
       </div>
@@ -102,7 +102,7 @@ export function Designs() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d38f5] text-white rounded-full font-bold text-lg hover:bg-[#2d28d5] hover:shadow-lg transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d38f5] text-white rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all"
           >
             View More on Dribbble
           </motion.a>

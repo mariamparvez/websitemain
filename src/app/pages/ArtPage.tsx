@@ -67,7 +67,7 @@ export function ArtPage() {
                   href="https://www.instagram.com/themimpact/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white text-[#3d38f5] px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all"
+                  className="inline-flex items-center gap-2 bg-white text-[#3d38f5] px-8 py-4 rounded-full font-bold hover:scale-105 transition-all"
                 >
                   @themimpact →
                 </a>
@@ -83,12 +83,12 @@ export function ArtPage() {
                   <img
                     src={art1}
                     alt="Art 1"
-                    className="rounded-2xl shadow-2xl"
+                    className="rounded-2xl border-2 border-white/10"
                   />
                   <img
                     src={art2}
                     alt="Art 2"
-                    className="rounded-2xl shadow-2xl mt-8"
+                    className="rounded-2xl border-2 border-white/10 mt-8"
                   />
                 </div>
               </motion.div>
@@ -122,7 +122,7 @@ export function ArtPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+                className="group relative overflow-hidden rounded-2xl border-2 border-gray-200 hover:border-[#3d38f5] hover:scale-105 transition-all duration-300"
               >
                 <img
                   src={art.src}
@@ -156,7 +156,7 @@ export function ArtPage() {
                 href="https://www.instagram.com/themimpact/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold hover:bg-[#2d28d5] transition-all shadow-lg"
+                className="inline-flex items-center gap-2 bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold hover:bg-[#2d28d5] hover:scale-105 transition-all"
               >
                 Follow @themimpact →
               </a>
