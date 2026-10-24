@@ -3,14 +3,14 @@ import { Mail, MapPin, Send } from "lucide-react";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-16 lg:py-20 relative overflow-hidden bg-white">
+    <section id="contact" className="py-12 relative overflow-hidden bg-white">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center md:text-center mb-16"
+          className="text-center md:text-center mb-10"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center">
             Let's{" "}

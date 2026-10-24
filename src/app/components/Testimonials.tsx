@@ -79,7 +79,7 @@ export function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative py-16 md:py-20 overflow-hidden bg-white">
+    <section id="testimonials" className="relative py-12 overflow-hidden bg-white">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
       </div>

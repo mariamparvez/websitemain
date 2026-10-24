@@ -25,10 +25,10 @@ const caseStudies = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="relative py-16 overflow-hidden bg-[#f8f9fa]">
+    <section id="case-studies" className="relative py-12 overflow-hidden bg-white">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

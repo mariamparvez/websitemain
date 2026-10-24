@@ -62,7 +62,7 @@ export function Navigation() {
               to="/"
               className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-[#3d38f5] via-[#6b63f7] to-[#3d38f5] bg-clip-text text-transparent"
             >
-              Mariam Parvez
+              The M Impact
             </Link>
           </motion.div>
 

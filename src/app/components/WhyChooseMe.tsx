@@ -5,7 +5,7 @@ import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png"
 
 export function WhyChooseMe() {
   return (
-    <section className="relative py-8 md:py-10 overflow-hidden bg-[#f8f9fa]" style={{ position: 'relative' }}>
+    <section className="relative py-10 md:py-12 overflow-hidden bg-white" style={{ position: 'relative' }}>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Image LEFT - Content RIGHT Layout */}

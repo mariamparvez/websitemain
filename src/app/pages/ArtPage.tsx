@@ -64,12 +64,12 @@ export function ArtPage() {
                 </p>
 
                 <a
-                  href="https://www.instagram.com/the.m.impact/"
+                  href="https://www.instagram.com/themimpact/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-white text-[#3d38f5] px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all"
                 >
-                  View My Art →
+                  @themimpact →
                 </a>
               </motion.div>
 
@@ -147,18 +147,18 @@ export function ArtPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Ready to Start Your Creative Journey?
+                Connect with me to view all of my art pieces
               </h2>
               <p className="text-gray-600 text-lg mb-8">
-                Follow me on social media to see more of my work and creative process
+                Follow me on Instagram to see more artwork available for purchase
               </p>
               <a
-                href="https://www.instagram.com/the.m.impact/"
+                href="https://www.instagram.com/themimpact/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold hover:bg-[#2d28d5] transition-all shadow-lg"
               >
-                Follow on Instagram →
+                Follow @themimpact →
               </a>
             </motion.div>
           </div>

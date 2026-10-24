@@ -41,7 +41,7 @@ const designs = [
 
 export function Designs() {
   return (
-    <section id="designs" className="py-16 lg:py-20 relative overflow-hidden bg-white">
+    <section id="designs" className="py-12 relative overflow-hidden bg-[#f8f9fa]">
       {/* Background */}
       <div className="absolute inset-0">
       </div>
@@ -52,7 +52,7 @@ export function Designs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Creative{" "}
@@ -94,7 +94,7 @@ export function Designs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="text-center mt-12"
+          className="text-center mt-10"
         >
           <motion.a
             href="https://dribbble.com/themariamparvez"
@@ -102,7 +102,7 @@ export function Designs() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#3d38f5] via-[#3d38f5] to-indigo-600 rounded-full font-medium text-lg hover:shadow-2xl hover:shadow-cyan-500/30 transition-shadow"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d38f5] text-white rounded-full font-bold text-lg hover:bg-[#2d28d5] hover:shadow-lg transition-all"
           >
             View More on Dribbble
           </motion.a>

@@ -51,7 +51,7 @@ export function Services() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="services" className="relative pt-16 pb-16 overflow-hidden bg-white" style={{ position: 'relative' }}>
+    <section ref={sectionRef} id="services" className="relative pt-12 pb-12 overflow-hidden bg-[#f8f9fa]" style={{ position: 'relative' }}>
       {/* Parallax Background Image */}
       <motion.div 
         className="absolute inset-0 pointer-events-none"
@@ -84,7 +84,7 @@ export function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             What I{" "}
@@ -110,7 +110,7 @@ export function Services() {
                 whileHover={{ y: -10 }}
                 className="group relative"
               >
-                <div className="relative bg-white/95 backdrop-blur-sm border border-[#3d38f5]/20 rounded-3xl p-8 lg:p-10 h-full overflow-hidden transition-all duration-300 hover:border-[#3d38f5]/20 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col">
+                <div className="relative bg-white/95 backdrop-blur-sm border border-[#3d38f5]/20 rounded-3xl p-6 lg:p-7 h-full overflow-hidden transition-all duration-300 hover:border-[#3d38f5]/20 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col">
                   {/* Gradient Background on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#3d38f5]/0 to-[#6b63f7]/0 group-hover:from-[#3d38f5]/10 group-hover:to-[#6b63f7]/10 transition-all duration-300" />
                   
@@ -120,10 +120,10 @@ export function Services() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="relative text-2xl lg:text-3xl font-bold mb-4">
+                  <h3 className="relative text-xl lg:text-2xl font-bold mb-3">
                     {service.title}
                   </h3>
-                  <p className="relative text-gray-600 mb-6 leading-relaxed flex-grow">
+                  <p className="relative text-gray-600 text-sm mb-4 leading-relaxed flex-grow">
                     {service.description}
                   </p>
 
@@ -136,7 +136,7 @@ export function Services() {
                     >
                       <Link
                         to={service.link}
-                        className="relative inline-flex items-center gap-2 px-6 py-3 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn"
+                        className="relative inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn text-sm whitespace-nowrap"
                       >
                         {service.linkText}
                         <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -147,7 +147,7 @@ export function Services() {
                       href={service.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative inline-flex items-center gap-2 px-6 py-3 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn mt-auto"
+                      className="relative inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn mt-auto text-sm whitespace-nowrap"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >

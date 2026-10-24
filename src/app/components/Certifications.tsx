@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 import { Award, ExternalLink, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import { CertificateModal } from "./CertificateModal";
 
 const certifications = [
   {
@@ -47,8 +49,16 @@ const certifications = [
 ];
 
 export function Certifications() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedCert, setSelectedCert] = useState<{ title: string; pdfLink: string } | null>(null);
+
+  const openCertificate = (cert: { title: string; pdfLink: string }) => {
+    setSelectedCert(cert);
+    setModalOpen(true);
+  };
+
   return (
-    <section id="certifications" className="relative py-16 overflow-hidden bg-gradient-to-br from-[#f8f9fa] to-white">
+    <section id="certifications" className="relative py-12 overflow-hidden bg-gradient-to-br from-[#f8f9fa] to-white">
       {/* Floating Elements Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -80,26 +90,26 @@ export function Certifications() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-10"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 mb-4 px-5 py-2 bg-white rounded-full shadow-md border-2 border-[#3d38f5]/20"
+            className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 bg-white rounded-full shadow-md border-2 border-[#3d38f5]/20"
             whileHover={{ scale: 1.05 }}
           >
-            <Award className="w-5 h-5 text-[#3d38f5]" />
-            <span className="text-[#3d38f5] font-bold">Credentials</span>
+            <Award className="w-4 h-4 text-[#3d38f5]" />
+            <span className="text-[#3d38f5] font-bold text-sm">Credentials</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900">
             My Certifications
           </h2>
         </motion.div>
 
         {/* Certifications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
@@ -110,41 +120,39 @@ export function Certifications() {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <div className="relative bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all border-2 border-gray-100 hover:border-[#3d38f5] h-full">
+              <div className="relative bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all border-2 border-gray-100 hover:border-[#3d38f5] h-full">
                 {/* Emoji Icon */}
                 <div className="relative mb-3">
-                  <div className="text-4xl mb-2 transform group-hover:scale-110 transition-transform">
+                  <div className="text-3xl mb-1.5 transform group-hover:scale-110 transition-transform">
                     {cert.icon}
                   </div>
                   <div className="flex items-center gap-1">
-                    <CheckCircle2 className="w-4 h-4 text-green-500" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
                     <span className="text-xs font-semibold text-green-600">Verified</span>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="relative">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">
+                  <h3 className="text-base font-bold text-gray-900 mb-1.5 leading-tight">
                     {cert.title}
                   </h3>
 
-                  <div className="space-y-1 mb-3">
-                    <p className="text-gray-600 text-sm font-medium">{cert.organization}</p>
-                    <p className="text-[#3d38f5] font-bold text-sm">{cert.year}</p>
+                  <div className="space-y-0.5 mb-3">
+                    <p className="text-gray-600 text-xs font-medium">{cert.organization}</p>
+                    <p className="text-[#3d38f5] font-bold text-xs">{cert.year}</p>
                   </div>
 
                   {/* Action Button */}
-                  <motion.a
-                    href={cert.pdfLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <motion.button
+                    onClick={() => openCertificate(cert)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full bg-[#3d38f5] text-white px-4 py-2 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-[#2d28d5] transition-all text-sm"
+                    className="w-full bg-[#3d38f5] text-white px-3 py-1.5 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-[#2d28d5] transition-all text-xs"
                   >
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-3.5 h-3.5" />
                     View Certificate
-                  </motion.a>
+                  </motion.button>
                 </div>
               </div>
             </motion.div>
@@ -156,24 +164,34 @@ export function Certifications() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-10 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] rounded-2xl p-6 text-center"
+          className="mt-8 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] rounded-2xl p-5 text-center"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white">
             <div>
-              <div className="text-3xl font-black mb-1">12+</div>
-              <div className="text-sm font-medium opacity-90">Certifications</div>
+              <div className="text-2xl font-black mb-0.5">12+</div>
+              <div className="text-xs font-medium opacity-90">Certifications</div>
             </div>
             <div>
-              <div className="text-3xl font-black mb-1">7.6+</div>
-              <div className="text-sm font-medium opacity-90">Years Experience</div>
+              <div className="text-2xl font-black mb-0.5">7.6+</div>
+              <div className="text-xs font-medium opacity-90">Years Experience</div>
             </div>
             <div>
-              <div className="text-3xl font-black mb-1">50+</div>
-              <div className="text-sm font-medium opacity-90">Projects Delivered</div>
+              <div className="text-2xl font-black mb-0.5">50+</div>
+              <div className="text-xs font-medium opacity-90">Projects Delivered</div>
             </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Certificate Modal */}
+      {selectedCert && (
+        <CertificateModal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          pdfUrl={selectedCert.pdfLink}
+          title={selectedCert.title}
+        />
+      )}
     </section>
   );
 }
