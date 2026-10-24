@@ -1,12 +1,8 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "/PDF_for_students.pdf",
-      "dest": "/PDF_for_students.pdf"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/((?!PDF_for_students\\.pdf$).*)",
+      "destination": "/index.html"
     }
   ]
 }

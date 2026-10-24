@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/PDF_for_students.pdf"
+  to = "/PDF_for_students.pdf"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
