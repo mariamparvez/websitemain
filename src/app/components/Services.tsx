@@ -44,7 +44,8 @@ export function Services() {
   // Parallax scroll effect
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
+    layoutEffect: false
   });
   
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
@@ -52,7 +53,7 @@ export function Services() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="services" className="pt-16 pb-16 relative overflow-hidden bg-[#020610]">
+    <section ref={sectionRef} id="services" className="relative pt-16 pb-16 overflow-hidden bg-[#020610]" style={{ position: 'relative' }}>
       {/* Parallax Background Image */}
       <motion.div 
         className="absolute inset-0 pointer-events-none"
