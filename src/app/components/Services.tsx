@@ -52,7 +52,7 @@ export function Services() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="services" className="relative pt-10 pb-10 overflow-hidden bg-white border-t-2 border-gray-200" style={{ position: 'relative' }}>
+    <section ref={sectionRef} id="services" className="relative pt-10 pb-10 overflow-hidden bg-[#121212] border-t-2 border-[#fdfdfd]/15" style={{ position: 'relative' }}>
       <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto mb-0 px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -62,13 +62,13 @@ export function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-gray-900">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-[#fdfdfd]">
             What I{" "}
             <span className="bg-gradient-to-r from-[#3d38f5] via-[#3d38f5] to-indigo-500 bg-clip-text text-transparent">
               Offer
             </span>
           </h2>
-          <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-[#b8b8b8] text-base md:text-lg max-w-2xl mx-auto">
             Bringing creativity and expertise to every project
           </p>
         </motion.div>
@@ -86,17 +86,17 @@ export function Services() {
                 whileHover={{ y: -10 }}
                 className="group relative"
               >
-                <div className="relative bg-white border-2 border-gray-200 rounded-2xl p-5 h-full overflow-hidden transition-all duration-300 hover:border-[#3d38f5] hover:scale-105 flex flex-col">
+                <div className="relative bg-[#121212] border-2 border-[#fdfdfd]/15 rounded-2xl p-5 h-full overflow-hidden transition-all duration-300 hover:border-[#3d38f5] hover:scale-105 flex flex-col">
                   {/* Large Background Icon */}
                   <div className="absolute -right-6 -bottom-6 opacity-5 pointer-events-none">
-                    <Icon className="w-40 h-40 lg:w-48 lg:h-48 text-[#3d38f5]" />
+                    <Icon className="w-40 h-40 lg:w-48 lg:h-48 text-[#9a96ff]" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="relative text-lg lg:text-xl font-bold mb-2 text-gray-900">
+                  <h3 className="relative text-lg lg:text-xl font-bold mb-2 text-[#fdfdfd]">
                     {service.title}
                   </h3>
-                  <p className="relative text-gray-700 text-sm mb-4 leading-snug flex-grow">
+                  <p className="relative text-[#d6d6d6] text-sm mb-4 leading-snug flex-grow">
                     {service.description}
                   </p>
 
@@ -109,7 +109,7 @@ export function Services() {
                     >
                       <Link
                         to={service.link}
-                        className="relative inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] transition-all group/btn text-xs"
+                        className="relative inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-[#fdfdfd] rounded-full font-bold hover:bg-[#2d28d5] transition-all group/btn text-xs"
                       >
                         {service.linkText}
                         <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
@@ -123,7 +123,7 @@ export function Services() {
                         href={service.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] transition-all group/btn text-xs"
+                        className="relative inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-[#fdfdfd] rounded-full font-bold hover:bg-[#2d28d5] transition-all group/btn text-xs"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >

@@ -52,7 +52,7 @@ const platforms = [
 
 export function InfiniteMarquee() {
   return (
-    <section className="relative py-8 overflow-hidden bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] border-y-2 border-gray-200">
+    <section className="relative py-8 overflow-hidden bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] border-y-2 border-[#fdfdfd]/15">
       <div className="relative flex">
         {/* First set */}
         <motion.div
@@ -75,22 +75,22 @@ export function InfiniteMarquee() {
               href={platform.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all whitespace-nowrap"
+              className="group flex items-center gap-3 px-6 py-3 bg-[#fdfdfd]/10 backdrop-blur-md rounded-full border border-[#fdfdfd]/20 hover:bg-[#fdfdfd]/20 transition-all whitespace-nowrap"
             >
               {platform.iconType === "muxion" ? (
                 <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
                   <img src={muxionIcon} alt="MUXION" className="w-full h-full object-contain" />
                 </div>
               ) : platform.iconType === "linkedin" ? (
-                <Linkedin className="w-6 h-6 text-white" />
+                <Linkedin className="w-6 h-6 text-[#fdfdfd]" />
               ) : platform.iconType === "youtube" ? (
-                <Youtube className="w-6 h-6 text-white" />
+                <Youtube className="w-6 h-6 text-[#fdfdfd]" />
               ) : (
-                <svg className="w-6 h-6 text-white fill-current" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-[#fdfdfd] fill-current" viewBox="0 0 24 24">
                   <path d={platform.svgPath} />
                 </svg>
               )}
-              <span className="text-white font-bold text-lg">{platform.name}</span>
+              <span className="text-[#fdfdfd] font-bold text-lg">{platform.name}</span>
             </a>
           ))}
         </motion.div>
@@ -116,22 +116,22 @@ export function InfiniteMarquee() {
               href={platform.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all whitespace-nowrap"
+              className="group flex items-center gap-3 px-6 py-3 bg-[#fdfdfd]/10 backdrop-blur-md rounded-full border border-[#fdfdfd]/20 hover:bg-[#fdfdfd]/20 transition-all whitespace-nowrap"
             >
               {platform.iconType === "muxion" ? (
                 <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
                   <img src={muxionIcon} alt="MUXION" className="w-full h-full object-contain" />
                 </div>
               ) : platform.iconType === "linkedin" ? (
-                <Linkedin className="w-6 h-6 text-white" />
+                <Linkedin className="w-6 h-6 text-[#fdfdfd]" />
               ) : platform.iconType === "youtube" ? (
-                <Youtube className="w-6 h-6 text-white" />
+                <Youtube className="w-6 h-6 text-[#fdfdfd]" />
               ) : (
-                <svg className="w-6 h-6 text-white fill-current" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-[#fdfdfd] fill-current" viewBox="0 0 24 24">
                   <path d={platform.svgPath} />
                 </svg>
               )}
-              <span className="text-white font-bold text-lg">{platform.name}</span>
+              <span className="text-[#fdfdfd] font-bold text-lg">{platform.name}</span>
             </a>
           ))}
         </motion.div>

@@ -8,7 +8,7 @@ export function Footer() {
   const isArtPage = location.pathname === "/art";
 
   return (
-    <footer className="relative py-12 overflow-hidden border-t border-gray-200 bg-[#f8f9fa]">
+    <footer className="relative py-12 overflow-hidden border-t border-[#fdfdfd]/15 bg-[#1b1b1b]">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <motion.div
@@ -20,22 +20,22 @@ export function Footer() {
             <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] bg-clip-text text-transparent">
               Mariam Parvez
             </h3>
-            <p className="text-gray-600 mb-6 font-medium">
+            <p className="text-[#b8b8b8] mb-6 font-medium">
               Web Designer | UI/UX Expert | Graphic Designer | Artist | Coach
             </p>
 
-            <div className="hidden md:flex items-center justify-center gap-2 text-gray-600">
+            <div className="hidden md:flex items-center justify-center gap-2 text-[#b8b8b8]">
               <span>Made with</span>
               <Heart className="w-4 h-4 text-red-400 fill-red-400" />
               <span>© {currentYear} Mariam Parvez. All rights reserved.</span>
             </div>
 
-            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-500">
+            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-[#a3a3a3]">
               <a
                 href="https://www.linkedin.com/in/themariamparvez/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#3d38f5] transition-colors"
+                className="hover:text-[#9a96ff] transition-colors"
               >
                 LinkedIn
               </a>
@@ -44,7 +44,7 @@ export function Footer() {
                 href="https://www.behance.net/themariamparvez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#3d38f5] transition-colors"
+                className="hover:text-[#9a96ff] transition-colors"
               >
                 Behance
               </a>
@@ -53,7 +53,7 @@ export function Footer() {
                 href="https://dribbble.com/themariamparvez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#3d38f5] transition-colors"
+                className="hover:text-[#9a96ff] transition-colors"
               >
                 Dribbble
               </a>
@@ -62,7 +62,7 @@ export function Footer() {
                 href="https://www.instagram.com/themimpact/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#3d38f5] transition-colors"
+                className="hover:text-[#9a96ff] transition-colors"
               >
                 Instagram
               </a>
@@ -71,7 +71,7 @@ export function Footer() {
                 href="https://medium.com/@themariamparvez"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#3d38f5] transition-colors"
+                className="hover:text-[#9a96ff] transition-colors"
               >
                 Medium
               </a>
@@ -80,35 +80,35 @@ export function Footer() {
             <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
               <Link
                 to="/terms"
-                className="text-gray-500 hover:text-[#3d38f5] transition-colors"
+                className="text-[#a3a3a3] hover:text-[#9a96ff] transition-colors"
               >
                 Terms & Conditions
               </Link>
-              <span className="text-gray-400">•</span>
+              <span className="text-[#999999]">•</span>
               <Link
                 to="/privacy"
-                className="text-gray-500 hover:text-[#3d38f5] transition-colors"
+                className="text-[#a3a3a3] hover:text-[#9a96ff] transition-colors"
               >
                 Privacy Policy
               </Link>
-              <span className="text-gray-400">•</span>
+              <span className="text-[#999999]">•</span>
               <Link
                 to="/disclaimer"
-                className="text-gray-500 hover:text-[#3d38f5] transition-colors"
+                className="text-[#a3a3a3] hover:text-[#9a96ff] transition-colors"
               >
                 Disclaimer
               </Link>
-              <span className="text-gray-400">•</span>
+              <span className="text-[#999999]">•</span>
               <Link
                 to="/copyright"
-                className="text-gray-500 hover:text-[#3d38f5] transition-colors"
+                className="text-[#a3a3a3] hover:text-[#9a96ff] transition-colors"
               >
                 Copyright
               </Link>
-              <span className="text-gray-400">•</span>
+              <span className="text-[#999999]">•</span>
               <Link
                 to="/csr"
-                className="text-gray-500 hover:text-[#3d38f5] transition-colors"
+                className="text-[#a3a3a3] hover:text-[#9a96ff] transition-colors"
               >
                 CSR Policy
               </Link>

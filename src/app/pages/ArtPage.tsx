@@ -24,7 +24,7 @@ export function ArtPage() {
       />
       <ScrollToTop />
       <Navigation />
-      <div className="relative bg-white min-h-screen overflow-x-hidden max-w-full">
+      <div className="relative bg-[#121212] min-h-screen overflow-x-hidden max-w-full">
         {/* Hero Section */}
         <section className="relative pt-32 pb-16 px-4 bg-gradient-to-br from-[#3d38f5] to-[#6b63f7]">
           <div className="max-w-7xl mx-auto">
@@ -35,7 +35,7 @@ export function ArtPage() {
             >
               <Link
                 to="/"
-                className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors"
+                className="inline-flex items-center gap-2 text-[#fdfdfd] hover:text-[#fdfdfd]/80 transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
                 Back to Home
@@ -48,15 +48,15 @@ export function ArtPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-                  <span className="text-white font-medium">🎨 Art Portfolio</span>
+                <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-[#fdfdfd]/10 backdrop-blur-sm rounded-full border border-[#fdfdfd]/20">
+                  <span className="text-[#fdfdfd] font-medium">🎨 Art Portfolio</span>
                 </div>
 
-                <h1 className="text-5xl md:text-6xl font-black mb-6 text-white leading-tight">
+                <h1 className="text-5xl md:text-6xl font-black mb-6 text-[#fdfdfd] leading-tight">
                   I also paint, sculpt and sketch!
                 </h1>
 
-                <p className="text-white/90 text-lg mb-8 leading-relaxed">
+                <p className="text-[#fdfdfd]/90 text-lg mb-8 leading-relaxed">
                   Check out my Art Pieces on my art gallery. I create{" "}
                   <span className="font-bold">Acrylic Painting</span>,{" "}
                   <span className="font-bold">Watercolor Painting</span>,{" "}
@@ -69,7 +69,7 @@ export function ArtPage() {
                   href="https://www.instagram.com/themimpact/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-white text-[#3d38f5] px-8 py-4 rounded-full font-bold hover:scale-105 transition-all"
+                  className="inline-flex items-center gap-2 bg-[#121212] text-[#9a96ff] px-8 py-4 rounded-full font-bold hover:scale-105 transition-all"
                 >
                   @themimpact →
                 </a>
@@ -85,12 +85,12 @@ export function ArtPage() {
                   <img
                     src={art1}
                     alt="Art 1"
-                    className="rounded-2xl border-2 border-white/10"
+                    className="rounded-2xl border-2 border-[#fdfdfd]/10"
                   />
                   <img
                     src={art2}
                     alt="Art 2"
-                    className="rounded-2xl border-2 border-white/10 mt-8"
+                    className="rounded-2xl border-2 border-[#fdfdfd]/10 mt-8"
                   />
                 </div>
               </motion.div>
@@ -104,7 +104,7 @@ export function ArtPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center"
+            className="text-4xl md:text-5xl font-bold text-[#fdfdfd] mb-12 text-center"
           >
             My Creations
           </motion.h2>
@@ -124,16 +124,16 @@ export function ArtPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl border-2 border-gray-200 hover:border-[#3d38f5] hover:scale-105 transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl border-2 border-[#fdfdfd]/15 hover:border-[#3d38f5] hover:scale-105 transition-all duration-300"
               >
                 <img
                   src={art.src}
                   alt={art.title}
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
-                  <span className="text-white/80 text-sm mb-1">{art.category}</span>
-                  <h3 className="text-white text-xl font-bold">{art.title}</h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#121212]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                  <span className="text-[#fdfdfd]/80 text-sm mb-1">{art.category}</span>
+                  <h3 className="text-[#fdfdfd] text-xl font-bold">{art.title}</h3>
                 </div>
               </motion.div>
             ))}
@@ -141,24 +141,24 @@ export function ArtPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 px-4 bg-[#f8f9fa]">
+        <section className="py-16 px-4 bg-[#1b1b1b]">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#fdfdfd] mb-6">
                 Connect with me to view all of my art pieces
               </h2>
-              <p className="text-gray-600 text-lg mb-8">
+              <p className="text-[#b8b8b8] text-lg mb-8">
                 Follow me on Instagram to see more artwork available for purchase
               </p>
               <a
                 href="https://www.instagram.com/themimpact/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold hover:bg-[#2d28d5] hover:scale-105 transition-all"
+                className="inline-flex items-center gap-2 bg-[#3d38f5] text-[#fdfdfd] px-8 py-4 rounded-full font-bold hover:bg-[#2d28d5] hover:scale-105 transition-all"
               >
                 Follow @themimpact →
               </a>

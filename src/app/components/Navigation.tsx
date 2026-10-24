@@ -53,14 +53,14 @@ export function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 bg-[#121212]/95 backdrop-blur-md border-b border-[#fdfdfd]/15 shadow-sm transition-all duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               to="/"
-              className="text-2xl lg:text-3xl font-black text-gray-900"
+              className="text-2xl lg:text-3xl font-black text-[#fdfdfd]"
               style={{ fontFamily: isArtPage ? "'Balsamiq Sans', sans-serif" : "'Balsamiq Sans', sans-serif", fontWeight: 700 }}
             >
               {isArtPage ? "The M Impact" : "Mariam Parvez"}
@@ -74,7 +74,7 @@ export function Navigation() {
                 <motion.div key={item.href} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     to={item.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors relative group"
+                    className="text-[#b8b8b8] hover:text-[#fdfdfd] transition-colors relative group"
                   >
                     {item.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] group-hover:w-full transition-all duration-300" />
@@ -85,7 +85,7 @@ export function Navigation() {
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
-                  className="text-gray-600 hover:text-gray-900 transition-colors relative group"
+                  className="text-[#b8b8b8] hover:text-[#fdfdfd] transition-colors relative group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -99,7 +99,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-gray-600 hover:text-gray-900"
+            className="lg:hidden p-2 text-[#b8b8b8] hover:text-[#fdfdfd]"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -113,7 +113,7 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200"
+            className="lg:hidden bg-[#121212]/95 backdrop-blur-lg border-t border-[#fdfdfd]/15"
           >
             <div className="px-4 py-4 space-y-3">
               {navItems.map((item) => (
@@ -122,7 +122,7 @@ export function Navigation() {
                     key={item.href}
                     to={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-[#3d38f5]/10 rounded-lg transition-colors"
+                    className="block px-4 py-2 text-[#b8b8b8] hover:text-[#fdfdfd] hover:bg-[#3d38f5]/10 rounded-lg transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -131,7 +131,7 @@ export function Navigation() {
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
-                    className="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-[#3d38f5]/10 rounded-lg transition-colors"
+                    className="block px-4 py-2 text-[#b8b8b8] hover:text-[#fdfdfd] hover:bg-[#3d38f5]/10 rounded-lg transition-colors"
                   >
                     {item.label}
                   </a>

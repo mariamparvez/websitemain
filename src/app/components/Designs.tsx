@@ -42,7 +42,7 @@ const designs = [
 
 export function Designs() {
   return (
-    <section id="designs" className="py-10 relative overflow-hidden bg-white border-t-2 border-gray-200">
+    <section id="designs" className="py-10 relative overflow-hidden bg-[#121212] border-t-2 border-[#fdfdfd]/15">
       <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -52,13 +52,13 @@ export function Designs() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#fdfdfd]">
             Creative{" "}
             <span className="bg-gradient-to-r from-[#3d38f5] via-sky-400 to-[#6b63f7] bg-clip-text text-transparent">
               Graphic Designs
             </span>
           </h2>
-          <p className="text-gray-600 text-base max-w-3xl mx-auto">
+          <p className="text-[#b8b8b8] text-base max-w-3xl mx-auto">
             Around 2019, I started my freelance journey by doing these designs. I had alot of fun as a gigster!
           </p>
         </motion.div>
@@ -100,7 +100,7 @@ export function Designs() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d38f5] text-white rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d38f5] text-[#fdfdfd] rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all"
           >
             View More on Dribbble
           </motion.a>

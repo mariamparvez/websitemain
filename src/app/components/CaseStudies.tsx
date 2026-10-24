@@ -26,7 +26,7 @@ const caseStudies = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="relative py-10 overflow-hidden bg-gray-50 border-t-2 border-gray-200">
+    <section id="case-studies" className="relative py-10 overflow-hidden bg-[#1b1b1b] border-t-2 border-[#fdfdfd]/15">
       <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -35,10 +35,10 @@ export function CaseStudies() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#fdfdfd]">
             Case Studies
           </h2>
-          <p className="text-gray-600 text-base max-w-2xl mx-auto">
+          <p className="text-[#b8b8b8] text-base max-w-2xl mx-auto">
             Real-world UX case studies showcasing user-centered design solutions
           </p>
         </motion.div>
@@ -56,7 +56,7 @@ export function CaseStudies() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="bg-white rounded-2xl overflow-hidden transition-all duration-300 border-2 border-gray-200 hover:border-[#3d38f5] hover:scale-105">
+              <div className="bg-[#121212] rounded-2xl overflow-hidden transition-all duration-300 border-2 border-[#fdfdfd]/15 hover:border-[#3d38f5] hover:scale-105">
                 <div className="relative h-56 overflow-hidden">
                   <img
                     src={study.bgImage}
@@ -65,9 +65,9 @@ export function CaseStudies() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{study.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{study.description}</p>
-                  <div className="inline-flex items-center gap-2 text-[#3d38f5] font-semibold group-hover:gap-3 transition-all">
+                  <h3 className="text-xl font-bold text-[#fdfdfd] mb-2">{study.title}</h3>
+                  <p className="text-[#b8b8b8] text-sm mb-4">{study.description}</p>
+                  <div className="inline-flex items-center gap-2 text-[#9a96ff] font-semibold group-hover:gap-3 transition-all">
                     View Case Study <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export function CaseStudies() {
             href="https://www.behance.net/themariamparvez"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold hover:bg-[#2d28d5] hover:scale-105 transition-all"
+            className="inline-flex items-center gap-2 bg-[#3d38f5] text-[#fdfdfd] px-8 py-4 rounded-full font-bold hover:bg-[#2d28d5] hover:scale-105 transition-all"
           >
             View All Projects <ArrowRight className="w-5 h-5" />
           </a>

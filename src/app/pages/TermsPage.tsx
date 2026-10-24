@@ -98,7 +98,7 @@ export function TermsPage() {
         canonicalUrl="https://mariamparvez.in/terms"
       />
       <Navigation />
-      <div className="relative bg-[#010408] min-h-screen text-white overflow-x-hidden">
+      <div className="relative bg-[#121212] min-h-screen text-[#fdfdfd] overflow-x-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" />
@@ -131,10 +131,10 @@ export function TermsPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent">
               Terms and Conditions
             </h1>
-            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+            <p className="text-[#999999] text-lg max-w-3xl mx-auto">
               Please read these terms and conditions carefully before using our services
             </p>
-            <p className="text-gray-500 text-sm mt-4">
+            <p className="text-[#a3a3a3] text-sm mt-4">
               Last Updated: April 6, 2026
             </p>
           </motion.div>
@@ -188,7 +188,7 @@ export function TermsPage() {
             className="mt-16 p-8 md:p-12 bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm border border-blue-500/30 rounded-3xl text-center"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Questions About Our Terms?</h2>
-            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-[#999999] mb-8 max-w-2xl mx-auto">
               If you have any questions or concerns about these Terms and Conditions, please don't hesitate to contact us.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -201,7 +201,7 @@ export function TermsPage() {
               </Link>
               <a
                 href="mailto:designwithmariam@gmail.com"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#fdfdfd]/10 backdrop-blur-sm border border-[#fdfdfd]/30 rounded-full font-medium hover:bg-[#fdfdfd]/20 transition-all"
               >
                 designwithmariam@gmail.com
               </a>

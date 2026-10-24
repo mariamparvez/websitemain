@@ -106,7 +106,7 @@ export function ExperienceTimeline() {
   };
 
   return (
-    <section id="experience" className="relative py-10 overflow-hidden bg-gray-50 border-t-2 border-gray-200">
+    <section id="experience" className="relative py-10 overflow-hidden bg-[#1b1b1b] border-t-2 border-[#fdfdfd]/15">
       <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -116,10 +116,10 @@ export function ExperienceTimeline() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
+          <h2 className="text-3xl md:text-4xl font-black text-[#fdfdfd] mb-3">
             My Experience Journey
           </h2>
-          <p className="text-gray-600 text-base max-w-2xl mx-auto">
+          <p className="text-[#b8b8b8] text-base max-w-2xl mx-auto">
             Swipe to explore my professional timeline
           </p>
         </motion.div>
@@ -148,16 +148,16 @@ export function ExperienceTimeline() {
                   stiffness: 300,
                   damping: 30
                 }}
-                className="absolute inset-0 bg-white rounded-2xl border-2 border-gray-200 p-6 md:p-8 cursor-grab active:cursor-grabbing"
+                className="absolute inset-0 bg-[#121212] rounded-2xl border-2 border-[#fdfdfd]/15 p-6 md:p-8 cursor-grab active:cursor-grabbing"
               >
                 <div className="flex flex-col h-full">
                   {/* Header */}
                   <div className="mb-4">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-[#fdfdfd] mb-2">
                       {exp.role}
                     </h3>
-                    <div className="flex flex-wrap gap-2 text-sm text-gray-600">
-                      <span className="font-semibold text-[#3d38f5]">{exp.company}</span>
+                    <div className="flex flex-wrap gap-2 text-sm text-[#b8b8b8]">
+                      <span className="font-semibold text-[#9a96ff]">{exp.company}</span>
                       <span>•</span>
                       <span>{exp.location}</span>
                       <span>•</span>
@@ -169,8 +169,8 @@ export function ExperienceTimeline() {
                   <div className="flex-1 overflow-y-auto">
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm md:text-base text-gray-700">
-                          <span className="text-[#3d38f5] mt-1">•</span>
+                        <li key={idx} className="flex items-start gap-2 text-sm md:text-base text-[#d6d6d6]">
+                          <span className="text-[#9a96ff] mt-1">•</span>
                           <span>{achievement}</span>
                         </li>
                       ))}
@@ -178,22 +178,22 @@ export function ExperienceTimeline() {
                   </div>
 
                   {/* Footer */}
-                  <div className="mt-4 pt-4 border-t border-gray-200 flex justify-between items-center">
-                    <span className="text-sm text-gray-500">
+                  <div className="mt-4 pt-4 border-t border-[#fdfdfd]/15 flex justify-between items-center">
+                    <span className="text-sm text-[#a3a3a3]">
                       {currentIndex + 1} / {experiences.length}
                     </span>
                     <div className="flex gap-2">
                       <button
                         onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
                         disabled={currentIndex === 0}
-                        className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-gray-200 transition-all"
+                        className="px-4 py-2 bg-[#232323] text-[#d6d6d6] rounded-full text-sm font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#2e2e2e] transition-all"
                       >
                         Previous
                       </button>
                       <button
                         onClick={() => setCurrentIndex((prev) => Math.min(experiences.length - 1, prev + 1))}
                         disabled={currentIndex === experiences.length - 1}
-                        className="px-4 py-2 bg-[#3d38f5] text-white rounded-full text-sm font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#2d28d5] transition-all"
+                        className="px-4 py-2 bg-[#3d38f5] text-[#fdfdfd] rounded-full text-sm font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#2d28d5] transition-all"
                       >
                         Next
                       </button>
@@ -215,7 +215,7 @@ export function ExperienceTimeline() {
               onClick={() => setCurrentIndex(index)}
               aria-label={`Go to experience ${index + 1}`}
               className={`w-2 h-2 rounded-full transition-all ${
-                index === currentIndex ? "bg-[#3d38f5] w-8" : "bg-gray-300"
+                index === currentIndex ? "bg-[#3d38f5] w-8" : "bg-[#2e2e2e]"
               }`}
             />
           ))}

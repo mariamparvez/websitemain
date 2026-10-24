@@ -48,17 +48,17 @@ export function ArtCallout() {
             transition={{ delay: 0.2 }}
             className="flex-1 text-left"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-white leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-[#fdfdfd] leading-tight">
               I also paint, sculpt and sketch!
             </h2>
 
-            <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-2xl">
+            <p className="text-[#fdfdfd]/90 text-base md:text-lg leading-relaxed max-w-2xl">
               Check out my Art Pieces on my art gallery. I create{" "}
-              <span className="font-semibold text-white">Acrylic Painting</span>,{" "}
-              <span className="font-semibold text-white">Watercolor Painting</span>,{" "}
-              <span className="font-semibold text-white">Russian Sculpture Art</span>,{" "}
-              <span className="font-semibold text-white">Sketching</span>, and{" "}
-              <span className="font-semibold text-white">Mandala Art</span>
+              <span className="font-semibold text-[#fdfdfd]">Acrylic Painting</span>,{" "}
+              <span className="font-semibold text-[#fdfdfd]">Watercolor Painting</span>,{" "}
+              <span className="font-semibold text-[#fdfdfd]">Russian Sculpture Art</span>,{" "}
+              <span className="font-semibold text-[#fdfdfd]">Sketching</span>, and{" "}
+              <span className="font-semibold text-[#fdfdfd]">Mandala Art</span>
             </p>
           </motion.div>
 
@@ -72,7 +72,7 @@ export function ArtCallout() {
           >
             <Link
               to="/art"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#3d38f5] rounded-full font-bold text-lg hover:scale-105 transition-all"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-[#121212] text-[#9a96ff] rounded-full font-bold text-lg hover:scale-105 transition-all"
             >
               <span>Ready for Art?</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

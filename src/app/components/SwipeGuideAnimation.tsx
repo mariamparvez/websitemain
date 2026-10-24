@@ -89,7 +89,7 @@ export function SwipeGuideAnimation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ delay: 0.5 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-[#3d38f5] text-white px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-[#3d38f5] text-[#fdfdfd] px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap"
           >
             Swipe to explore →
           </motion.div>

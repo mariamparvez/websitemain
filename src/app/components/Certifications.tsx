@@ -73,7 +73,7 @@ export function Certifications() {
   };
 
   return (
-    <section id="certifications" className="relative py-10 overflow-hidden bg-white border-t-2 border-gray-200">
+    <section id="certifications" className="relative py-10 overflow-hidden bg-[#121212] border-t-2 border-[#fdfdfd]/15">
       <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -84,14 +84,14 @@ export function Certifications() {
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 bg-white rounded-full border-2 border-[#3d38f5]/20"
+            className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 bg-[#121212] rounded-full border-2 border-[#3d38f5]/20"
             whileHover={{ scale: 1.05 }}
           >
-            <Award className="w-4 h-4 text-[#3d38f5]" />
-            <span className="text-[#3d38f5] font-bold text-sm">Credentials</span>
+            <Award className="w-4 h-4 text-[#9a96ff]" />
+            <span className="text-[#9a96ff] font-bold text-sm">Credentials</span>
           </motion.div>
 
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-black text-[#fdfdfd]">
             My Certifications
           </h2>
         </motion.div>
@@ -108,7 +108,7 @@ export function Certifications() {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <div className="relative bg-white rounded-2xl p-4 transition-all duration-300 border-2 border-gray-200 hover:border-[#3d38f5] hover:scale-105 h-full">
+              <div className="relative bg-[#121212] rounded-2xl p-4 transition-all duration-300 border-2 border-[#fdfdfd]/15 hover:border-[#3d38f5] hover:scale-105 h-full">
                 {/* Emoji Icon */}
                 <div className="relative mb-3">
                   <div className="text-3xl mb-2">
@@ -118,12 +118,12 @@ export function Certifications() {
 
                 {/* Content */}
                 <div className="relative">
-                  <h3 className="text-base font-bold text-gray-900 mb-1.5 leading-tight">
+                  <h3 className="text-base font-bold text-[#fdfdfd] mb-1.5 leading-tight">
                     {cert.title}
                   </h3>
 
                   <div className="mb-3">
-                    <p className="text-gray-600 text-xs font-medium">{cert.organization}</p>
+                    <p className="text-[#b8b8b8] text-xs font-medium">{cert.organization}</p>
                   </div>
 
                   {/* Action Button */}
@@ -132,7 +132,7 @@ export function Certifications() {
                       onClick={() => openCertificate(cert)}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] transition-all text-xs group/btn"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-[#fdfdfd] rounded-full font-bold hover:bg-[#2d28d5] transition-all text-xs group/btn"
                     >
                       View
                       <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />

@@ -80,7 +80,7 @@ export function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative py-10 overflow-hidden bg-[#f8f9fa] border-t-2 border-gray-200">
+    <section id="testimonials" className="relative py-10 overflow-hidden bg-[#1b1b1b] border-t-2 border-[#fdfdfd]/15">
       <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -89,7 +89,7 @@ export function Testimonials() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-3"
+            className="text-3xl md:text-4xl font-bold text-[#fdfdfd] mb-3"
           >
             Testimonials
           </motion.h2>
@@ -98,7 +98,7 @@ export function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-[#b8b8b8] max-w-2xl mx-auto"
           >
             What people say about working with me
           </motion.p>
@@ -114,7 +114,7 @@ export function Testimonials() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="relative p-4 md:p-10 rounded-3xl bg-white border-2 border-gray-200 hover:border-[#3d38f5] shadow-sm hover:shadow-md transition-all duration-300"
+                  className="relative p-4 md:p-10 rounded-3xl bg-[#121212] border-2 border-[#fdfdfd]/15 hover:border-[#3d38f5] shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   {/* Header with Image, Name, and Role */}
                   <div className="flex items-start gap-4 mb-3 md:mb-6">
@@ -127,17 +127,17 @@ export function Testimonials() {
                     
                     {/* Name and Role */}
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-1 break-words">
+                      <h4 className="text-lg md:text-xl font-bold text-[#fdfdfd] mb-1 break-words">
                         {testimonial.name}
                       </h4>
-                      <p className="text-gray-600 text-xs md:text-sm break-words">
+                      <p className="text-[#b8b8b8] text-xs md:text-sm break-words">
                         {testimonial.role}
                       </p>
                     </div>
                   </div>
 
                   {/* Testimonial Text */}
-                  <p className="text-gray-700 text-sm md:text-lg leading-relaxed text-left break-words">
+                  <p className="text-[#d6d6d6] text-sm md:text-lg leading-relaxed text-left break-words">
                     {testimonial.text}
                   </p>
                 </motion.div>

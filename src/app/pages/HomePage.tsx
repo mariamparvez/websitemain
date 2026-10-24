@@ -20,7 +20,7 @@ export function HomePage() {
     <>
       <SEO />
       <ScrollToTop />
-      <div className="relative bg-[#fdfdfd] min-h-screen text-gray-900 overflow-x-hidden max-w-full" style={{ position: 'relative' }}>
+      <div className="relative bg-[#121212] min-h-screen text-[#fdfdfd] overflow-x-hidden max-w-full" style={{ position: 'relative' }}>
         <Navigation />
         <Hero />
         <WhyChooseMe />
