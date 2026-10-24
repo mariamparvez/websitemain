@@ -78,8 +78,16 @@ export function InfiniteMarquee() {
               className="group flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all whitespace-nowrap"
             >
               {platform.iconType === "muxion" ? (
-                <div className="w-8 h-8 flex items-center justify-center overflow-hidden">
-                  <div className="scale-[0.2] origin-center">
+                <div className="w-8 h-8 flex items-center justify-center">
+                  <div style={{
+                    width: '170px',
+                    height: '170px',
+                    transform: 'scale(0.047)',
+                    transformOrigin: 'center center',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
                     <MuxionLogo />
                   </div>
                 </div>
@@ -121,8 +129,16 @@ export function InfiniteMarquee() {
               className="group flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all whitespace-nowrap"
             >
               {platform.iconType === "muxion" ? (
-                <div className="w-8 h-8 flex items-center justify-center overflow-hidden">
-                  <div className="scale-[0.2] origin-center">
+                <div className="w-8 h-8 flex items-center justify-center">
+                  <div style={{
+                    width: '170px',
+                    height: '170px',
+                    transform: 'scale(0.047)',
+                    transformOrigin: 'center center',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
                     <MuxionLogo />
                   </div>
                 </div>
