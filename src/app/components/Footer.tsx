@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Heart } from "lucide-react";
-import { useLocation } from "react-router";
+import { useLocation, Link } from "react-router";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -100,6 +100,17 @@ export function Footer() {
               >
                 Medium
               </a>
+            </div>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+              <Link
+                to="/terms"
+                className={`transition-colors ${
+                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-blue-400"
+                }`}
+              >
+                Terms & Conditions
+              </Link>
             </div>
           </motion.div>
         </div>
