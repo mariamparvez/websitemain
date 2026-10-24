@@ -14,11 +14,18 @@ export function FloatingShapes({ density = "medium" }: FloatingShapesProps) {
     const types = ["circle", "triangle", "hexagon", "square"];
     const sizes = [40, 60, 80, 100, 120];
     const colors = [
-      "bg-[#3d38f5]/8",
-      "bg-[#6b63f7]/8",
-      "bg-blue-400/8",
-      "bg-indigo-400/8",
-      "bg-sky-400/8",
+      "bg-blue-100/40",
+      "bg-sky-100/40",
+      "bg-indigo-100/40",
+      "bg-cyan-100/40",
+      "bg-blue-50/50",
+    ];
+    const svgColors = [
+      "#dbeafe",
+      "#e0f2fe",
+      "#e0e7ff",
+      "#cffafe",
+      "#eff6ff",
     ];
     const positions = [
       { top: "10%", left: "5%" },
@@ -36,6 +43,7 @@ export function FloatingShapes({ density = "medium" }: FloatingShapesProps) {
       type: types[i % types.length],
       size: sizes[i % sizes.length],
       color: colors[i % colors.length],
+      svgColor: svgColors[i % svgColors.length],
       position: positions[i % positions.length],
       duration: 4 + (i % 3) * 2,
       delay: i * 0.5,
@@ -43,7 +51,7 @@ export function FloatingShapes({ density = "medium" }: FloatingShapesProps) {
     };
   });
 
-  const getShapePath = (type: string, size: number) => {
+  const getShapePath = (type: string, size: number, svgColor: string) => {
     switch (type) {
       case "triangle":
         return (
@@ -52,10 +60,12 @@ export function FloatingShapes({ density = "medium" }: FloatingShapesProps) {
             height={size}
             viewBox="0 0 100 100"
             className="w-full h-full"
+            style={{ background: 'transparent' }}
           >
             <polygon
               points="50,10 90,90 10,90"
-              fill="currentColor"
+              fill={svgColor}
+              opacity="0.4"
               className="transition-all duration-300"
             />
           </svg>
@@ -67,10 +77,12 @@ export function FloatingShapes({ density = "medium" }: FloatingShapesProps) {
             height={size}
             viewBox="0 0 100 100"
             className="w-full h-full"
+            style={{ background: 'transparent' }}
           >
             <polygon
               points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
-              fill="currentColor"
+              fill={svgColor}
+              opacity="0.4"
               className="transition-all duration-300"
             />
           </svg>
@@ -82,13 +94,15 @@ export function FloatingShapes({ density = "medium" }: FloatingShapesProps) {
             height={size}
             viewBox="0 0 100 100"
             className="w-full h-full"
+            style={{ background: 'transparent' }}
           >
             <rect
               x="10"
               y="10"
               width="80"
               height="80"
-              fill="currentColor"
+              fill={svgColor}
+              opacity="0.4"
               className="transition-all duration-300"
             />
           </svg>
@@ -134,7 +148,7 @@ export function FloatingShapes({ density = "medium" }: FloatingShapesProps) {
           {shape.type === "circle" ? (
             <div className="w-full h-full" />
           ) : (
-            getShapePath(shape.type, shape.size)
+            getShapePath(shape.type, shape.size, shape.svgColor)
           )}
         </motion.div>
       ))}
