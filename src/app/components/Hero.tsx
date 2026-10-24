@@ -12,6 +12,31 @@ const roles = [
   "Teaching"
 ];
 
+const portals = [
+  {
+    name: "MUXION",
+    index: "01",
+    tag: "Services & Learning",
+    copy: "Hire me for design work, or learn my services and skills hands-on.",
+    domain: "muxion.in",
+    href: "https://muxion.in",
+    cta: "Work with me",
+    surface: "bg-gradient-to-br from-[#3d38f5] to-[#1d1a8f] border-[#fdfdfd]/20 hover:border-[#fdfdfd]/50",
+    glow: "bg-[#fdfdfd]/15",
+  },
+  {
+    name: "DESNIOSENSE",
+    index: "02",
+    tag: "Official Merch",
+    copy: "Wear the art. Shop my merch, made with the same obsession as everything else.",
+    domain: "desniosens.com",
+    href: "https://desniosens.com",
+    cta: "Shop merch",
+    surface: "bg-[#1b1b1b] border-[#fdfdfd]/20 hover:border-[#9a96ff]",
+    glow: "bg-[#3d38f5]/30",
+  },
+];
+
 export function Hero() {
   const [currentRole, setCurrentRole] = useState(0);
 
@@ -114,45 +139,52 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
           >
-            <a
-              href="https://muxion.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex flex-col justify-between min-h-[260px] md:min-h-[340px] p-8 md:p-10 rounded-3xl overflow-hidden bg-gradient-to-br from-[#3d38f5] to-[#1d1a8f] border-2 border-[#fdfdfd]/20 transition-transform duration-300 hover:-translate-y-1"
-            >
-              <div className="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[#fdfdfd]/10 blur-2xl group-hover:scale-125 transition-transform duration-500" />
-              <div className="relative flex items-start justify-between">
-                <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-[#fdfdfd]/80">Services &amp; Learning</span>
-                <span className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#fdfdfd] text-[#121212] flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
-                  <ArrowUpRight className="w-6 h-6" />
-                </span>
-              </div>
-              <div className="relative space-y-3">
-                <h3 className="text-5xl md:text-7xl font-bold text-[#fdfdfd] leading-none" style={{ fontFamily: "'Balsamiq Sans', sans-serif" }}>MUXION</h3>
-                <p className="text-base md:text-lg text-[#fdfdfd]/85 max-w-md">Reach out to hire me for design work, or learn my services and skills hands-on.</p>
-                <span className="text-sm font-semibold text-[#fdfdfd]/80 underline underline-offset-4">muxion.in</span>
-              </div>
-            </a>
+            {portals.map((p) => (
+              <a
+                key={p.name}
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${p.name} — ${p.domain}`}
+                className={`group relative block [container-type:inline-size] rounded-3xl overflow-hidden border transition-all duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9a96ff] ${p.surface}`}
+              >
+                <div className="absolute inset-0 opacity-[0.07] [background-image:radial-gradient(#fdfdfd_1px,transparent_1px)] [background-size:18px_18px]" />
+                <div className={`absolute -top-24 -right-24 w-72 h-72 rounded-full blur-3xl transition-transform duration-500 group-hover:scale-125 ${p.glow}`} />
 
-            <a
-              href="https://desniosens.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex flex-col justify-between min-h-[260px] md:min-h-[340px] p-8 md:p-10 rounded-3xl overflow-hidden bg-[#1b1b1b] border-2 border-[#fdfdfd]/25 hover:border-[#9a96ff] transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="absolute -left-16 -bottom-20 w-72 h-72 rounded-full bg-[#3d38f5]/25 blur-3xl group-hover:scale-125 transition-transform duration-500" />
-              <div className="relative flex items-start justify-between">
-                <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-[#9a96ff]">Official Merch</span>
-                <span className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[#fdfdfd] text-[#fdfdfd] flex items-center justify-center group-hover:bg-[#fdfdfd] group-hover:text-[#121212] group-hover:rotate-45 transition-all duration-300">
-                  <ArrowUpRight className="w-6 h-6" />
-                </span>
-              </div>
-              <div className="relative space-y-3">
-                <h3 className="text-5xl md:text-7xl font-bold text-[#fdfdfd] leading-none" style={{ fontFamily: "'Balsamiq Sans', sans-serif" }}>DESNIOSENSE</h3>
-                <p className="text-base md:text-lg text-[#b8b8b8] max-w-md">Wear the art. Shop my merch collection, designed with the same obsession as everything else.</p>
-                <span className="text-sm font-semibold text-[#b8b8b8] underline underline-offset-4">desniosens.com</span>
-              </div>
-            </a>
+                <div className="relative flex flex-col gap-10 min-h-[300px] md:min-h-[380px] p-7 md:p-9">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="flex items-center gap-3 text-xs font-semibold tracking-[0.22em] uppercase text-[#fdfdfd]/80">
+                      <span className="tabular-nums text-[#fdfdfd]/50">{p.index}</span>
+                      <span className="h-px w-8 bg-[#fdfdfd]/40" />
+                      {p.tag}
+                    </span>
+                    <span className="shrink-0 w-11 h-11 rounded-full bg-[#fdfdfd] text-[#121212] flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
+                      <ArrowUpRight className="w-5 h-5" />
+                    </span>
+                  </div>
+
+                  <h3
+                    className="mt-auto font-bold text-[#fdfdfd] leading-[0.95] tracking-tight whitespace-nowrap text-[clamp(1.75rem,9cqw,4.5rem)]"
+                    style={{ fontFamily: "'Balsamiq Sans', sans-serif" }}
+                  >
+                    {p.name}
+                  </h3>
+
+                  <div className="space-y-5">
+                    <p className="text-base md:text-lg leading-relaxed text-[#fdfdfd]/80 max-w-[34ch] [text-wrap:balance] [hyphens:none]">
+                      {p.copy}
+                    </p>
+                    <div className="flex items-center justify-between border-t border-[#fdfdfd]/20 pt-4">
+                      <span className="text-sm font-semibold text-[#fdfdfd]/70">{p.domain}</span>
+                      <span className="inline-flex items-center gap-2 text-sm font-bold text-[#fdfdfd]">
+                        {p.cta}
+                        <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            ))}
           </motion.div>
         </motion.div>
       </div>
