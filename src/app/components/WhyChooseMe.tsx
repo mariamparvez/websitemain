@@ -5,7 +5,7 @@ import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png"
 
 export function WhyChooseMe() {
   return (
-    <section className="relative py-8 md:py-10 overflow-hidden bg-[#0a1a3a]" style={{ position: 'relative' }}>
+    <section className="relative py-8 md:py-10 overflow-hidden bg-[#050d1a]" style={{ position: 'relative' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <img 
@@ -21,14 +21,14 @@ export function WhyChooseMe() {
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-left mb-8"
+          className="text-left mb-8 max-w-5xl"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
             Why Choose Me?
@@ -36,7 +36,7 @@ export function WhyChooseMe() {
         </motion.div>
 
         {/* Image LEFT - Content RIGHT Layout */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-start gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-start lg:items-start gap-8 lg:gap-12 max-w-5xl">
           {/* Profile Image - LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -61,7 +61,7 @@ export function WhyChooseMe() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex-1 text-left space-y-6"
+            className="flex-1 text-left space-y-6 max-w-3xl"
           >
             <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed">
               I'm a UI/UX designer and developer with{" "}
