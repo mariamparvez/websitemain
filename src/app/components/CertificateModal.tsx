@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "motion/react";
 import { X } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 interface CertificateModalProps {
   isOpen: boolean;
@@ -10,14 +10,29 @@ interface CertificateModalProps {
 }
 
 export function CertificateModal({ isOpen, onClose, pdfUrl, title }: CertificateModalProps) {
+  const scrollPositionRef = useRef(0);
+
   useEffect(() => {
     if (isOpen) {
+      // Save current scroll position
+      scrollPositionRef.current = window.scrollY;
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollPositionRef.current}px`;
+      document.body.style.width = "100%";
     } else {
-      document.body.style.overflow = "unset";
+      // Restore scroll position
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollPositionRef.current);
     }
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
     };
   }, [isOpen]);
 
@@ -53,12 +68,19 @@ export function CertificateModal({ isOpen, onClose, pdfUrl, title }: Certificate
             </div>
 
             {/* PDF Viewer */}
-            <div className="bg-gray-50">
-              <iframe
-                src={pdfUrl}
+            <div className="bg-gray-50 p-4 flex items-center justify-center">
+              <object
+                data={pdfUrl}
+                type="application/pdf"
                 className="w-full h-[70vh]"
                 title={title}
-              />
+              >
+                <embed
+                  src={pdfUrl}
+                  type="application/pdf"
+                  className="w-full h-[70vh]"
+                />
+              </object>
             </div>
           </motion.div>
         </div>

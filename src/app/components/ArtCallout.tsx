@@ -19,7 +19,7 @@ export function ArtCallout() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-16 border-t-2 border-gray-200"
+      className="relative overflow-hidden py-10"
       style={{ position: 'relative' }}
     >
       {/* Parallax Background */}
