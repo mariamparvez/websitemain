@@ -2,6 +2,7 @@ import { motion, useMotionValue, useTransform, PanInfo } from "motion/react";
 import { useState } from "react";
 import { ParticlesBackground } from "./ParticlesBackground";
 import { SwipeGuideAnimation } from "./SwipeGuideAnimation";
+import { BigSwipeIndicator } from "./BigSwipeIndicator";
 
 const experiences = [
   {
@@ -203,6 +204,7 @@ export function ExperienceTimeline() {
             );
           })}
           <SwipeGuideAnimation />
+          <BigSwipeIndicator />
         </div>
 
         {/* Dots Indicator */}

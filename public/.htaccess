@@ -1,0 +1,4 @@
+# Ensure PDF files are served directly without routing through React
+<Files "PDF_for_students.pdf">
+    # Allow direct access to PDF
+</Files>
