@@ -13,11 +13,13 @@ import { Blogs } from "../components/Blogs";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
 import { SEO } from "../components/SEO";
+import { ScrollToTop } from "../components/ScrollToTop";
 
 export function HomePage() {
   return (
     <>
       <SEO />
+      <ScrollToTop />
       <div className="relative bg-[#fdfdfd] min-h-screen text-gray-900 overflow-x-hidden max-w-full" style={{ position: 'relative' }}>
         <Navigation />
         <Hero />

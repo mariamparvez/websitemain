@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router";
-import { useEffect } from "react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { SEO } from "../components/SEO";
+import { ScrollToTop } from "../components/ScrollToTop";
 import art1 from "figma:asset/44bc4ae49779224ab35cf09963389b8c58f729aa.png";
 import art2 from "figma:asset/b0ab5f894f83d2851c3736ef69232cb7974cb671.png";
 import art3 from "figma:asset/ed51938dd8cf845db517dbbd5ea02156401e66e3.png";
@@ -13,9 +13,6 @@ import art5 from "figma:asset/c80864e580e821e9b0b3afb94c7ccf6d20b40783.png";
 import art6 from "figma:asset/774675c43fe003f5321b84fba521c3d9d42c3114.png";
 
 export function ArtPage() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <>
       <SEO
@@ -25,6 +22,7 @@ export function ArtPage() {
         canonicalUrl="https://mariamparvez.in/art"
         isArtPage={true}
       />
+      <ScrollToTop />
       <Navigation />
       <div className="relative bg-white min-h-screen overflow-x-hidden max-w-full">
         {/* Hero Section */}

@@ -1,57 +1,65 @@
 import { motion } from "motion/react";
-import { Award, ExternalLink } from "lucide-react";
+import { Award, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { CertificateModal } from "./CertificateModal";
 import { ParticlesBackground } from "./ParticlesBackground";
+import adobePdf from "../../imports/adobe-premiere-pro-1.pdf";
+import coachingPdf from "../../imports/coaching-and-developing-employees-1.pdf";
+import codeAsylumsPdf from "../../imports/code-asylums-1.pdf";
+import webDevPdf from "../../imports/complete-web-dev-1.pdf";
+import pmSkillsPdf from "../../imports/essential-new-skills-for-project-management-1.pdf";
+import futureLearnPdf from "../../imports/future-learn-1.pdf";
+import pmAssessmentPdf from "../../imports/project-management-assessment-1.pdf";
+import videoProductionPdf from "../../imports/video-production-1.pdf";
 
 const certifications = [
   {
     title: "Adobe Premiere Pro",
     organization: "Adobe",
     icon: "🎬",
-    pdfLink: "/src/imports/adobe-premiere-pro-1.pdf"
+    pdfLink: adobePdf
   },
   {
     title: "Coaching and Developing Employees",
     organization: "Professional Development",
     icon: "👥",
-    pdfLink: "/src/imports/coaching-and-developing-employees-1.pdf"
+    pdfLink: coachingPdf
   },
   {
     title: "Code Asylums",
     organization: "Code Asylums",
     icon: "💻",
-    pdfLink: "/src/imports/code-asylums-1.pdf"
+    pdfLink: codeAsylumsPdf
   },
   {
     title: "Complete Web Development",
     organization: "Online Learning",
     icon: "🌐",
-    pdfLink: "/src/imports/complete-web-dev-1.pdf"
+    pdfLink: webDevPdf
   },
   {
     title: "Essential New Skills for Project Management",
     organization: "Professional Institute",
     icon: "📊",
-    pdfLink: "/src/imports/essential-new-skills-for-project-management-1.pdf"
+    pdfLink: pmSkillsPdf
   },
   {
     title: "Future Learn",
     organization: "FutureLearn",
     icon: "📚",
-    pdfLink: "/src/imports/future-learn-1.pdf"
+    pdfLink: futureLearnPdf
   },
   {
     title: "Project Management Assessment",
     organization: "Professional Institute",
     icon: "📋",
-    pdfLink: "/src/imports/project-management-assessment-1.pdf"
+    pdfLink: pmAssessmentPdf
   },
   {
     title: "Video Production",
     organization: "Creative Academy",
     icon: "🎥",
-    pdfLink: "/src/imports/video-production-1.pdf"
+    pdfLink: videoProductionPdf
   }
 ];
 
@@ -119,15 +127,17 @@ export function Certifications() {
                   </div>
 
                   {/* Action Button */}
-                  <motion.button
-                    onClick={() => openCertificate(cert)}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full bg-[#3d38f5] text-white px-3 py-1.5 rounded-full font-bold flex items-center justify-center gap-1.5 hover:bg-[#2d28d5] transition-all text-xs"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    View
-                  </motion.button>
+                  <div className="flex justify-end">
+                    <motion.button
+                      onClick={() => openCertificate(cert)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] transition-all text-xs group/btn"
+                    >
+                      View
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    </motion.button>
+                  </div>
                 </div>
               </div>
             </motion.div>
