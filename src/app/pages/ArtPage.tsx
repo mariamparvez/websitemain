@@ -104,7 +104,7 @@ export function ArtPage() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center"
           >
-            Our Creations
+            My Creations
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
