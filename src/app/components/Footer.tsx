@@ -111,6 +111,42 @@ export function Footer() {
               >
                 Terms & Conditions
               </Link>
+              <span className="text-gray-700">•</span>
+              <Link
+                to="/privacy"
+                className={`transition-colors ${
+                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-blue-400"
+                }`}
+              >
+                Privacy Policy
+              </Link>
+              <span className="text-gray-700">•</span>
+              <Link
+                to="/disclaimer"
+                className={`transition-colors ${
+                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-blue-400"
+                }`}
+              >
+                Disclaimer
+              </Link>
+              <span className="text-gray-700">•</span>
+              <Link
+                to="/copyright"
+                className={`transition-colors ${
+                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-blue-400"
+                }`}
+              >
+                Copyright
+              </Link>
+              <span className="text-gray-700">•</span>
+              <Link
+                to="/csr"
+                className={`transition-colors ${
+                  isArtPage ? "text-gray-500 hover:text-purple-400" : "text-gray-500 hover:text-blue-400"
+                }`}
+              >
+                CSR Policy
+              </Link>
             </div>
           </motion.div>
         </div>
