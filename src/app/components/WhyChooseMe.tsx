@@ -5,7 +5,7 @@ import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png"
 
 export function WhyChooseMe() {
   return (
-    <section className="relative py-8 md:py-10 overflow-hidden bg-[#010408]" style={{ position: 'relative' }}>
+    <section className="relative py-8 md:py-10 overflow-hidden bg-[#0a1a3a]" style={{ position: 'relative' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <img 
@@ -28,7 +28,7 @@ export function WhyChooseMe() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8"
+          className="text-left mb-8"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
             Why Choose Me?
@@ -36,7 +36,7 @@ export function WhyChooseMe() {
         </motion.div>
 
         {/* Image LEFT - Content RIGHT Layout */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-start lg:items-start gap-8 lg:gap-12">
           {/* Profile Image - LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -61,9 +61,9 @@ export function WhyChooseMe() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex-1 text-left"
+            className="flex-1 text-left space-y-6"
           >
-            <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed mb-6">
+            <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed">
               I'm a UI/UX designer and developer with{" "}
               <span className="text-cyan-300 font-semibold">7.6+ years of experience</span>{" "}
               creating high-retention digital products. As a{" "}
