@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { ParticlesBackground } from "./ParticlesBackground";
 import bgImage from "../../imports/1.jpg";
+import blogHeroImg from "../../imports/image-22.png";
 
 // Import blog images
 import blog1Img from "figma:asset/0ba5d1f06fbee29f386abda5688335c6d343056d.png";
@@ -41,27 +42,26 @@ export function Blogs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden mb-8 p-8 md:p-12"
+          className="relative rounded-3xl overflow-hidden mb-8 p-8 md:p-12 bg-white border-2 border-gray-200"
           style={{
-            backgroundImage: `url(${bgImage})`,
+            backgroundImage: `url(${blogHeroImg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#3d38f5]/90 to-[#6b63f7]/90" />
           <div className="relative max-w-3xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
               Why Color is Important in Graphic Design and Fashion Design
             </h1>
-            <p className="text-white/90 text-lg mb-6">
+            <p className="text-gray-700 text-lg mb-6">
               Explore how color shapes our emotions and decisions in both graphic design and fashion, and see how the right colors can bring life and meaning to your creations.
             </p>
             <a
               href="https://themariamparvez.medium.com/why-color-is-important-in-graphic-design-and-fashion-design-03096dfe57f9"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-white text-[#3d38f5] font-bold text-lg px-6 py-3 rounded-full hover:scale-105 transition-all"
+              className="inline-flex items-center bg-[#3d38f5] text-white font-bold text-lg px-6 py-3 rounded-full hover:scale-105 transition-all"
             >
               Continue reading
               <ArrowRight className="ml-2 w-5 h-5" />
