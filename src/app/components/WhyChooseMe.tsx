@@ -42,7 +42,7 @@ export function WhyChooseMe() {
             className="flex-1 text-left space-y-6 max-w-3xl"
           >
             {/* Title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 text-center italic">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 text-left italic">
               Why Choose Me?
             </h2>
 

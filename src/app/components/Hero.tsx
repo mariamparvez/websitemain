@@ -60,12 +60,12 @@ export function Hero() {
           </div>
 
           <motion.p
-            className="text-blue-100/80 text-lg md:text-xl leading-relaxed max-w-2xl"
+            className="text-blue-100/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto text-center italic"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            <span className="italic">and I now help others do the same.</span>
+            and I now help others do the same.
           </motion.p>
 
           <motion.div 
