@@ -6,6 +6,15 @@ import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png"
 export function WhyChooseMe() {
   return (
     <section className="relative py-12 md:py-16 overflow-hidden bg-[#010408]" style={{ position: 'relative' }}>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <img 
+          src={bgPattern} 
+          alt="" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+
       {/* Background Decoration */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
@@ -20,9 +29,27 @@ export function WhyChooseMe() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
             Why Choose Me?
           </h2>
+
+          {/* Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-8 flex justify-center"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-xl opacity-30" />
+              <img
+                src={profileImg}
+                alt="Mariam Parvez"
+                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-cyan-400/30 shadow-2xl shadow-cyan-500/20"
+              />
+            </div>
+          </motion.div>
           
           <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed mb-6">
             I'm a UI/UX designer and developer with{" "}
@@ -42,7 +69,7 @@ export function WhyChooseMe() {
           </p>
 
           {/* Quick Stats */}
-          <div className="flex flex-wrap gap-6 mt-8">
+          <div className="flex flex-wrap justify-center gap-6 mt-8">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center">
                 <Award className="w-5 h-5 text-cyan-400" />
