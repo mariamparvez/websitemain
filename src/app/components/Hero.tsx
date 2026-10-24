@@ -17,23 +17,29 @@ const portals = [
     name: "MUXION",
     index: "01",
     tag: "Services & Learning",
-    copy: "Hire me for design work, or learn my services and skills hands-on.",
+    copy: "Hire me for design work, or learn my skills hands-on.",
+    chips: ["UI/UX", "Branding", "Courses"],
     domain: "muxion.in",
     href: "https://muxion.in",
     cta: "Work with me",
-    surface: "bg-gradient-to-br from-[#3d38f5] to-[#1d1a8f] border-[#fdfdfd]/20 hover:border-[#fdfdfd]/50",
-    glow: "bg-[#fdfdfd]/15",
+    ring: "from-[#fdfdfd]/70 via-[#6b63f7] to-[#3d38f5]",
+    surface: "bg-gradient-to-br from-[#4a45ff] via-[#3d38f5] to-[#1d1a8f]",
+    blobs: ["bg-[#9a96ff]/50", "bg-[#1d1a8f]"],
+    dot: "bg-[#fdfdfd]",
   },
   {
     name: "DESNIOSENSE",
     index: "02",
     tag: "Official Merch",
-    copy: "Wear the art. Shop my merch, made with the same obsession as everything else.",
+    copy: "Wear the art. Merch made with the same obsession.",
+    chips: ["Tees", "Prints", "Drops"],
     domain: "desniosense.com",
     href: "https://desniosense.com",
     cta: "Shop merch",
-    surface: "bg-[#1b1b1b] border-[#fdfdfd]/20 hover:border-[#9a96ff]",
-    glow: "bg-[#3d38f5]/30",
+    ring: "from-[#9a96ff] via-[#3d38f5]/40 to-[#fdfdfd]/40",
+    surface: "bg-gradient-to-br from-[#1f1f2b] via-[#171720] to-[#121212]",
+    blobs: ["bg-[#3d38f5]/50", "bg-[#9a96ff]/25"],
+    dot: "bg-[#9a96ff]",
   },
 ];
 
@@ -51,60 +57,90 @@ export function Hero() {
     <>
       <section
         id="home"
-        className="relative overflow-hidden bg-[#121212] pt-28 pb-10 px-4"
+        className="relative overflow-hidden bg-[#121212] pt-24 md:pt-28 pb-6 md:pb-10 px-4"
       >
         <div className="relative z-10 w-full max-w-7xl mx-auto">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 w-full text-left"
+            className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 w-full text-left"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
           >
-            {portals.map((p) => (
-              <a
+            {portals.map((p, i) => (
+              <motion.div
                 key={p.name}
-                href={p.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${p.name} — ${p.domain}`}
-                className={`group relative block [container-type:inline-size] rounded-3xl overflow-hidden border transition-all duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9a96ff] ${p.surface}`}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 + i * 0.15, duration: 0.6 }}
+                className={`group rounded-3xl p-[1.5px] bg-gradient-to-br ${p.ring} shadow-[0_20px_60px_-25px_rgba(61,56,245,0.7)] transition-transform duration-300 hover:-translate-y-1`}
               >
-                <div className="absolute inset-0 opacity-[0.07] [background-image:radial-gradient(#fdfdfd_1px,transparent_1px)] [background-size:18px_18px]" />
-                <div className={`absolute -top-24 -right-24 w-72 h-72 rounded-full blur-3xl transition-transform duration-500 group-hover:scale-125 ${p.glow}`} />
-
-                <div className="relative flex flex-col gap-10 min-h-[300px] md:min-h-[380px] p-7 md:p-9">
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="flex items-center gap-3 text-xs font-semibold tracking-[0.22em] uppercase text-[#fdfdfd]/80">
-                      <span className="tabular-nums text-[#fdfdfd]/50">{p.index}</span>
-                      <span className="h-px w-8 bg-[#fdfdfd]/40" />
-                      {p.tag}
-                    </span>
-                    <span className="shrink-0 w-11 h-11 rounded-full bg-[#fdfdfd] text-[#121212] flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
-                      <ArrowUpRight className="w-5 h-5" />
-                    </span>
-                  </div>
-
-                  <h3
-                    className="mt-auto font-bold text-[#fdfdfd] leading-[0.95] tracking-tight whitespace-nowrap text-[clamp(1.75rem,9cqw,4.5rem)]"
-                    style={{ fontFamily: "'Balsamiq Sans', sans-serif" }}
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${p.name} — ${p.domain}`}
+                  className={`relative block h-full [container-type:inline-size] rounded-[calc(1.5rem-1.5px)] overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9a96ff] ${p.surface}`}
+                >
+                  <motion.div
+                    className={`absolute -top-20 -right-16 w-64 h-64 rounded-full blur-3xl ${p.blobs[0]}`}
+                    animate={{ x: [0, -30, 0], y: [0, 24, 0] }}
+                    transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                  <motion.div
+                    className={`absolute -bottom-24 -left-16 w-64 h-64 rounded-full blur-3xl ${p.blobs[1]}`}
+                    animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
+                    transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                  <div className="absolute inset-0 opacity-[0.08] [background-image:radial-gradient(#fdfdfd_1px,transparent_1px)] [background-size:16px_16px]" />
+                  <span
+                    aria-hidden="true"
+                    className="absolute -bottom-6 -right-2 md:-bottom-10 md:right-2 text-[7rem] md:text-[11rem] leading-none font-black select-none pointer-events-none text-transparent [-webkit-text-stroke:1.5px_rgba(253,253,253,0.16)]"
                   >
-                    {p.name}
-                  </h3>
+                    {p.index}
+                  </span>
+                  <div className="absolute inset-y-0 -left-1/2 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-[#fdfdfd]/15 to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-x-[300%] transition-all duration-1000 ease-out" />
 
-                  <div className="space-y-5">
-                    <p className="text-base md:text-lg leading-relaxed text-[#fdfdfd]/80 max-w-[34ch] [text-wrap:balance] [hyphens:none]">
-                      {p.copy}
-                    </p>
-                    <div className="flex items-center justify-between border-t border-[#fdfdfd]/20 pt-4">
-                      <span className="text-sm font-semibold text-[#fdfdfd]/70">{p.domain}</span>
-                      <span className="inline-flex items-center gap-2 text-sm font-bold text-[#fdfdfd]">
+                  <div className="relative flex flex-col gap-3 md:gap-8 p-5 md:p-9 md:min-h-[380px]">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-[#fdfdfd]/25 bg-[#121212]/30 backdrop-blur-sm px-3 py-1 text-[10px] sm:text-xs font-semibold tracking-[0.14em] sm:tracking-[0.2em] uppercase text-[#fdfdfd]">
+                        <span className="relative flex h-2 w-2">
+                          <span className={`absolute inline-flex h-full w-full rounded-full opacity-70 animate-ping ${p.dot}`} />
+                          <span className={`relative inline-flex h-2 w-2 rounded-full ${p.dot}`} />
+                        </span>
+                        {p.tag}
+                      </span>
+                      <span className="shrink-0 w-9 h-9 md:w-12 md:h-12 rounded-full bg-[#fdfdfd] text-[#121212] flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
+                        <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
+                      </span>
+                    </div>
+
+                    <div className="md:mt-auto space-y-1.5 md:space-y-4">
+                      <h3
+                        className="font-bold text-[#fdfdfd] leading-[0.95] tracking-tight whitespace-nowrap text-[clamp(1.75rem,8.5cqw,4.5rem)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.35)]"
+                        style={{ fontFamily: "'Balsamiq Sans', sans-serif" }}
+                      >
+                        {p.name}
+                      </h3>
+                      <p className="text-sm md:text-lg leading-snug text-[#fdfdfd]/80 max-w-[34ch] [text-wrap:balance]">
+                        {p.copy}
+                      </p>
+                      <div className="hidden md:flex gap-2 pt-1">
+                        {p.chips.map((c) => (
+                          <span key={c} className="rounded-full border border-[#fdfdfd]/25 px-3 py-1 text-xs font-semibold text-[#fdfdfd]/85">{c}</span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between border-t border-[#fdfdfd]/20 pt-3 md:pt-4">
+                      <span className="text-xs md:text-sm font-semibold text-[#fdfdfd]/70">{p.domain}</span>
+                      <span className="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-[#fdfdfd]">
                         {p.cta}
                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </span>
                     </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </motion.div>
             ))}
           </motion.div>
         </div>
