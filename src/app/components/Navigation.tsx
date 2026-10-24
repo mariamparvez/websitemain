@@ -61,7 +61,7 @@ export function Navigation() {
             <Link
               to="/"
               className="text-2xl lg:text-3xl font-black text-gray-900"
-              style={{ fontFamily: isArtPage ? "'Be Vietnam Pro', sans-serif" : "'Passions Conflict', cursive", fontWeight: 900 }}
+              style={{ fontFamily: isArtPage ? "'Balsamiq Sans', sans-serif" : "'Balsamiq Sans', sans-serif", fontWeight: 700 }}
             >
               {isArtPage ? "The M Impact" : "Mariam Parvez"}
             </Link>

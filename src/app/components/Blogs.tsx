@@ -50,8 +50,8 @@ export function Blogs() {
             backgroundRepeat: 'no-repeat'
           }}
         >
-          {/* #fdfdfd 30% overlay ONLY on mobile */}
-          <div className="absolute inset-0 bg-[#fdfdfd]/30 md:bg-transparent" />
+          {/* #fdfdfd 50% overlay ONLY on mobile */}
+          <div className="absolute inset-0 bg-[#fdfdfd]/50 md:bg-transparent" />
 
           {/* Content - VISIBLE on all screens */}
           <div className="max-w-2xl relative z-10">
