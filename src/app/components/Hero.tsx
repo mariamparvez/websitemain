@@ -63,39 +63,51 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
+            className="flex flex-wrap gap-4 justify-center items-center pt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
           >
-            <motion.div
-              className="bg-white/80 backdrop-blur-sm border border-[#3d38f5]/30 rounded-2xl px-6 py-4 w-full sm:w-auto shadow-lg"
-              whileHover={{ scale: 1.05 }}
-            >
-              <p className="text-sm text-gray-500 mb-1">Latest:</p>
-              <a
-                href="https://www.youtube.com/watch?v=nJ3clNDNu9s"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg font-semibold text-[#3d38f5] hover:text-[#6b63f7] transition-colors"
-              >
-                UI/UX Design Course
-              </a>
-            </motion.div>
-
             <motion.a
-              href="https://www.youtube.com/watch?v=cs2ySXNG4aU"
+              href="https://www.behance.net/themariamparvez"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-[#3d38f5]/30 rounded-2xl px-6 py-4 w-full sm:w-auto shadow-lg"
               whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#3d38f5] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2d28d5] transition-all shadow-lg inline-flex items-center gap-2"
             >
-              <div className="w-10 h-10 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-              <span className="text-lg font-semibold text-gray-900">About Me</span>
+              Latest Work →
+            </motion.a>
+
+            <motion.a
+              href="https://dribbble.com/themariamparvez"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#3d38f5] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2d28d5] transition-all shadow-lg inline-flex items-center gap-2"
+            >
+              View Designs →
+            </motion.a>
+
+            <motion.a
+              href="/art"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#3d38f5] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2d28d5] transition-all shadow-lg inline-flex items-center gap-2"
+            >
+              Explore Art →
+            </motion.a>
+
+            <motion.a
+              href="https://www.youtube.com/watch?v=nJ3clNDNu9s"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#3d38f5] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#2d28d5] transition-all shadow-lg inline-flex items-center gap-2"
+            >
+              Go To Course →
             </motion.a>
           </motion.div>
 
