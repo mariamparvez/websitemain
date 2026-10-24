@@ -23,7 +23,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-[50vh] sm:min-h-[70vh] lg:min-h-[85vh] flex items-center justify-center relative overflow-hidden pt-24 pb-12 px-4 bg-gradient-to-br from-[#050d1f] to-[#0a1229]"
+      className="min-h-[50vh] sm:min-h-[70vh] lg:min-h-[85vh] flex items-center justify-center relative overflow-hidden pt-24 pb-12 px-4 bg-gradient-to-br from-[#030816] to-[#050b18]"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden px-[0px] py-[66px]">
