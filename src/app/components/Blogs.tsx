@@ -37,15 +37,12 @@ export function Blogs() {
         </motion.div>
 
         {/* Primary/Featured Blog */}
-        <motion.a
-          href="https://themariamparvez.medium.com/why-color-is-important-in-graphic-design-and-fashion-design-03096dfe57f9"
-          target="_blank"
-          rel="noopener noreferrer"
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden mb-8 h-64 md:h-auto md:p-12 bg-white border-2 border-gray-200 block cursor-pointer hover:scale-[1.02] transition-all"
+          className="relative rounded-3xl overflow-hidden mb-8 p-8 md:p-12 bg-white border-2 border-gray-200"
           style={{
             backgroundImage: `url(${blogHeroImg})`,
             backgroundSize: 'cover',
@@ -53,23 +50,28 @@ export function Blogs() {
             backgroundRepeat: 'no-repeat'
           }}
         >
-          {/* White overlay ONLY on mobile */}
-          <div className="absolute inset-0 bg-white/12 md:hidden" />
+          {/* #fdfdfd 12% overlay ONLY on mobile */}
+          <div className="absolute inset-0 bg-[#fdfdfd]/12 md:bg-transparent" />
 
-          {/* Content - HIDDEN on mobile, VISIBLE on desktop */}
-          <div className="hidden md:block max-w-2xl relative">
+          {/* Content - VISIBLE on all screens */}
+          <div className="max-w-2xl relative z-10">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-gray-900 italic leading-tight">
               Why Color is Important in Graphic Design and Fashion Design
             </h1>
             <p className="text-gray-700 text-base md:text-lg mb-6 leading-relaxed">
               Explore how color shapes our emotions and decisions in both graphic design and fashion, and see how the right colors can bring life and meaning to your creations.
             </p>
-            <span className="inline-flex items-center bg-[#3d38f5] text-white font-bold text-base md:text-lg px-6 py-3 rounded-full hover:scale-105 transition-all">
+            <a
+              href="https://themariamparvez.medium.com/why-color-is-important-in-graphic-design-and-fashion-design-03096dfe57f9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-[#3d38f5] text-white font-bold text-base md:text-lg px-6 py-3 rounded-full hover:scale-105 transition-all"
+            >
               Continue reading
               <ArrowRight className="ml-2 w-5 h-5" />
-            </span>
+            </a>
           </div>
-        </motion.a>
+        </motion.div>
 
         {/* Secondary Blogs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
