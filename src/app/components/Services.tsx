@@ -53,7 +53,7 @@ export function Services() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="services" className="relative pt-16 pb-16 overflow-hidden bg-[#020610]" style={{ position: 'relative' }}>
+    <section ref={sectionRef} id="services" className="relative pt-16 pb-16 overflow-hidden bg-[#020a15]" style={{ position: 'relative' }}>
       {/* Parallax Background Image */}
       <motion.div 
         className="absolute inset-0 pointer-events-none"

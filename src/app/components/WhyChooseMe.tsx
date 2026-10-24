@@ -5,7 +5,7 @@ import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png"
 
 export function WhyChooseMe() {
   return (
-    <section className="relative py-8 md:py-10 overflow-hidden bg-[#030815]" style={{ position: 'relative' }}>
+    <section className="relative py-8 md:py-10 overflow-hidden bg-[#0a0e1a]" style={{ position: 'relative' }}>
       {/* Background Decoration */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />

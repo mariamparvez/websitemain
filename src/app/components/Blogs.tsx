@@ -8,7 +8,7 @@ import blog3Img from "figma:asset/5310a1d936833a9c8391005bd7219b7b7b79a6d7.png";
 
 export function Blogs() {
   return (
-    <section id="blogs" className="py-16 lg:py-20 relative overflow-hidden bg-[#020610]">
+    <section id="blogs" className="py-16 lg:py-20 relative overflow-hidden bg-[#0b0f1c]">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-3xl" />
