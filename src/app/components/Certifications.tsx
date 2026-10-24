@@ -153,29 +153,6 @@ export function Certifications() {
             </motion.div>
           ))}
         </div>
-
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-8 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] rounded-2xl p-5 text-center"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white">
-            <div>
-              <div className="text-2xl font-black mb-0.5">12+</div>
-              <div className="text-xs font-medium opacity-90">Certifications</div>
-            </div>
-            <div>
-              <div className="text-2xl font-black mb-0.5">7.6+</div>
-              <div className="text-xs font-medium opacity-90">Years Experience</div>
-            </div>
-            <div>
-              <div className="text-2xl font-black mb-0.5">50+</div>
-              <div className="text-xs font-medium opacity-90">Projects Delivered</div>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       {/* Certificate Modal */}

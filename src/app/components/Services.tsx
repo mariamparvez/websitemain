@@ -104,28 +104,32 @@ export function Services() {
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="mt-auto"
+                      className="mt-auto flex justify-end"
                     >
                       <Link
                         to={service.link}
-                        className="relative inline-flex items-center gap-2 px-4 py-2 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn text-sm whitespace-nowrap"
+                        className="relative inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn text-xs"
                       >
                         {service.linkText}
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                       </Link>
                     </motion.div>
                   ) : (
-                    <motion.a
-                      href={service.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative inline-flex items-center gap-2 px-4 py-2 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn mt-auto text-sm whitespace-nowrap text-center"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                    <motion.div
+                      className="mt-auto flex justify-end"
                     >
-                      {service.linkText}
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </motion.a>
+                      <motion.a
+                        href={service.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn text-xs"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {service.linkText}
+                        <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                      </motion.a>
+                    </motion.div>
                   )}
                 </div>
               </motion.div>

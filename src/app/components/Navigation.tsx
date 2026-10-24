@@ -60,8 +60,8 @@ export function Navigation() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               to="/"
-              className="text-4xl lg:text-5xl font-black text-gray-900"
-              style={{ fontFamily: isArtPage ? "'Lato', sans-serif" : "'Passions Conflict', cursive", fontWeight: 900 }}
+              className="text-2xl lg:text-3xl font-black text-gray-900"
+              style={{ fontFamily: isArtPage ? "'Be Vietnam Pro', sans-serif" : "'Passions Conflict', cursive", fontWeight: 900 }}
             >
               {isArtPage ? "The M Impact" : "Mariam Parvez"}
             </Link>
