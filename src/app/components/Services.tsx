@@ -67,18 +67,18 @@ export function Services() {
             alt="Background" 
             className="w-full h-full object-cover"
             style={{
-              opacity: 0.3
+              opacity: 0.5
             }}
           />
-          {/* Dark overlay to blend with theme */}
-          <div className="absolute inset-0 bg-[rgba(2,6,16,0.7)]" />
+          {/* Lighter dark overlay to let image show through more */}
+          <div className="absolute inset-0 bg-[rgba(2,6,16,0.4)]" />
         </motion.div>
       </motion.div>
 
       {/* Background Decoration */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto mb-0 px-[32px] py-[24px]">
