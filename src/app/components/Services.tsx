@@ -10,16 +10,14 @@ const services = [
     title: "Web Design",
     description: "Skilled in creating responsive, user-centric websites using HTML, CSS, and JavaScript. Over 5 years of delivering top-quality web and mobile designs.",
     link: "https://www.behance.net/themariamparvez",
-    linkText: "Latest Work",
-    gradient: "from-[#3d38f5] to-[#6b63f7]"
+    linkText: "Latest Work"
   },
   {
     icon: Palette,
     title: "Graphic Design",
     description: "5+ years of experience creating impactful logos, branding, and marketing materials using Adobe Creative Suite.",
     link: "https://dribbble.com/themariamparvez",
-    linkText: "View Designs",
-    gradient: "from-[#3d38f5] to-teal-500"
+    linkText: "View Designs"
   },
   {
     icon: Paintbrush,
@@ -27,7 +25,6 @@ const services = [
     description: "Creating unique Acrylic, Watercolor, Mandala, and Abstract Art pieces. Commissions available to bring your ideas to life.",
     link: "/art",
     linkText: "Explore Art",
-    gradient: "from-teal-500 to-emerald-500",
     isRoute: true
   },
   {
@@ -35,8 +32,7 @@ const services = [
     title: "Coach",
     description: "Experienced UI/UX and Graphic Design coach, loved by students for practical and engaging learning.",
     link: "https://muxion.in",
-    linkText: "Go To Course",
-    gradient: "from-emerald-500 to-[#6b63f7]"
+    linkText: "Go To Course"
   }
 ];
 
@@ -140,7 +136,7 @@ export function Services() {
                     >
                       <Link
                         to={service.link}
-                        className={`relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.gradient} rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-shadow group/btn`}
+                        className="relative inline-flex items-center gap-2 px-6 py-3 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn"
                       >
                         {service.linkText}
                         <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -151,7 +147,7 @@ export function Services() {
                       href={service.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${service.gradient} rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-shadow group/btn mt-auto`}
+                      className="relative inline-flex items-center gap-2 px-6 py-3 bg-[#3d38f5] text-white rounded-full font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all group/btn mt-auto"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
