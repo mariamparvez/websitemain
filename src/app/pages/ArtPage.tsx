@@ -390,7 +390,7 @@ export function ArtPage() {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Love What You See?</h2>
               <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-                I take commissions for custom art pieces. Whether it's for your home, office, or a special gift, let's create something beautiful together.
+                Follow me on Instagram to see more of my artwork and stay updated with my latest creations.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <motion.a
@@ -399,21 +399,10 @@ export function ArtPage() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-900/40 to-pink-900/40 backdrop-blur-sm border border-purple-500/30 rounded-full hover:border-purple-500/60 transition-all"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 rounded-full font-medium hover:shadow-2xl hover:shadow-pink-500/30 transition-all"
                 >
                   <Instagram className="w-6 h-6" />
                   Follow on Instagram
-                </motion.a>
-                <motion.a
-                  href="https://ig.me/m/themimpact"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 rounded-full font-medium hover:shadow-2xl hover:shadow-pink-500/30 transition-all"
-                >
-                  <ExternalLink className="w-6 h-6" />
-                  Commission an Art Piece
                 </motion.a>
               </div>
             </motion.div>
