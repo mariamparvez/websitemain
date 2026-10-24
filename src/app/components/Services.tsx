@@ -52,7 +52,7 @@ export function Services() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="services" className="pt-20 relative overflow-hidden bg-[#030815]">
+    <section ref={sectionRef} id="services" className="pt-16 pb-16 relative overflow-hidden bg-[#020610]">
       {/* Parallax Background Image */}
       <motion.div 
         className="absolute inset-0 pointer-events-none"
@@ -67,11 +67,11 @@ export function Services() {
             alt="Background" 
             className="w-full h-full object-cover"
             style={{
-              opacity: 0.15
+              opacity: 0.3
             }}
           />
           {/* Dark overlay to blend with theme */}
-          <div className="absolute inset-0 bg-[rgba(3,8,21,0.85)]" />
+          <div className="absolute inset-0 bg-[rgba(2,6,16,0.7)]" />
         </motion.div>
       </motion.div>
 
@@ -81,13 +81,13 @@ export function Services() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto mb-0 px-[32px] py-[36px]">
+      <div className="relative z-10 max-w-7xl mx-auto mb-0 px-[32px] py-[24px]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             What I{" "}
