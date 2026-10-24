@@ -12,7 +12,7 @@ import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="relative bg-gradient-to-br from-[#030816] to-[#050b18] min-h-screen text-white overflow-x-hidden" style={{ position: 'relative' }}>
+    <div className="relative bg-[#010408] min-h-screen text-white overflow-x-hidden" style={{ position: 'relative' }}>
       <Navigation />
       <Hero />
       <WhyChooseMe />

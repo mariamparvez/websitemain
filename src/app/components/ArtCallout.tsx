@@ -4,7 +4,7 @@ import bgImage from "figma:asset/aa43f793764a7490f8c87793750a0fd36b5286f5.png";
 
 export function ArtCallout() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#060e22] to-[#08132c]">
+    <section className="relative overflow-hidden bg-[#020610]">
       <div className="max-w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
