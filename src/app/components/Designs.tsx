@@ -41,7 +41,7 @@ const designs = [
 
 export function Designs() {
   return (
-    <section id="designs" className="py-20 lg:py-32 relative overflow-hidden bg-gradient-to-br from-[#020715] to-[#050d24]">
+    <section id="designs" className="py-20 lg:py-32 relative overflow-hidden bg-gradient-to-br from-[#08122e] to-[#0a1538]">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />

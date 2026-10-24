@@ -52,7 +52,7 @@ export function Services() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="services" className="pt-20 relative overflow-hidden bg-[#030a18]">
+    <section ref={sectionRef} id="services" className="pt-20 relative overflow-hidden bg-gradient-to-br from-[#0a1538] to-[#08122e]">
       {/* Parallax Background Image */}
       <motion.div 
         className="absolute inset-0 pointer-events-none"

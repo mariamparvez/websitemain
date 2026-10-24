@@ -42,7 +42,7 @@ export function CaseStudies() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="case-studies" className="relative py-32 overflow-hidden bg-gradient-to-br from-[#06102a] to-[#0a1435]">
+    <section ref={sectionRef} id="case-studies" className="relative py-32 overflow-hidden bg-gradient-to-br from-[#0a1538] to-[#08122e]">
       {/* Animated Background Orbs */}
       <div className="absolute inset-0 pointer-events-none relative">{/* Added relative positioning */}
         <motion.div 
