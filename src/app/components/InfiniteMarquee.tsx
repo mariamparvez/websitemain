@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Linkedin, Youtube } from "lucide-react";
-import MuxionLogo from "../../imports/SocialIcon/SocialIcon";
+import muxionIcon from "../../imports/favicon-1.png";
 
 const platforms = [
   {
@@ -78,19 +78,7 @@ export function InfiniteMarquee() {
               className="group flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all whitespace-nowrap"
             >
               {platform.iconType === "muxion" ? (
-                <div className="w-8 h-8 flex items-center justify-center">
-                  <div style={{
-                    width: '170px',
-                    height: '170px',
-                    transform: 'scale(0.047)',
-                    transformOrigin: 'center center',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    <MuxionLogo />
-                  </div>
-                </div>
+                <img src={muxionIcon} alt="MUXION" className="w-6 h-6" />
               ) : platform.iconType === "linkedin" ? (
                 <Linkedin className="w-6 h-6 text-white" />
               ) : platform.iconType === "youtube" ? (
@@ -129,19 +117,7 @@ export function InfiniteMarquee() {
               className="group flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all whitespace-nowrap"
             >
               {platform.iconType === "muxion" ? (
-                <div className="w-8 h-8 flex items-center justify-center">
-                  <div style={{
-                    width: '170px',
-                    height: '170px',
-                    transform: 'scale(0.047)',
-                    transformOrigin: 'center center',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    <MuxionLogo />
-                  </div>
-                </div>
+                <img src={muxionIcon} alt="MUXION" className="w-6 h-6" />
               ) : platform.iconType === "linkedin" ? (
                 <Linkedin className="w-6 h-6 text-white" />
               ) : platform.iconType === "youtube" ? (
