@@ -5,7 +5,7 @@ import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png"
 
 export function WhyChooseMe() {
   return (
-    <section className="relative py-10 md:py-12 overflow-hidden bg-white" style={{ position: 'relative' }}>
+    <section className="relative py-8 overflow-hidden bg-[#f8f9fa]" style={{ position: 'relative' }}>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Image LEFT - Content RIGHT Layout */}
@@ -36,11 +36,11 @@ export function WhyChooseMe() {
             className="flex-1 text-left space-y-6 max-w-3xl"
           >
             {/* Title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-6 text-left italic">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-4 text-left italic">
               Why Choose Me?
             </h2>
 
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-700 leading-relaxed">
               I'm a UI/UX designer and developer with{" "}
               <span className="text-[#3d38f5] font-semibold">7.6+ years of experience</span>{" "}
               creating high-retention digital products. As a{" "}

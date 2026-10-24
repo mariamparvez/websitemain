@@ -79,7 +79,7 @@ export function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative py-12 overflow-hidden bg-white">
+    <section id="testimonials" className="relative py-10 overflow-hidden bg-[#f8f9fa]">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
       </div>
@@ -91,7 +91,7 @@ export function Testimonials() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-3"
           >
             Testimonials
           </motion.h2>

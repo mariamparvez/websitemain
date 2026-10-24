@@ -41,7 +41,7 @@ const designs = [
 
 export function Designs() {
   return (
-    <section id="designs" className="py-12 relative overflow-hidden bg-[#f8f9fa]">
+    <section id="designs" className="py-10 relative overflow-hidden bg-white">
       {/* Background */}
       <div className="absolute inset-0">
       </div>
@@ -52,15 +52,15 @@ export function Designs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900">
             Creative{" "}
             <span className="bg-gradient-to-r from-[#3d38f5] via-sky-400 to-[#6b63f7] bg-clip-text text-transparent">
               Graphic Designs
             </span>
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-gray-600 text-base max-w-3xl mx-auto">
             Around 2019, I started my freelance journey by doing these designs. I had alot of fun as a gigster!
           </p>
         </motion.div>
@@ -94,7 +94,7 @@ export function Designs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="text-center mt-10"
+          className="text-center mt-8"
         >
           <motion.a
             href="https://dribbble.com/themariamparvez"

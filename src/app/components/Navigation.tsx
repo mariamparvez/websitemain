@@ -60,9 +60,10 @@ export function Navigation() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               to="/"
-              className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-[#3d38f5] via-[#6b63f7] to-[#3d38f5] bg-clip-text text-transparent"
+              className="text-4xl lg:text-5xl font-black text-gray-900"
+              style={{ fontFamily: isArtPage ? "'Lato', sans-serif" : "'Passions Conflict', cursive", fontWeight: 900 }}
             >
-              The M Impact
+              {isArtPage ? "The M Impact" : "Mariam Parvez"}
             </Link>
           </motion.div>
 

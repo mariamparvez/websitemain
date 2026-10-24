@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Award, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Award, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { CertificateModal } from "./CertificateModal";
 
@@ -58,7 +58,7 @@ export function Certifications() {
   };
 
   return (
-    <section id="certifications" className="relative py-12 overflow-hidden bg-gradient-to-br from-[#f8f9fa] to-white">
+    <section id="certifications" className="relative py-10 overflow-hidden bg-white">
       {/* Floating Elements Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -123,12 +123,8 @@ export function Certifications() {
               <div className="relative bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all border-2 border-gray-100 hover:border-[#3d38f5] h-full">
                 {/* Emoji Icon */}
                 <div className="relative mb-3">
-                  <div className="text-3xl mb-1.5 transform group-hover:scale-110 transition-transform">
+                  <div className="text-3xl mb-2">
                     {cert.icon}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
-                    <span className="text-xs font-semibold text-green-600">Verified</span>
                   </div>
                 </div>
 
@@ -138,9 +134,8 @@ export function Certifications() {
                     {cert.title}
                   </h3>
 
-                  <div className="space-y-0.5 mb-3">
+                  <div className="mb-3">
                     <p className="text-gray-600 text-xs font-medium">{cert.organization}</p>
-                    <p className="text-[#3d38f5] font-bold text-xs">{cert.year}</p>
                   </div>
 
                   {/* Action Button */}

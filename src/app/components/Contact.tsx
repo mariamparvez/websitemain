@@ -3,22 +3,22 @@ import { Mail, MapPin, Send } from "lucide-react";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-12 relative overflow-hidden bg-white">
+    <section id="contact" className="py-10 relative overflow-hidden bg-[#f8f9fa]">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center md:text-center mb-10"
+          className="text-center md:text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 text-center text-gray-900">
             Let's{" "}
             <span className="bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] bg-clip-text text-transparent">
               Connect
             </span>
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto text-center">
+          <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto text-center">
             Have a project in mind? Let's work together to bring your ideas to life
           </p>
         </motion.div>
@@ -32,10 +32,10 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <div className="bg-white border border-gray-200 rounded-3xl p-6 md:p-8 shadow-sm">
-              <h3 className="text-2xl font-bold mb-4 md:mb-6 text-gray-900">Get in Touch</h3>
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 shadow-sm h-full flex flex-col">
+              <h3 className="text-xl font-bold mb-4 text-gray-900">Get in Touch</h3>
 
-              <div className="space-y-4 md:space-y-6">
+              <div className="space-y-4">
                 <motion.div
                   whileHover={{ x: 10 }}
                   className="flex items-start gap-4"
@@ -106,7 +106,7 @@ export function Contact() {
             <form
               action="https://formsubmit.co/designwithmariam@gmail.com"
               method="POST"
-              className="bg-white border border-gray-200 rounded-3xl p-8 space-y-4 h-full shadow-sm"
+              className="bg-white border-2 border-gray-200 rounded-2xl p-6 space-y-4 h-full shadow-sm flex flex-col"
             >
               {/* Honeypot */}
               <input type="text" name="_honey" style={{ display: 'none' }} />
@@ -155,7 +155,7 @@ export function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  rows={5}
+                  rows={3}
                   className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-xl focus:border-[#3d38f5] focus:outline-none transition-all resize-none text-gray-900"
                   placeholder="Tell me about your project..."
                   required
@@ -166,7 +166,7 @@ export function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] text-white rounded-xl font-semibold hover:shadow-lg transition-shadow"
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#3d38f5] text-white rounded-xl font-bold hover:bg-[#2d28d5] hover:shadow-lg transition-all"
               >
                 <span>Send Message</span>
                 <Send className="w-5 h-5" />

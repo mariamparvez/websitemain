@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 export function ArtCallout() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#3d38f5] to-[#2d28d5] py-12">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#3d38f5] to-[#2d28d5] py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
