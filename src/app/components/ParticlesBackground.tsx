@@ -78,6 +78,7 @@ export function ParticlesBackground() {
             cy={`${particle.y}%`}
             r={particle.size}
             fill={particle.color}
+            fillOpacity={0.4}
             className="cursor-pointer pointer-events-auto"
             animate={{
               cx: hoveredParticle === particle.id
