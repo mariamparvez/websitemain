@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { ParticlesBackground } from "./ParticlesBackground";
 import bgImage from "../../imports/1.jpg";
-import blogHeroImg from "../../imports/image-22.png";
+import blogHeroImg from "../../imports/1-3.jpg";
 
 // Import blog images
 import blog1Img from "figma:asset/0ba5d1f06fbee29f386abda5688335c6d343056d.png";
