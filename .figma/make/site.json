@@ -1,0 +1,11 @@
+{
+  "title": "Mariam's Portfolio",
+  "description": "This modern web application offers a sleek, minimalistic design with a dark blue theme, enhancing user experience and accessibility for all visitors.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

@@ -1,0 +1,91 @@
+{
+	"WhoisRecord": {
+		"domainName": "mariamparvez.in",
+		"parseCode": 8,
+		"audit": {
+			"createdDate": "2025-02-26 22:24:10 UTC",
+			"updatedDate": "2025-02-26 22:24:10 UTC"
+		},
+		"registrarName": "GoDaddy.com, LLC",
+		"registrarIANAID": "146",
+		"dataError": "MASKED_WHOIS_DATA",
+		"registryData": {
+			"createdDate": "2023-09-02T21:23:24Z",
+			"updatedDate": "2023-09-07T21:23:26Z",
+			"expiresDate": "2033-09-02T21:23:24Z",
+			"registrant": {
+				"name": "REDACTED FOR PRIVACY",
+				"organization": "Personal Website",
+				"street1": "REDACTED FOR PRIVACY",
+				"city": "REDACTED FOR PRIVACY",
+				"state": "Tamil Nadu",
+				"postalCode": "REDACTED FOR PRIVACY",
+				"country": "INDIA",
+				"countryCode": "IN",
+				"telephone": "",
+				"telephoneExt": "",
+				"fax": "",
+				"faxExt": "",
+				"rawText": "Registrant Name: REDACTED FOR PRIVACY\nRegistrant Organization: Personal Website\nRegistrant Street: REDACTED FOR PRIVACY\nRegistrant Street: REDACTED FOR PRIVACY\nRegistrant Street: REDACTED FOR PRIVACY\nRegistrant City: REDACTED FOR PRIVACY\nRegistrant State/Province: Tamil Nadu\nRegistrant Postal Code: REDACTED FOR PRIVACY\nRegistrant Country: IN\nRegistrant Phone: REDACTED FOR PRIVACY\nRegistrant Phone Ext: REDACTED FOR PRIVACY\nRegistrant Fax: REDACTED FOR PRIVACY\nRegistrant Fax Ext: REDACTED FOR PRIVACY\nRegistrant Email: Please contact the Registrar listed above"
+			},
+			"administrativeContact": {
+				"name": "REDACTED FOR PRIVACY",
+				"organization": "REDACTED FOR PRIVACY",
+				"street1": "REDACTED FOR PRIVACY",
+				"city": "REDACTED FOR PRIVACY",
+				"state": "REDACTED FOR PRIVACY",
+				"postalCode": "REDACTED FOR PRIVACY",
+				"country": "REDACTED FOR PRIVACY",
+				"telephone": "",
+				"telephoneExt": "",
+				"fax": "",
+				"faxExt": "",
+				"rawText": "Admin Name: REDACTED FOR PRIVACY\nAdmin Organization: REDACTED FOR PRIVACY\nAdmin Street: REDACTED FOR PRIVACY\nAdmin Street: REDACTED FOR PRIVACY\nAdmin Street: REDACTED FOR PRIVACY\nAdmin City: REDACTED FOR PRIVACY\nAdmin State/Province: REDACTED FOR PRIVACY\nAdmin Postal Code: REDACTED FOR PRIVACY\nAdmin Country: REDACTED FOR PRIVACY\nAdmin Phone: REDACTED FOR PRIVACY\nAdmin Phone Ext: REDACTED FOR PRIVACY\nAdmin Fax: REDACTED FOR PRIVACY\nAdmin Fax Ext: REDACTED FOR PRIVACY\nAdmin Email: Please contact the Registrar listed above"
+			},
+			"technicalContact": {
+				"name": "REDACTED FOR PRIVACY",
+				"organization": "REDACTED FOR PRIVACY",
+				"street1": "REDACTED FOR PRIVACY",
+				"city": "REDACTED FOR PRIVACY",
+				"state": "REDACTED FOR PRIVACY",
+				"postalCode": "REDACTED FOR PRIVACY",
+				"country": "REDACTED FOR PRIVACY",
+				"telephone": "",
+				"telephoneExt": "",
+				"fax": "",
+				"faxExt": "",
+				"rawText": "Tech Name: REDACTED FOR PRIVACY\nTech Organization: REDACTED FOR PRIVACY\nTech Street: REDACTED FOR PRIVACY\nTech Street: REDACTED FOR PRIVACY\nTech Street: REDACTED FOR PRIVACY\nTech City: REDACTED FOR PRIVACY\nTech State/Province: REDACTED FOR PRIVACY\nTech Postal Code: REDACTED FOR PRIVACY\nTech Country: REDACTED FOR PRIVACY\nTech Phone: REDACTED FOR PRIVACY\nTech Phone Ext: REDACTED FOR PRIVACY\nTech Fax: REDACTED FOR PRIVACY\nTech Fax Ext: REDACTED FOR PRIVACY\nTech Email: Please contact the Registrar listed above"
+			},
+			"domainName": "mariamparvez.in",
+			"nameServers": {
+				"rawText": "ns44.domaincontrol.com\nns43.domaincontrol.com\n",
+				"hostNames": [
+					"ns44.domaincontrol.com",
+					"ns43.domaincontrol.com"
+				],
+				"ips": []
+			},
+			"status": "clientRenewProhibited clientTransferProhibited clientDeleteProhibited clientUpdateProhibited",
+			"rawText": "Domain Name: mariamparvez.in\nRegistry Domain ID: D3327D1C01B1E4101BFA9EC35184A1251-IN\nRegistrar WHOIS Server:\nRegistrar URL: www.godaddy.com\nUpdated Date: 2023-09-07T21:23:26Z\nCreation Date: 2023-09-02T21:23:24Z\nRegistry Expiry Date: 2033-09-02T21:23:24Z\nRegistrar: GoDaddy.com, LLC\nRegistrar IANA ID: 146\nRegistrar Abuse Contact Email:\nRegistrar Abuse Contact Phone:\nDomain Status: clientRenewProhibited http://www.icann.org/epp#clientRenewProhibited\nDomain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited\nDomain Status: clientDeleteProhibited http://www.icann.org/epp#clientDeleteProhibited\nDomain Status: clientUpdateProhibited http://www.icann.org/epp#clientUpdateProhibited\nRegistry Registrant ID: REDACTED FOR PRIVACY\nRegistrant Name: REDACTED FOR PRIVACY\nRegistrant Organization: Personal Website\nRegistrant Street: REDACTED FOR PRIVACY\nRegistrant Street: REDACTED FOR PRIVACY\nRegistrant Street: REDACTED FOR PRIVACY\nRegistrant City: REDACTED FOR PRIVACY\nRegistrant State/Province: Tamil Nadu\nRegistrant Postal Code: REDACTED FOR PRIVACY\nRegistrant Country: IN\nRegistrant Phone: REDACTED FOR PRIVACY\nRegistrant Phone Ext: REDACTED FOR PRIVACY\nRegistrant Fax: REDACTED FOR PRIVACY\nRegistrant Fax Ext: REDACTED FOR PRIVACY\nRegistrant Email: Please contact the Registrar listed above\nRegistry Admin ID: REDACTED FOR PRIVACY\nAdmin Name: REDACTED FOR PRIVACY\nAdmin Organization: REDACTED FOR PRIVACY\nAdmin Street: REDACTED FOR PRIVACY\nAdmin Street: REDACTED FOR PRIVACY\nAdmin Street: REDACTED FOR PRIVACY\nAdmin City: REDACTED FOR PRIVACY\nAdmin State/Province: REDACTED FOR PRIVACY\nAdmin Postal Code: REDACTED FOR PRIVACY\nAdmin Country: REDACTED FOR PRIVACY\nAdmin Phone: REDACTED FOR PRIVACY\nAdmin Phone Ext: REDACTED FOR PRIVACY\nAdmin Fax: REDACTED FOR PRIVACY\nAdmin Fax Ext: REDACTED FOR PRIVACY\nAdmin Email: Please contact the Registrar listed above\nRegistry Tech ID: REDACTED FOR PRIVACY\nTech Name: REDACTED FOR PRIVACY\nTech Organization: REDACTED FOR PRIVACY\nTech Street: REDACTED FOR PRIVACY\nTech Street: REDACTED FOR PRIVACY\nTech Street: REDACTED FOR PRIVACY\nTech City: REDACTED FOR PRIVACY\nTech State/Province: REDACTED FOR PRIVACY\nTech Postal Code: REDACTED FOR PRIVACY\nTech Country: REDACTED FOR PRIVACY\nTech Phone: REDACTED FOR PRIVACY\nTech Phone Ext: REDACTED FOR PRIVACY\nTech Fax: REDACTED FOR PRIVACY\nTech Fax Ext: REDACTED FOR PRIVACY\nTech Email: Please contact the Registrar listed above\nName Server: ns44.domaincontrol.com\nName Server: ns43.domaincontrol.com\nDNSSEC: unsigned\nURL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/\n>>> Last update of WHOIS database: 2025-02-26T22:24:10Z <<<\n\nFor more information on Whois status codes, please visit https://icann.org/epp\n\nAccess to .IN WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the .IN registry database. The data in this record is provided by .IN Registry for informational purposes only ,and .IN does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator or a Registrar, or NIXI except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. .IN reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.",
+			"parseCode": 3579,
+			"header": "",
+			"strippedText": "Domain Name: mariamparvez.in\nRegistrar URL: www.godaddy.com\nUpdated Date: 2023-09-07T21:23:26Z\nCreation Date: 2023-09-02T21:23:24Z\nRegistry Expiry Date: 2033-09-02T21:23:24Z\nRegistrar: GoDaddy.com, LLC\nRegistrar IANA ID: 146\nDomain Status: clientRenewProhibited http://www.icann.org/epp#clientRenewProhibited\nDomain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited\nDomain Status: clientDeleteProhibited http://www.icann.org/epp#clientDeleteProhibited\nDomain Status: clientUpdateProhibited http://www.icann.org/epp#clientUpdateProhibited\nRegistrant Name: REDACTED FOR PRIVACY\nRegistrant Organization: Personal Website\nRegistrant Street: REDACTED FOR PRIVACY\nRegistrant Street: REDACTED FOR PRIVACY\nRegistrant Street: REDACTED FOR PRIVACY\nRegistrant City: REDACTED FOR PRIVACY\nRegistrant State/Province: Tamil Nadu\nRegistrant Postal Code: REDACTED FOR PRIVACY\nRegistrant Country: IN\nRegistrant Phone: REDACTED FOR PRIVACY\nRegistrant Phone Ext: REDACTED FOR PRIVACY\nRegistrant Fax: REDACTED FOR PRIVACY\nRegistrant Fax Ext: REDACTED FOR PRIVACY\nRegistrant Email: Please contact the Registrar listed above\nAdmin Name: REDACTED FOR PRIVACY\nAdmin Organization: REDACTED FOR PRIVACY\nAdmin Street: REDACTED FOR PRIVACY\nAdmin Street: REDACTED FOR PRIVACY\nAdmin Street: REDACTED FOR PRIVACY\nAdmin City: REDACTED FOR PRIVACY\nAdmin State/Province: REDACTED FOR PRIVACY\nAdmin Postal Code: REDACTED FOR PRIVACY\nAdmin Country: REDACTED FOR PRIVACY\nAdmin Phone: REDACTED FOR PRIVACY\nAdmin Phone Ext: REDACTED FOR PRIVACY\nAdmin Fax: REDACTED FOR PRIVACY\nAdmin Fax Ext: REDACTED FOR PRIVACY\nAdmin Email: Please contact the Registrar listed above\nTech Name: REDACTED FOR PRIVACY\nTech Organization: REDACTED FOR PRIVACY\nTech Street: REDACTED FOR PRIVACY\nTech Street: REDACTED FOR PRIVACY\nTech Street: REDACTED FOR PRIVACY\nTech City: REDACTED FOR PRIVACY\nTech State/Province: REDACTED FOR PRIVACY\nTech Postal Code: REDACTED FOR PRIVACY\nTech Country: REDACTED FOR PRIVACY\nTech Phone: REDACTED FOR PRIVACY\nTech Phone Ext: REDACTED FOR PRIVACY\nTech Fax: REDACTED FOR PRIVACY\nTech Fax Ext: REDACTED FOR PRIVACY\nTech Email: Please contact the Registrar listed above\nName Server: ns44.domaincontrol.com\nName Server: ns43.domaincontrol.com\n",
+			"footer": "",
+			"audit": {
+				"createdDate": "2025-02-26 22:24:10 UTC",
+				"updatedDate": "2025-02-26 22:24:10 UTC"
+			},
+			"registrarName": "GoDaddy.com, LLC",
+			"registrarIANAID": "146",
+			"createdDateNormalized": "2023-09-02 21:23:24 UTC",
+			"updatedDateNormalized": "2023-09-07 21:23:26 UTC",
+			"expiresDateNormalized": "2033-09-02 21:23:24 UTC",
+			"customField3Name": "RegistrarURL",
+			"customField3Value": "www.godaddy.com",
+			"whoisServer": "whois.godaddy.com"
+		},
+		"domainAvailability": "UNAVAILABLE",
+		"domainNameExt": ".in",
+		"estimatedDomainAge": 543
+	}
+}
