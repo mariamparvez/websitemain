@@ -45,12 +45,12 @@ export function Blogs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="block relative rounded-3xl overflow-hidden mb-8 border-2 border-gray-200 hover:scale-105 transition-all cursor-pointer"
+          className="block relative rounded-3xl overflow-hidden mb-8 border-2 border-gray-200 hover:scale-[1.02] transition-all cursor-pointer"
         >
           <img
             src={blogHeroImg}
             alt="Why Color is Important in Graphic Design and Fashion Design"
-            className="w-full h-auto"
+            className="w-full h-auto object-cover"
           />
         </motion.a>
 

@@ -59,36 +59,30 @@ export function WhyChooseMe() {
               </a>.
             </p>
 
-            {/* Quick Stats */}
-            <div className="flex flex-wrap gap-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center">
+            {/* Quick Stats - All in One Row */}
+            <div className="grid grid-cols-3 gap-3 max-w-xl">
+              <div className="flex flex-col items-start">
+                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center mb-2">
                   <Award className="w-5 h-5 text-[#3d38f5]" />
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-900">7.6+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
-                </div>
+                <div className="text-xl font-bold text-gray-900">7.6+</div>
+                <div className="text-xs text-gray-600">Years Experience</div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center">
+              <div className="flex flex-col items-start">
+                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center mb-2">
                   <Code className="w-5 h-5 text-[#3d38f5]" />
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-900">Lead</div>
-                  <div className="text-sm text-gray-600">Developer Designer</div>
-                </div>
+                <div className="text-xl font-bold text-gray-900">Lead</div>
+                <div className="text-xs text-gray-600">Developer Designer</div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center">
+              <div className="flex flex-col items-start">
+                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center mb-2">
                   <Users className="w-5 h-5 text-[#3d38f5]" />
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-900">Mentor</div>
-                  <div className="text-sm text-gray-600">Muxion Academy</div>
-                </div>
+                <div className="text-xl font-bold text-gray-900">Mentor</div>
+                <div className="text-xs text-gray-600">Muxion Academy</div>
               </div>
             </div>
           </motion.div>

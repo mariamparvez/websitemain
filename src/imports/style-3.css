@@ -1,0 +1,651 @@
+/*General Start*/
+:root {
+  /*Success*/
+  --success: #23ce6b;
+  /*Error*/
+  --error: #ba1200;
+  /*Warnings*/
+  --warning: #f3a712;
+
+  /*Primary*/
+  --primary-dark: #092177;
+  --primary: #496ce8;
+  --primary-100: #5779f5;
+  --primary-200: #90a8ff;
+
+  /*Other Colors*/
+
+  /*Neutrals*/
+  --white: #fdfdfd;
+  --white-transperant: rgb(253, 253, 253, .4);
+  --grey-100: #fafafa;
+  --grey-200: #d8d8d8;
+  --grey-300: #969696;
+  --grey-400: #757575;
+  --grey-500: #565656;
+  --black: #202020;
+  --black-transparent: rgb(7, 7, 10, .4);
+
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(assets/libraries/font/font.woff2) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(assets/libraries/font/font-2.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+.btn {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn:hover {
+  background-color: var(--primary-100);
+  color: var(--white);
+  outline: 2px solid var(--primary-200);
+}
+
+.hero-section, .art-call-to-action, .connect-wrap, .testimonials {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+.graphic-design-wrap, .case-study-wrap ul li, .blogs, .lets-connect-wrap, .socials{
+  margin: 4rem;
+}
+.copyright {
+  border-bottom: 1px solid var(--grey-200);
+  margin-bottom: .6rem;
+}
+@media only screen and (max-width: 1000px) {
+  .graphic-design-wrap, .case-study-wrap ul li, .blogs, .lets-connect-wrap, .socials{
+    margin: 1rem;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .btn{
+    font-size: 12px;
+  }
+  .copyright {
+    font-size: 14px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--grey-200);
+  }
+  .seperator {
+    display: none;
+  }
+}
+/*General End*/
+
+
+/*Nav Start*/
+#navbar-logo {
+  width: 120px;
+  height: auto;
+}
+/*Nav End*/
+
+/*Hero Section Start*/
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  background-image: url(assets/images/bg.jpg);
+}
+
+.latest {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--grey-400);
+}
+
+.video-about-me img{
+  width: 5rem;
+  height: auto;
+  transition: 1s;
+}
+
+.video-about-me h2 {
+  padding-left: 1rem;
+}
+
+.video-about-me:hover img {
+  box-shadow:  1px 2px 6px 4px var(--primary-200);
+  border-radius: 100%;
+}
+
+.changing-words, .latest{
+  width: 86%;
+}
+
+.change:after {
+  font-weight: 240;
+  content: "";
+  animation: changeword 12s linear infinite;
+}
+
+@keyframes changeword {
+  0% {content: "UI UX Design";}
+  25% {content: "Web Design";}
+  50% {content: "Graphic Design";}
+  75% {content: "UI/UX Design Coaching"; }
+  90% {content: "Art";}
+  100% {content: "";}
+}
+
+@media only screen and (max-width: 1000px) {
+  .video-about-me img {
+    width: 3rem;
+  }
+  .video-about-me h2 {
+    padding-left: .4rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .video-about-me {
+    margin-top: 1rem;
+  }
+}
+/*Hero Section End*/
+
+/*Service Cards Start*/
+.service-cards-wrap {
+  background-color: var(--white);
+  width: 100%;
+  height: 80vh;
+  padding: 0 1rem;
+} 
+
+.service-cards {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.service-cards .service-card {
+  display: inline-block;
+  background: var(--white);
+  border: 1px solid var(--primary);
+  width: 16rem;
+  height: 18rem;
+  white-space: normal;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 1rem 4rem 1rem;
+  margin: 1rem;
+  transition: all 0.5s;
+}
+
+.service-card:hover {
+  border: 2px solid var(--primary);
+  box-shadow: 0 .4rem 1rem rgba(0,0,0,.175);
+}
+
+.service-card:hover .service-icon-wrap {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.service-icon-wrap {
+  border: 1px solid var(--primary);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: 50%;
+  transform: rotate(-35deg) translateY(55px);
+  transition: all ease 0.5s;
+}
+
+.fa-solid{
+  padding-top: 2rem;
+  color: var(--primary);
+  font-size: 2em;
+}
+
+.service-card:hover .service-icon-wrap .fa-solid {
+  color: var(--white);
+}
+
+@media only screen and (max-width: 1030px) {
+  .service-cards-wrap {
+    height: 42vh;
+  } 
+}
+
+@media only screen and (max-width: 800px) {
+  .service-cards-wrap {
+    height: 60vh;
+  } 
+}
+
+@media only screen and (max-width: 400px) {
+  .service-cards-wrap {
+    height: 50vh;
+  } 
+}
+/*Service Cards End*/
+
+/*Case Studies Start*/
+.case-studies {
+  width: 100%;
+  height: 300vh; /* gives scroll space */
+  position: relative;
+
+  overflow: visible; /* IMPORTANT: remove internal scroll */
+}
+
+.case-studies-main-title {
+  position: sticky;
+  top: 0;
+
+  height: 100vh; /* FULL SCREEN CENTER */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1;
+  pointer-events: none; /* allows clicking cards */
+}
+.case-studies-main-title h1 {
+  width: 60%;
+  font-size: 6em;
+  font-weight: 800;
+}
+
+.case-study-wrap {
+  margin-top: -100vh; /* makes cards flow OVER title */
+  position: relative;
+  z-index: 2;
+}
+
+.case-study-wrap ul {
+  list-style: outside none none;
+  padding: 1rem 0;
+  margin-bottom: 10rem;
+}
+
+.case-study-wrap ul li {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  display: block;
+  height: 20rem;
+  width: 46%;
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.case-study-wrap ul li:after {
+  border-radius: 1rem;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all 0.3s;
+}
+
+.case-study-wrap ul li:nth-child(1) {
+  background-image: url('assets/images/case-studies/blue.png');
+}
+
+.case-study-wrap ul li:nth-child(2) {
+  background-image: url('assets/images/case-studies/orange.png');
+}
+
+.case-study-wrap ul li:nth-child(3) {
+  background-image: url('assets/images/case-studies/pink.png');
+}
+
+.case-study-wrap ul li .initial-content {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.case-study-wrap ul li .initial-content h2 {
+  width: 100%;
+  color: var(--white);
+}
+
+.case-study-wrap ul li .second-content {
+  display: none;
+  font-size: 16px;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease 0s;
+  width: 65%;
+  z-index: 1;
+}
+
+.case-study-wrap ul li .second-content p {
+  color: var(--white);
+  margin: 0px;
+}
+
+.case-study-wrap ul li:hover {
+  box-shadow: 0 0 0 25px rgba(0, 0, 0, 0.2) inset;
+}
+
+.case-study-wrap ul li:hover:after {
+  background-color: rgba(22, 22, 22, 0.2);
+}
+
+.case-study-wrap ul li:hover .initial-content {
+  display: none;
+}
+
+.case-study-wrap ul li:hover .second-content {
+  display: block;
+}
+
+.second-content-btn {
+  background: none;
+  outline: none;
+  border: none;
+  color: var(--white);
+  transition: 2s;
+}
+.second-content-btn:hover {
+  text-decoration: underline;
+}
+
+.fa-arrow-right {
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+@media only screen and (max-width: 1030px) {
+  .case-studies {
+    height: 60vh;
+  }
+  .case-studies-main-title h1 {
+    font-size: 2em;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .case-study {
+    width: 100%;
+  }
+  .case-study-wrap ul li {
+    width: 86%;
+  }
+  .case-studies-main-title h1 {
+    font-size: 1.6em;
+    font-weight: 800;
+  }
+}
+/*Case Studies End*/
+
+/*Art Call to Action Start*/
+.art-call-to-action {
+  width: 100%;
+  height: fit-content;
+  padding: 4rem;
+  background-image: url(assets/images/art-call-to-action/art-bg.jpg);
+  text-decoration: none;
+  color: var(--white);
+}
+
+.art-cta-btn a, .art-cta-content a{
+  color: var(--white);
+}
+
+.art-cta-btn {
+  width: 10rem;
+}
+
+.art-cta-content a {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 1030px) {
+  .art-call-to-action {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .art-cta-btn {
+    margin-top: 1rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .art-cta-btn {
+    width: 100%;
+  }
+}
+/*Art Call to Action End*/
+
+/*Socials Start*/
+.copyright a {
+  color: var(--black);
+}
+/*Socials End*/
+
+/*Carrousel Start*/
+.testimonials {
+  height: 100%;
+  background-image: url(assets/images/testimonials/BG.jpg);
+  padding: 4rem;
+}
+.carousel-item-content p {
+  width: 60%;
+}
+h6 {
+  font-style: italic;
+  margin: 0 0 2rem 4rem;
+  font-weight: 400;
+}
+@media only screen and (max-width: 1030px) {
+  .testimonials {
+    padding: 2rem;
+  }
+  .carousel-item-content p {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .carousel-item-content p {
+    width: 74%;
+  }
+}
+/*Carrousel End*/
+
+/*Graphic Design Wrap Start*/
+.gd-card {
+  width: 16rem;
+  height: auto;
+  margin: 1rem 0;
+}
+.gd-card img {
+  width: 100%;
+  height: fit-content;
+  border-radius: .4rem;
+  background-color: var(--primary);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gd-card:hover img {
+  background-color: rgba(210, 0, 0, 0.9);
+}
+
+@media only screen and (max-width: 1030px) {
+  .gd-cards-wrap {
+    width: 100%;
+    overflow: scroll;
+  }
+ .gd-cards {
+  white-space: nowrap;
+  flex-wrap: nowrap !important;
+ 
+  width: fit-content;
+ }
+ .gd-card {
+  width: 12rem;
+  height: 12rem !important;
+  padding-right: 1rem;
+ }
+}
+/*Graphic Design Wrap End*/
+
+/*Blogs Start*/
+.primary-blog {
+  background-image: url(assets/images/blogs/1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.blog-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.fst-italic {
+  font-weight: 600;
+}
+/*Blogs End*/
+
+/*Connect Wrap Start*/
+.connect-wrap {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 4rem 0;
+  background-image: url(assets/images/connect/connect-main.jpg);
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 10s linear infinite;
+}
+
+.marquee h1 {
+  display: inline-block;
+  font-size: 12em;
+  font-weight: 800;
+  color: var(--white);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+/*Connect Wrap End*/
+
+/*Let's Connect Wrap Start*/
+.cam-one, .cam-two {
+  padding: 1rem;
+}
+
+.cam-one {
+  border-right: .4px var(--grey-200) solid;
+}
+.cam-one-social i, .cam-one-btn {
+  color: var(--primary);
+}
+.cam-one-social:hover i, .cam-one-btn:hover {
+  color: var(--white);
+}
+.cam-one-social, .cam-one-btn {
+  background-color: var(--white);
+  padding: .4rem 1rem;
+  margin: .4rem;
+  outline: none;
+  border: var(--primary) 1px solid;
+  transition: 1s;
+}
+.cam-one h3, .cam-two h3, .cam-two p {
+  margin-left: .4rem;
+}
+.cam-one-social:hover , .cam-one-btn:hover {
+  background-color: var(--primary);
+ 
+}
+.cam-one-social:hover a, .cam-one-btn:hover a {
+  color: var(--white);
+}
+
+.cam-one-stay-connected, .cam-two-email {
+  margin-top: 4rem;
+}
+/*Let's Connect Wrap End*/
+
+/*Let's Connect Form Start*/
+.connect-form {
+  padding: 4rem;
+  background-color: var(--grey-100);
+}
+.connect-form h2 {
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+@media only screen and (max-width: 1030px) {
+  .lets-connect-wrap, .connect-about-me {
+  flex-direction: column;
+ }
+ .cam-one {
+  border-right: none;
+  border-bottom: .4px var(--grey-200) solid;
+}
+.cam-one-stay-connected, .cam-two-email {
+  margin-top: 2rem;
+}
+.connect-form {
+  padding: 2rem;
+}
+}
+/*Let's Connect Form End*/
+
