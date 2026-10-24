@@ -52,7 +52,7 @@ export function WhyChooseMe() {
             </h2>
             
             <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed mb-6">
-              I'm a UI/UX designer and front-end developer with{" "}
+              I'm a UI/UX designer and developer with{" "}
               <span className="text-cyan-300 font-semibold">7.6+ years of experience</span>{" "}
               creating high-retention digital products. As a{" "}
               <span className="text-cyan-300 font-semibold">Lead Developer Designer at Prodapt</span>, 
