@@ -52,7 +52,7 @@ export function Services() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="services" className="pt-20 relative overflow-hidden bg-gradient-to-br from-[#0a1538] to-[#08122e]">
+    <section ref={sectionRef} id="services" className="pt-20 relative overflow-hidden bg-gradient-to-br from-[#1a2951] to-[#0f1b3d]">
       {/* Parallax Background Image */}
       <motion.div 
         className="absolute inset-0 pointer-events-none"
@@ -67,11 +67,11 @@ export function Services() {
             alt="Background" 
             className="w-full h-full object-cover"
             style={{
-              opacity: 0.5
+              opacity: 0.3
             }}
           />
-          {/* Dark overlay to blend with theme */}
-          <div className="absolute inset-0 bg-[rgba(2,8,24,0.40)]" />
+          {/* Light overlay to blend with theme */}
+          <div className="absolute inset-0 bg-[rgba(26,41,81,0.70)]" />
         </motion.div>
       </motion.div>
 
@@ -113,7 +113,7 @@ export function Services() {
                 whileHover={{ y: -10 }}
                 className="group relative"
               >
-                <div className="relative bg-gradient-to-br from-[#020815]/90 to-[#030d20]/90 backdrop-blur-sm border border-blue-500/20 rounded-3xl p-8 lg:p-10 h-full overflow-hidden transition-all duration-300 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col">
+                <div className="relative bg-gradient-to-br from-[#1a2d5a]/80 to-[#152347]/80 backdrop-blur-sm border border-blue-500/20 rounded-3xl p-8 lg:p-10 h-full overflow-hidden transition-all duration-300 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col">
                   {/* Gradient Background on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 to-cyan-600/0 group-hover:from-blue-600/10 group-hover:to-cyan-600/10 transition-all duration-300" />
                   

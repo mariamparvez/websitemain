@@ -79,7 +79,7 @@ export function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative py-8 md:py-32 overflow-hidden bg-gradient-to-br from-[#08122e] to-[#0a1538]">
+    <section id="testimonials" className="relative py-8 md:py-32 overflow-hidden bg-gradient-to-br from-[#0f1b3d] to-[#1a2951]">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl" />
