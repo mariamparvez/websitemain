@@ -78,7 +78,9 @@ export function InfiniteMarquee() {
               className="group flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all whitespace-nowrap"
             >
               {platform.iconType === "muxion" ? (
-                <img src={muxionIcon} alt="MUXION" className="w-6 h-6" />
+                <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                  <img src={muxionIcon} alt="MUXION" className="w-full h-full object-contain" />
+                </div>
               ) : platform.iconType === "linkedin" ? (
                 <Linkedin className="w-6 h-6 text-white" />
               ) : platform.iconType === "youtube" ? (
@@ -117,7 +119,9 @@ export function InfiniteMarquee() {
               className="group flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all whitespace-nowrap"
             >
               {platform.iconType === "muxion" ? (
-                <img src={muxionIcon} alt="MUXION" className="w-6 h-6" />
+                <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                  <img src={muxionIcon} alt="MUXION" className="w-full h-full object-contain" />
+                </div>
               ) : platform.iconType === "linkedin" ? (
                 <Linkedin className="w-6 h-6 text-white" />
               ) : platform.iconType === "youtube" ? (
