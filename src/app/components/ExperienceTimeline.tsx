@@ -1,6 +1,7 @@
 import { motion, useMotionValue, useTransform, PanInfo } from "motion/react";
 import { useState } from "react";
 import { ParticlesBackground } from "./ParticlesBackground";
+import { SwipeGuideAnimation } from "./SwipeGuideAnimation";
 
 const experiences = [
   {
@@ -124,6 +125,7 @@ export function ExperienceTimeline() {
 
         {/* Card Stack Container */}
         <div className="relative h-[400px] md:h-[350px]">
+          <SwipeGuideAnimation />
           {experiences.map((exp, index) => {
             const isActive = index === currentIndex;
             const offset = index - currentIndex;
