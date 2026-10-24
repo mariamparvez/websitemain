@@ -11,7 +11,7 @@ import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="relative bg-gradient-to-br from-[#050816] via-[#0a0e27] via-[#0f1942] to-[#1a1f3a] min-h-screen text-white overflow-x-hidden">
+    <div className="relative bg-gradient-to-br from-[#050816] via-[#0a0e27] via-[#0f1942] to-[#1a1f3a] min-h-screen text-white overflow-x-hidden" style={{ position: 'relative' }}>
       <Navigation />
       <Hero />
       <Services />
