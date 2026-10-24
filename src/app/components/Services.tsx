@@ -52,7 +52,7 @@ export function Services() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="services" className="pt-20 relative overflow-hidden bg-gradient-to-br from-[#1a2951] to-[#0f1b3d]">
+    <section ref={sectionRef} id="services" className="pt-20 relative overflow-hidden bg-gradient-to-br from-[#050d1f] to-[#0a1229]">
       {/* Parallax Background Image */}
       <motion.div 
         className="absolute inset-0 pointer-events-none"
@@ -67,11 +67,11 @@ export function Services() {
             alt="Background" 
             className="w-full h-full object-cover"
             style={{
-              opacity: 0.3
+              opacity: 0.4
             }}
           />
-          {/* Light overlay to blend with theme */}
-          <div className="absolute inset-0 bg-[rgba(26,41,81,0.70)]" />
+          {/* Dark overlay to blend with theme */}
+          <div className="absolute inset-0 bg-[rgba(5,13,31,0.75)]" />
         </motion.div>
       </motion.div>
 
