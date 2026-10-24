@@ -8,44 +8,50 @@ const certifications = [
   {
     title: "Adobe Premiere Pro",
     organization: "Adobe",
-    year: "2024",
     icon: "🎬",
-    pdfLink: "/src/imports/adobe-premiere-pro.pdf"
+    pdfLink: "/src/imports/adobe-premiere-pro-1.pdf"
+  },
+  {
+    title: "Coaching and Developing Employees",
+    organization: "Professional Development",
+    icon: "👥",
+    pdfLink: "/src/imports/coaching-and-developing-employees-1.pdf"
   },
   {
     title: "Code Asylums",
     organization: "Code Asylums",
-    year: "2023",
     icon: "💻",
-    pdfLink: "/src/imports/code-asylums.pdf"
+    pdfLink: "/src/imports/code-asylums-1.pdf"
   },
   {
     title: "Complete Web Development",
     organization: "Online Learning",
-    year: "2023",
     icon: "🌐",
-    pdfLink: "/src/imports/complete-web-dev.pdf"
+    pdfLink: "/src/imports/complete-web-dev-1.pdf"
+  },
+  {
+    title: "Essential New Skills for Project Management",
+    organization: "Professional Institute",
+    icon: "📊",
+    pdfLink: "/src/imports/essential-new-skills-for-project-management-1.pdf"
   },
   {
     title: "Future Learn",
     organization: "FutureLearn",
-    year: "2023",
     icon: "📚",
-    pdfLink: "/src/imports/future-learn.pdf"
+    pdfLink: "/src/imports/future-learn-1.pdf"
   },
   {
-    title: "Project Management",
+    title: "Project Management Assessment",
     organization: "Professional Institute",
-    year: "2024",
-    icon: "📊",
-    pdfLink: "/src/imports/project-management-assessment.pdf"
+    icon: "📋",
+    pdfLink: "/src/imports/project-management-assessment-1.pdf"
   },
   {
     title: "Video Production",
     organization: "Creative Academy",
-    year: "2024",
     icon: "🎥",
-    pdfLink: "/src/imports/video-production.pdf"
+    pdfLink: "/src/imports/video-production-1.pdf"
   }
 ];
 

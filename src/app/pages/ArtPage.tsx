@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router";
+import { useEffect } from "react";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { SEO } from "../components/SEO";
@@ -12,6 +13,9 @@ import art5 from "figma:asset/c80864e580e821e9b0b3afb94c7ccf6d20b40783.png";
 import art6 from "figma:asset/774675c43fe003f5321b84fba521c3d9d42c3114.png";
 
 export function ArtPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <SEO

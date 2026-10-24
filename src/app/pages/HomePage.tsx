@@ -4,9 +4,11 @@ import { WhyChooseMe } from "../components/WhyChooseMe";
 import { Services } from "../components/Services";
 import { CaseStudies } from "../components/CaseStudies";
 import { Certifications } from "../components/Certifications";
+import { ExperienceTimeline } from "../components/ExperienceTimeline";
 import { ArtCallout } from "../components/ArtCallout";
 import { Designs } from "../components/Designs";
 import { Testimonials } from "../components/Testimonials";
+import { InfiniteMarquee } from "../components/InfiniteMarquee";
 import { Blogs } from "../components/Blogs";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
@@ -23,9 +25,11 @@ export function HomePage() {
         <Services />
         <CaseStudies />
         <Certifications />
+        <ExperienceTimeline />
         <ArtCallout />
         <Designs />
         <Testimonials />
+        <InfiniteMarquee />
         <Blogs />
         <Contact />
         <Footer />
