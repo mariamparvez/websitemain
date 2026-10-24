@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
+import openHandIcon from "../../imports/openhand.svg";
 
 const SWIPE_GUIDE_KEY = "hasSeenSwipeGuide";
 
@@ -50,41 +51,15 @@ export function SwipeGuideAnimation() {
               ease: "easeInOut"
             }}
           >
-            {/* Mickey Mouse Style Glove Hand */}
-            <svg
-              width="80"
-              height="80"
-              viewBox="0 0 80 80"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            {/* Open Hand Icon */}
+            <img
+              src={openHandIcon}
+              alt="Swipe hand"
+              className="w-20 h-20"
               style={{
                 filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3))"
               }}
-            >
-              {/* White Glove */}
-              <g>
-                {/* Palm */}
-                <ellipse cx="40" cy="50" rx="18" ry="22" fill="white" stroke="#333" strokeWidth="2"/>
-
-                {/* Thumb */}
-                <ellipse cx="25" cy="48" rx="7" ry="12" fill="white" stroke="#333" strokeWidth="2" transform="rotate(-25 25 48)"/>
-
-                {/* Index Finger */}
-                <ellipse cx="35" cy="28" rx="5" ry="14" fill="white" stroke="#333" strokeWidth="2"/>
-
-                {/* Middle Finger */}
-                <ellipse cx="45" cy="25" rx="5" ry="16" fill="white" stroke="#333" strokeWidth="2"/>
-
-                {/* Ring Finger */}
-                <ellipse cx="52" cy="28" rx="5" ry="13" fill="white" stroke="#333" strokeWidth="2"/>
-
-                {/* Pinky */}
-                <ellipse cx="58" cy="35" rx="4" ry="10" fill="white" stroke="#333" strokeWidth="2" transform="rotate(15 58 35)"/>
-
-                {/* Wrist Cuff */}
-                <rect x="28" y="68" width="24" height="8" rx="2" fill="#333"/>
-              </g>
-            </svg>
+            />
 
             {/* Swipe Direction Arrows */}
             <motion.div
