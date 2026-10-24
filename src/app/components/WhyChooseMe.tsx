@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { getYearsOfExperience } from "../utils/experience";
 import { Award, Code, Users } from "lucide-react";
 import profileImg from "figma:asset/b24ff9e4b7551f05e787bd06aa29bbbf89d44e92.png";
 import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png";
@@ -44,7 +45,7 @@ export function WhyChooseMe() {
 
             <p className="text-base md:text-lg text-[#d6d6d6] leading-relaxed text-justify">
               I'm a UI/UX designer and developer with{" "}
-              <span className="text-[#9a96ff] font-semibold">8+ years of experience</span>{" "}
+              <span className="text-[#9a96ff] font-semibold">{getYearsOfExperience()}+ years of experience</span>{" "}
               creating high-retention digital products. As a{" "}
               <span className="text-[#9a96ff] font-semibold">Lead Developer Designer at Prodapt</span>,
               I design intuitive, user-centered experiences that drive engagement and real impact,
@@ -68,7 +69,7 @@ export function WhyChooseMe() {
                 <div className="w-12 h-12 rounded-full bg-[#3d38f5] flex items-center justify-center mb-3 shadow-lg shadow-[#3d38f5]/30">
                   <Award className="w-6 h-6 text-[#fdfdfd]" />
                 </div>
-                <div className="text-2xl font-black text-[#fdfdfd]">8+</div>
+                <div className="text-2xl font-black text-[#fdfdfd]">{getYearsOfExperience()}+</div>
                 <div className="text-sm text-[#b8b8b8] font-medium">Years Experience</div>
               </motion.div>
 
