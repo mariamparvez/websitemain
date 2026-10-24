@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Award, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { CertificateModal } from "./CertificateModal";
-import { FloatingShapes } from "./FloatingShapes";
+import { ParticlesBackground } from "./ParticlesBackground";
 
 const certifications = [
   {
@@ -59,8 +59,8 @@ export function Certifications() {
   };
 
   return (
-    <section id="certifications" className="relative py-10 overflow-hidden bg-[#f8f9fa] border-t-2 border-gray-200">
-      <FloatingShapes density="heavy" />
+    <section id="certifications" className="relative py-10 overflow-hidden bg-white border-t-2 border-gray-200">
+      <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

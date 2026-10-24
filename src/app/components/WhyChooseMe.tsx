@@ -2,12 +2,12 @@ import { motion } from "motion/react";
 import { Award, Code, Users } from "lucide-react";
 import profileImg from "figma:asset/b24ff9e4b7551f05e787bd06aa29bbbf89d44e92.png";
 import bgPattern from "figma:asset/16623c4cb9c7d3e071ce4bb4704c43706f38551d.png";
-import { FloatingShapes } from "./FloatingShapes";
+import { ParticlesBackground } from "./ParticlesBackground";
 
 export function WhyChooseMe() {
   return (
     <section className="relative py-10 overflow-hidden bg-white border-t-2 border-gray-200" style={{ position: 'relative' }}>
-      <FloatingShapes density="light" />
+      <ParticlesBackground />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Image LEFT - Content RIGHT Layout */}

@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
 import { Mail, MapPin, Send } from "lucide-react";
-import { FloatingShapes } from "./FloatingShapes";
+import { ParticlesBackground } from "./ParticlesBackground";
 
 export function Contact() {
   return (
     <section id="contact" className="py-10 relative overflow-hidden bg-[#f8f9fa] border-t-2 border-gray-200">
-      <FloatingShapes density="medium" />
+      <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

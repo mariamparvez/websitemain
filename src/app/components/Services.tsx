@@ -3,7 +3,7 @@ import { Globe, Palette, Paintbrush, GraduationCap, ArrowRight } from "lucide-re
 import { useRef } from "react";
 import { Link } from "react-router";
 import parallaxBg from 'figma:asset/089d4811ef31488112e1cf08c729f30084a51a92.png';
-import { FloatingShapes } from "./FloatingShapes";
+import { ParticlesBackground } from "./ParticlesBackground";
 
 const services = [
   {
@@ -52,8 +52,8 @@ export function Services() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 1.2]);
 
   return (
-    <section ref={sectionRef} id="services" className="relative pt-10 pb-10 overflow-hidden bg-[#f8f9fa] border-t-2 border-gray-200" style={{ position: 'relative' }}>
-      <FloatingShapes density="medium" />
+    <section ref={sectionRef} id="services" className="relative pt-10 pb-10 overflow-hidden bg-white border-t-2 border-gray-200" style={{ position: 'relative' }}>
+      <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto mb-0 px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

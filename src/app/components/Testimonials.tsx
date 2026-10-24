@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FloatingShapes } from "./FloatingShapes";
+import { ParticlesBackground } from "./ParticlesBackground";
 
 // Import testimonial images
 import rajeevImg from "figma:asset/c36a1a4faf91b7365b04df6f3a9bed203a782d09.png";
@@ -81,7 +81,7 @@ export function Testimonials() {
 
   return (
     <section id="testimonials" className="relative py-10 overflow-hidden bg-[#f8f9fa] border-t-2 border-gray-200">
-      <FloatingShapes density="medium" />
+      <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-6 md:mb-16">

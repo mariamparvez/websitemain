@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import iceCreamImg from 'figma:asset/8b3157e759eca02cd2111025c32e6995424dbe84.png';
-import { FloatingShapes } from './FloatingShapes';
+import { ParticlesBackground } from './ParticlesBackground';
 
 const caseStudies = [
   {
@@ -26,8 +26,8 @@ const caseStudies = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="relative py-10 overflow-hidden bg-white border-t-2 border-gray-200">
-      <FloatingShapes density="light" />
+    <section id="case-studies" className="relative py-10 overflow-hidden bg-gray-50 border-t-2 border-gray-200">
+      <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-8"

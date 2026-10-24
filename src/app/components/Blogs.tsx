@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { FloatingShapes } from "./FloatingShapes";
+import { ParticlesBackground } from "./ParticlesBackground";
+import bgImage from "../../imports/1.jpg";
 
 // Import blog images
 import blog1Img from "figma:asset/0ba5d1f06fbee29f386abda5688335c6d343056d.png";
@@ -9,8 +10,18 @@ import blog3Img from "figma:asset/5310a1d936833a9c8391005bd7219b7b7b79a6d7.png";
 
 export function Blogs() {
   return (
-    <section id="blogs" className="py-10 relative overflow-hidden bg-white border-t-2 border-gray-200">
-      <FloatingShapes density="light" />
+    <section
+      id="blogs"
+      className="py-10 relative overflow-hidden bg-white border-t-2 border-gray-200"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div className="absolute inset-0 bg-white/90" />
+      <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowDown } from "lucide-react";
-import { FloatingShapes } from "./FloatingShapes";
+import { ParticlesBackground } from "./ParticlesBackground";
+import heroBg from "../../imports/1.jpg";
 
 const roles = [
   "Web Design",
@@ -24,9 +25,17 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-[50vh] sm:min-h-[65vh] lg:min-h-[75vh] flex items-center justify-center relative overflow-hidden pt-28 pb-10 px-4 bg-white"
+      className="min-h-[50vh] sm:min-h-[65vh] lg:min-h-[75vh] flex items-center justify-center relative overflow-hidden pt-28 pb-10 px-4"
+      style={{
+        backgroundImage: `url(${heroBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
-      <FloatingShapes density="heavy" />
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-white/90" />
+      <ParticlesBackground />
       <div className="relative z-10 w-full max-w-7xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
