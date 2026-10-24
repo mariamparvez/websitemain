@@ -42,7 +42,7 @@ export function WhyChooseMe() {
               Why Choose Me?
             </h2>
 
-            <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-700 leading-relaxed text-justify">
               I'm a UI/UX designer and developer with{" "}
               <span className="text-[#3d38f5] font-semibold">7.6+ years of experience</span>{" "}
               creating high-retention digital products. As a{" "}
@@ -60,30 +60,39 @@ export function WhyChooseMe() {
             </p>
 
             {/* Quick Stats - All in One Row */}
-            <div className="grid grid-cols-3 gap-3 max-w-xl">
-              <div className="flex flex-col items-start">
-                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center mb-2">
-                  <Award className="w-5 h-5 text-[#3d38f5]" />
+            <div className="grid grid-cols-3 gap-6 max-w-2xl">
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="flex flex-col items-center text-center p-4 rounded-xl bg-gradient-to-br from-[#3d38f5]/5 to-[#6b63f7]/5 border border-[#3d38f5]/10"
+              >
+                <div className="w-12 h-12 rounded-full bg-[#3d38f5] flex items-center justify-center mb-3 shadow-lg shadow-[#3d38f5]/30">
+                  <Award className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-xl font-bold text-gray-900">7.6+</div>
-                <div className="text-xs text-gray-600">Years Experience</div>
-              </div>
+                <div className="text-2xl font-black text-gray-900">7.6+</div>
+                <div className="text-sm text-gray-600 font-medium">Years Experience</div>
+              </motion.div>
 
-              <div className="flex flex-col items-start">
-                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center mb-2">
-                  <Code className="w-5 h-5 text-[#3d38f5]" />
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="flex flex-col items-center text-center p-4 rounded-xl bg-gradient-to-br from-[#3d38f5]/5 to-[#6b63f7]/5 border border-[#3d38f5]/10"
+              >
+                <div className="w-12 h-12 rounded-full bg-[#3d38f5] flex items-center justify-center mb-3 shadow-lg shadow-[#3d38f5]/30">
+                  <Code className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-xl font-bold text-gray-900">Lead</div>
-                <div className="text-xs text-gray-600">Developer Designer</div>
-              </div>
+                <div className="text-2xl font-black text-gray-900">Lead</div>
+                <div className="text-sm text-gray-600 font-medium">Developer Designer</div>
+              </motion.div>
 
-              <div className="flex flex-col items-start">
-                <div className="w-10 h-10 rounded-full bg-[#3d38f5]/10 border border-[#3d38f5]/30 flex items-center justify-center mb-2">
-                  <Users className="w-5 h-5 text-[#3d38f5]" />
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="flex flex-col items-center text-center p-4 rounded-xl bg-gradient-to-br from-[#3d38f5]/5 to-[#6b63f7]/5 border border-[#3d38f5]/10"
+              >
+                <div className="w-12 h-12 rounded-full bg-[#3d38f5] flex items-center justify-center mb-3 shadow-lg shadow-[#3d38f5]/30">
+                  <Users className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-xl font-bold text-gray-900">Mentor</div>
-                <div className="text-xs text-gray-600">Muxion Academy</div>
-              </div>
+                <div className="text-2xl font-black text-gray-900">Mentor</div>
+                <div className="text-sm text-gray-600 font-medium">Muxion Academy</div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

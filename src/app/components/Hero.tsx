@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Play } from "lucide-react";
 import { ParticlesBackground } from "./ParticlesBackground";
 import heroBg from "../../imports/1.jpg";
 
@@ -73,31 +73,37 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8 border-t border-gray-300 pt-6 mt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
           >
-            <motion.a
-              href="https://www.youtube.com/watch?v=nJ3clNDNu9s"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all"
-            >
-              Latest Course
-            </motion.a>
+            {/* Latest Course */}
+            <div className="flex items-center gap-2 text-lg">
+              <span className="text-gray-900 font-medium">Latest:</span>
+              <a
+                href="https://www.youtube.com/watch?v=nJ3clNDNu9s"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#3d38f5] font-bold hover:text-[#6b63f7] transition-colors underline"
+              >
+                UI/UX Design Course
+              </a>
+            </div>
 
+            {/* About Me Button */}
             <motion.a
               href="https://www.youtube.com/watch?v=cs2ySXNG4aU"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#3d38f5] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all"
+              className="inline-flex items-center gap-3 bg-[#3d38f5] text-white px-6 py-3 rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all"
             >
-              About Me
+              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                <Play className="w-4 h-4 fill-white text-white" />
+              </div>
+              <span>About Me</span>
             </motion.a>
           </motion.div>
 
