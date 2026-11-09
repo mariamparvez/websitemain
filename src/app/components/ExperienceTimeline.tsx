@@ -9,7 +9,7 @@ type TimelineItem = {
   dateLabel: string;
   title: string;
   organisation: string;
-  roles?: { dateLabel: string; title: string }[];
+  roles?: { dateLabel: string; title: string; organisation: string }[];
 };
 
 // The canvas starts in May 2016. Eight pixels equals one month, keeping every
@@ -22,16 +22,21 @@ const items: TimelineItem[] = [
   {
     kind: "work", lane: "right", start: 28, months: 24, dateLabel: "Sep 2018 - Sep 2020", title: "Deloitte Digital", organisation: "formerly 2adpro",
     roles: [
-      { dateLabel: "Sep 2018 - Mar 2019", title: "Graphic Designer Intern" },
-      { dateLabel: "Mar 2019 - Sep 2020", title: "Graphic Designer" },
+      { dateLabel: "Sep 2018 - Mar 2019", title: "Graphic Designer Intern", organisation: "Deloitte Digital" },
+      { dateLabel: "Mar 2019 - Sep 2020", title: "Graphic Designer", organisation: "Deloitte Digital · formerly 2adpro" },
     ],
   },
   { kind: "education", lane: "left", start: 45, months: 27, dateLabel: "Feb 2020 - May 2022", title: "MBA in Technology Management", organisation: "Anna University · Centre for Distance Education" },
   { kind: "work", lane: "right", start: 52, months: 14, dateLabel: "Sep 2020 - Nov 2021", title: "Web Designer", organisation: "Netaxis IT Solutions" },
   { kind: "work", lane: "right", start: 66, months: 11, dateLabel: "Nov 2021 - Sep 2022", title: "UI/UX Designer & Developer", organisation: "YOCO Labs Private Limited" },
   { kind: "work", lane: "left", start: 76, months: 22, dateLabel: "Sep 2022 - Jul 2024", title: "Senior UI/UX Designer & Developer", organisation: "InSoft.com" },
-  { kind: "work", lane: "left", start: 98, months: 6, dateLabel: "Jul 2024 - Jan 2025", title: "UI/UX Designer Coach & Trainer", organisation: "ACTE Technologies" },
-  { kind: "work", lane: "left", start: 104, months: 3, dateLabel: "Jan 2025 - Mar 2025", title: "Primary Web & Graphic Designer", organisation: "Catalyst Media FZE · Freelance" },
+  {
+    kind: "work", lane: "left", start: 98, months: 9, dateLabel: "Jul 2024 - Mar 2025", title: "Freelance Engagements", organisation: "UI/UX, web & graphic design",
+    roles: [
+      { dateLabel: "Jul 2024 - Jan 2025", title: "UI/UX Designer Coach & Trainer", organisation: "ACTE Technologies" },
+      { dateLabel: "Jan 2025 - Mar 2025", title: "Primary Web & Graphic Designer", organisation: "Catalyst Media FZE" },
+    ],
+  },
   { kind: "work", lane: "right", start: 106, months: 16, dateLabel: "Mar 2025 - Jun 2026", title: "Lead UI/UX Designer, Developer & Product Designer", organisation: "Prodapt" },
 ];
 
@@ -62,6 +67,7 @@ function TimelineCard({ item, compact = false }: { item: TimelineItem; compact?:
         <div key={role.dateLabel} className={`mt-2 ${index ? "border-t border-white/10 pt-2" : ""}`}>
           <span className="block text-[10px] font-bold uppercase tracking-[0.06em] text-[#9bb6dd]">{role.dateLabel}</span>
           <span className="block text-xs font-bold leading-snug text-[#fdfdfd]">{role.title}</span>
+          <span className="block text-[10px] leading-snug text-[#c2c9d7]">{role.organisation}</span>
         </div>
       ))}
       <span className={`absolute inset-y-0 left-0 w-[3px] ${isEducation ? "bg-[#68a58f]" : "bg-[#6487b9]"}`} />
@@ -82,7 +88,7 @@ export function ExperienceTimeline() {
 
   const compactRows: [TimelineItem, TimelineItem | null][] = [
     [items[0], items[1]], [items[2], items[3]], [items[5], items[4]],
-    [items[6], null], [items[7], items[8]],
+    [items[6], items[7]],
   ];
   return (
     <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#000104] pb-16 pt-12 sm:pb-20 sm:pt-16">
