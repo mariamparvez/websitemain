@@ -95,7 +95,7 @@ export function Testimonials() {
 
         <div className="relative max-w-6xl mx-auto">
           <div ref={trackRef} className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {testimonials.map((testimonial, index) => <motion.article key={testimonial.name} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .04 }} className="relative flex h-[240px] w-[min(82vw,400px)] shrink-0 snap-start flex-col overflow-hidden border border-[#5575be]/70 bg-[#0b1b3d] p-4">
+            {testimonials.map((testimonial, index) => <motion.article key={testimonial.name} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .04 }} className="relative flex h-[240px] w-[min(82vw,400px)] shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-[#5575be]/70 bg-[#0b1b3d] p-4">
               <Quote className="absolute right-4 top-4 h-9 w-9 text-[#4d5dff]/15" strokeWidth={1.2} /><div className="flex items-center gap-3"><img src={testimonial.image} alt={testimonial.name} className="h-10 w-10 rounded-full border-2 border-[#4d5dff] object-cover" /><div><h4 className="font-bold text-[#fdfdfd]">{testimonial.name}</h4><p className="mt-1 text-xs text-[#b8b8b8]">{testimonial.role}</p></div></div><p className="mt-4 line-clamp-4 text-[15px] leading-6 text-[#d6d6d6]">{testimonial.text}</p>
             </motion.article>)}
           </div>
