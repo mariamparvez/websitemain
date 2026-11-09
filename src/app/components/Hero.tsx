@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { ParticlesBackground } from "./ParticlesBackground";
 import TechText from "./TechText";
+import { VantaWaves } from "./VantaWaves";
 
 const projects = [
   { name: "MUXION", index: "01", tag: "Services & Learning", copy: "Hire me for design work, or learn my skills hands-on.", chips: ["UI/UX", "Branding", "Courses"], domain: "muxion.in", href: "https://muxion.in", ring: "from-[#fdfdfd]/70 via-[#6b63f7] to-[#3d38f5]", surface: "bg-gradient-to-br from-[#4a45ff] via-[#3d38f5] to-[#1d1a8f]", dot: "bg-[#fdfdfd]" },
@@ -12,8 +13,8 @@ export function Hero() {
   return (
     <>
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-16 sm:py-28">
-        <div className="hero-slats absolute inset-0" />
-        <div className="absolute inset-0 bg-[#121212]/82" />
+        <VantaWaves />
+        <div className="absolute inset-0 bg-[#010104]/78" />
         <ParticlesBackground />
         <div className="relative z-10 w-full max-w-6xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="space-y-2 sm:space-y-5">

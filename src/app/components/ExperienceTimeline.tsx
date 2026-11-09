@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { VantaWaves } from "./VantaWaves";
 
 type TimelineItem = {
   kind: "education" | "work";
@@ -63,7 +62,7 @@ export function ExperienceTimeline() {
   const [compact, setCompact] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia("(max-width: 639px)");
+    const media = window.matchMedia("(max-width: 767px)");
     const sync = () => setCompact(media.matches);
     sync();
     media.addEventListener("change", sync);
@@ -76,7 +75,6 @@ export function ExperienceTimeline() {
   ];
   return (
     <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#000104] pb-16 pt-12 sm:pb-20 sm:pt-16">
-      <VantaWaves />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.header className="mb-6 text-center sm:mb-8" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.24em] text-[#8293bd]">A shared timeline</p>
