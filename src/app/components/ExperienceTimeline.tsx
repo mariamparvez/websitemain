@@ -1,58 +1,86 @@
 import { motion } from "motion/react";
 
 type TimelineItem = {
-  years: string;
+  kind: "education" | "work";
+  start: number;
+  months: number;
+  dateLabel: string;
   title: string;
   organisation: string;
-  location: string;
-  kind: "education" | "work";
-  months: number;
-  details: string;
 };
 
-const timeline: TimelineItem[] = [
-  { years: "May 2016–May 2019", title: "BSc Animation", organisation: "Vels University", location: "Chennai, India", kind: "education", months: 36, details: "Built a foundation in visual storytelling, animation, multimedia production, and creative technology." },
-  { years: "Sep 2018–Mar 2019", title: "Graphic Designer Intern", organisation: "Deloitte Digital", location: "Chennai, India", kind: "work", months: 6, details: "Selected among 400 applicants to contribute to enterprise design-production workflows and branding standards." },
-  { years: "Mar 2019–Sep 2020", title: "Graphic Designer", organisation: "Deloitte Digital (formerly 2adpro)", location: "Chennai, India", kind: "work", months: 18, details: "Created production-ready creative assets for international brands including Macy’s and News Corp." },
-  { years: "Feb 2020–May 2022", title: "MBA in Technology Management", organisation: "Anna University - Centre for Distance Education", location: "Chennai, India", kind: "education", months: 27, details: "Developed a strategic perspective on technology, operations, and digital business management." },
-  { years: "Sep 2020–Nov 2021", title: "Web Designer", organisation: "Netaxis IT Solutions", location: "Chennai, India", kind: "work", months: 14, details: "Developed responsive web experiences and strengthened practical UX and frontend implementation skills." },
-  { years: "Nov 2021–Sep 2022", title: "UI/UX Designer & Developer", organisation: "YOCO Labs Private Limited", location: "Chennai, India", kind: "work", months: 11, details: "Designed workflow-focused CCTV software interfaces that improved usability and product adoption." },
-  { years: "Sep 2022–Jul 2024", title: "Senior UI/UX Designer & Developer", organisation: "InSoft.com", location: "Chennai, India", kind: "work", months: 22, details: "Led responsive redesign work across US and Belgium projects while mentoring designers and developers." },
-  { years: "Jul 2024–Jan 2025", title: "UI/UX Designer Coach & Trainer", organisation: "ACTE Technologies", location: "Chennai, India", kind: "work", months: 7, details: "Taught hands-on UI/UX and frontend workflows through career-focused, real-world learning." },
-  { years: "Jan 2025–Mar 2025", title: "Primary Web & Graphic Designer", organisation: "Catalyst Media FZE (Freelance)", location: "Sharjah, UAE", kind: "work", months: 3, details: "Owned web design and visual direction as an independent creative contributor for an international client." },
-  { years: "Mar 2025–Jun 2026", title: "Lead UI/UX Designer & Developer", organisation: "Prodapt", location: "Chennai, India", kind: "work", months: 16, details: "Led enterprise UX initiatives for BT SRIMS and design-to-development collaboration for strategic digital products." },
+// Timeline zero is May 2016. Each grid row is one calendar month.
+const education: TimelineItem[] = [
+  { kind: "education", start: 0, months: 36, dateLabel: "May 2016 - May 2019", title: "BSc Animation", organisation: "Vels University" },
+  { kind: "education", start: 45, months: 27, dateLabel: "Feb 2020 - May 2022", title: "MBA in Technology Management", organisation: "Anna University · Centre for Distance Education" },
 ];
+
+const work: TimelineItem[] = [
+  { kind: "work", start: 28, months: 6, dateLabel: "Sep 2018 - Mar 2019", title: "Graphic Designer Intern", organisation: "Deloitte Digital" },
+  { kind: "work", start: 34, months: 18, dateLabel: "Mar 2019 - Sep 2020", title: "Graphic Designer", organisation: "Deloitte Digital · formerly 2adpro" },
+  { kind: "work", start: 52, months: 14, dateLabel: "Sep 2020 - Nov 2021", title: "Web Designer", organisation: "Netaxis IT Solutions" },
+  { kind: "work", start: 66, months: 11, dateLabel: "Nov 2021 - Sep 2022", title: "UI/UX Designer & Developer", organisation: "YOCO Labs Private Limited" },
+  { kind: "work", start: 76, months: 22, dateLabel: "Sep 2022 - Jul 2024", title: "Senior UI/UX Designer & Developer", organisation: "InSoft.com" },
+  { kind: "work", start: 98, months: 7, dateLabel: "Jul 2024 - Jan 2025", title: "UI/UX Designer Coach & Trainer", organisation: "ACTE Technologies" },
+  { kind: "work", start: 104, months: 3, dateLabel: "Jan 2025 - Mar 2025", title: "Primary Web & Graphic Designer", organisation: "Catalyst Media FZE · Freelance" },
+  { kind: "work", start: 106, months: 16, dateLabel: "Mar 2025 - Jun 2026", title: "Lead UI/UX Designer & Developer", organisation: "Prodapt" },
+];
+
+const years = [
+  [0, "2016"], [8, "2017"], [20, "2018"], [32, "2019"], [44, "2020"], [56, "2021"],
+  [68, "2022"], [80, "2023"], [92, "2024"], [104, "2025"], [116, "2026"],
+] as const;
+
+const GRID_MONTHS = 122;
+
+function TimelineCard({ item }: { item: TimelineItem }) {
+  const lane = item.kind === "education" ? "col-start-1" : "col-start-3";
+  const bg = item.kind === "education" ? "bg-[#121d35]" : "bg-[#111725]";
+  const visualMonths = Math.max(item.months, 6);
+  return (
+    <motion.article
+      className={`${lane} ${bg} relative z-10 overflow-hidden border border-[#60749d]/45 p-3 shadow-[0_12px_28px_rgba(0,0,0,.22)] sm:p-4`}
+      style={{ gridRow: `${item.start + 1} / span ${visualMonths}`, borderRadius: 8 }}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+    >
+      <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#8fa1cf] sm:text-xs">{item.dateLabel}</p>
+      <h3 className="mt-2 text-sm font-extrabold leading-tight text-[#fdfdfd] sm:text-lg">{item.title}</h3>
+      <p className="mt-1 text-xs leading-snug text-[#bdc5d8] sm:text-sm">{item.organisation}</p>
+      <span className="absolute bottom-0 left-0 top-0 w-[3px] bg-[#4a5f91]" />
+    </motion.article>
+  );
+}
 
 export function ExperienceTimeline() {
   return (
     <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#0c0f17] py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.header className="mb-12 text-center sm:mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }}>
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.24em] text-[#8090bd]">Career & education</p>
+        <motion.header className="mb-10 text-center sm:mb-14" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.24em] text-[#8293bd]">Career & education</p>
           <h2 className="text-3xl font-black tracking-tight text-[#fdfdfd] sm:text-5xl">My Experience Journey</h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#abb1c2] sm:text-base">A visual timeline of the work, study, and craft that shape how I design.</p>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#aeb6c8] sm:text-base">One real timeline: studies on the left, work on the right.</p>
         </motion.header>
 
-        <div className="relative">
-          <div aria-hidden="true" className="absolute bottom-0 left-1/2 top-0 w-[3px] -translate-x-1/2 bg-gradient-to-b from-[#20335f] via-[#344b80] to-[#152344]" />
-          <ol className="relative space-y-8 sm:space-y-12">
-            {timeline.map((item, index) => {
-              const left = index % 2 === 0;
-              const tint = item.kind === "education" ? "bg-[#111b32]" : "bg-[#101522]";
-              return (
-                <motion.li key={`${item.years}-${item.title}`} className="relative grid grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-6" initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.4, delay: Math.min(index * 0.035, 0.2) }}>
-                  <article className={`${left ? "col-start-1" : "col-start-3"} ${tint} relative min-w-0 border border-[#52658e]/45 p-4 shadow-[0_16px_32px_rgba(1,5,15,.18)] sm:p-5`} style={{ borderRadius: 8, minHeight: `${Math.max(112, Math.min(240, 96 + item.months * 4))}px` }}>
-                    <span className="mb-3 inline-flex border border-[#7184af]/45 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-[#aebce0]" style={{ borderRadius: 4 }}>{item.kind === "education" ? "Education" : "Experience"}</span>
-                    <h3 className="text-base font-extrabold leading-tight text-[#fdfdfd] sm:text-xl">{item.title}</h3>
-                    <p className="mt-2 text-sm font-semibold text-[#8fa1d4]">{item.organisation}</p>
-                    <p className="mt-1 text-xs text-[#9ea6b9]">{item.location}</p>
-                    <p className="mt-3 hidden text-sm leading-6 text-[#ccd0da] sm:block">{item.details}</p>
-                  </article>
-                  <div className="col-start-2 z-10 flex h-14 w-14 shrink-0 items-center justify-center border-4 border-[#0c0f17] bg-[#253a68] text-center text-[11px] font-black leading-3 text-[#fdfdfd] shadow-[0_0_0_1px_#6275a0] sm:h-16 sm:w-16 sm:text-xs" style={{ borderRadius: 9999 }}>{item.years}</div>
-                </motion.li>
-              );
-            })}
-          </ol>
+        <div className="mb-4 grid grid-cols-[minmax(0,1fr)_56px_minmax(0,1fr)] gap-3 text-[10px] font-bold uppercase tracking-[0.14em] sm:grid-cols-[minmax(0,1fr)_80px_minmax(0,1fr)] sm:gap-6 sm:text-xs">
+          <span className="text-right text-[#9eafda]">Education</span>
+          <span />
+          <span className="text-[#9eafda]">Experience</span>
+        </div>
+
+        <div
+          className="relative grid grid-cols-[minmax(0,1fr)_56px_minmax(0,1fr)] gap-3 sm:grid-cols-[minmax(0,1fr)_80px_minmax(0,1fr)] sm:gap-6"
+          style={{ gridTemplateRows: `repeat(${GRID_MONTHS}, 10px)` }}
+        >
+          <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-1/2 top-0 z-0 w-[2px] -translate-x-1/2 bg-[#516891]" />
+          {years.map(([month, label]) => (
+            <div key={label} className="col-start-2 z-10 -translate-y-1/2 justify-self-center border border-[#66799f] bg-[#0c0f17] px-1.5 py-1 text-[10px] font-black text-[#dce5ff] sm:px-2 sm:text-xs" style={{ gridRow: month + 1, borderRadius: 4 }}>
+              {label}
+            </div>
+          ))}
+          {education.map((item) => <TimelineCard key={`${item.title}-${item.start}`} item={item} />)}
+          {work.map((item) => <TimelineCard key={`${item.title}-${item.start}`} item={item} />)}
         </div>
       </div>
     </section>
