@@ -35,17 +35,17 @@ export function Designs() {
     onClick: () => setActiveIndex(index),
   })), []);
   return (
-    <section id="designs" className="py-12 md:py-16 relative overflow-hidden bg-[#121212] border-t-2 border-[#fdfdfd]/15">
+    <section id="designs" className="relative flex min-h-[100svh] overflow-hidden border-t-2 border-[#fdfdfd]/15 bg-[#121212] py-5 sm:py-6">
       <ParticlesBackground />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8"
+          className="mb-4 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-black mb-3 text-[#fdfdfd]">
+          <h2 className="mb-2 text-3xl font-black text-[#fdfdfd] md:text-5xl">
             Creative{" "}
             <span className="bg-gradient-to-r from-[#3d38f5] via-sky-400 to-[#6b63f7] bg-clip-text text-transparent">
               Graphic Designs
@@ -56,9 +56,9 @@ export function Designs() {
           </p>
         </motion.div>
 
-        <div className="relative mx-auto max-w-5xl pt-1">
-          <motion.a key={active.id} href="https://dribbble.com/themariamparvez" target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, rotateY: -18, scale: .96 }} animate={{ opacity: 1, rotateY: 0, scale: 1 }} transition={{ duration: .35 }} className="relative z-10 mx-auto block aspect-square w-[min(82vw,540px)] overflow-hidden border border-[#fdfdfd]/20 bg-[#121212] shadow-[0_28px_70px_-35px_rgba(77,93,255,.7)]"><img src={active.src} alt={active.alt} className="h-full w-full object-cover" /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#121212] to-transparent px-5 pb-4 pt-14"><p className="text-sm font-bold text-[#fdfdfd]">{active.alt}</p></div></motion.a>
-          <div className="design-carousel mt-7 grid place-items-center" aria-label="Choose a graphic design">
+        <div className="relative mx-auto max-w-5xl flex-1 pt-1">
+          <motion.a key={active.id} href="https://dribbble.com/themariamparvez" target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, rotateY: -18, scale: .96 }} animate={{ opacity: 1, rotateY: 0, scale: 1 }} transition={{ duration: .35 }} className="relative z-10 mx-auto block aspect-square w-[min(38svh,72vw,360px)] overflow-hidden border border-[#fdfdfd]/20 bg-[#121212] shadow-[0_28px_70px_-35px_rgba(77,93,255,.7)]"><img src={active.src} alt={active.alt} className="h-full w-full object-cover" /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#121212] to-transparent px-5 pb-4 pt-14"><p className="text-sm font-bold text-[#fdfdfd]">{active.alt}</p></div></motion.a>
+          <div className="design-carousel mt-3 grid place-items-center" aria-label="Choose a graphic design">
             <Carousel ref={carouselRef} items={carouselItems} itemWidth={190} showControls={false} slideOnClick />
           </div>
         </div>
@@ -68,7 +68,7 @@ export function Designs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-6 flex items-center justify-between gap-4"
+          className="mt-3 flex items-center justify-between gap-4"
         >
           <div className="flex gap-2"><button onClick={() => selectDesign(activeIndex - 1)} aria-label="Previous design" className="grid h-9 w-9 place-items-center border border-[#fdfdfd]/25 text-[#fdfdfd] transition-colors hover:border-[#4d5dff] hover:text-[#8e87ff]"><ChevronLeft className="h-4 w-4" /></button><button onClick={() => selectDesign(activeIndex + 1)} aria-label="Next design" className="grid h-9 w-9 place-items-center border border-[#fdfdfd]/25 text-[#fdfdfd] transition-colors hover:border-[#4d5dff] hover:text-[#8e87ff]"><ChevronRight className="h-4 w-4" /></button></div>
           <motion.a

@@ -71,8 +71,8 @@ export function Blogs() {
           className="bg-[#121212] border border-[#fdfdfd]/15 overflow-hidden hover:border-[#3d38f5] hover:-translate-y-1 transition-all duration-300 group"
           style={{ borderRadius: 8 }}
           >
-            <div className="flex h-full flex-col">
-              <div className="h-40 bg-[#0b0d12] p-2 sm:h-48">
+            <div className="flex h-full flex-col md:flex-row">
+              <div className="h-40 shrink-0 bg-[#0b0d12] p-2 md:h-auto md:w-48 lg:w-52">
                 <img
                   src={blog2Img}
                   alt="Ice Cream Project"
@@ -112,8 +112,8 @@ export function Blogs() {
           className="bg-[#121212] border border-[#fdfdfd]/15 overflow-hidden hover:border-[#3d38f5] hover:-translate-y-1 transition-all duration-300 group"
           style={{ borderRadius: 8 }}
           >
-            <div className="flex h-full flex-col">
-              <div className="h-40 bg-[#0b0d12] p-2 sm:h-48">
+            <div className="flex h-full flex-col md:flex-row">
+              <div className="h-40 shrink-0 bg-[#0b0d12] p-2 md:h-auto md:w-48 lg:w-52">
                 <img
                   src={blog3Img}
                   alt="Simplicity in UX"
