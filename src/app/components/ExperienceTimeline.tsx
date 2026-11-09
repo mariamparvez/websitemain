@@ -39,7 +39,7 @@ function TimelineCard({ item }: { item: TimelineItem }) {
   const palette = item.kind === "education"
     ? { card: "bg-[#142b25] border-[#4f786b]/65", date: "text-[#9dcbbb]", rail: "bg-[#68a58f]" }
     : { card: "bg-[#111d32] border-[#4f6f9a]/65", date: "text-[#9bb6dd]", rail: "bg-[#6487b9]" };
-  const visualMonths = Math.max(item.months, 20);
+  const visualMonths = Math.max(item.months, 12);
   return (
     <motion.article
       className={`${lane} ${palette.card} relative z-10 overflow-hidden border p-2.5 shadow-[0_10px_22px_rgba(0,0,0,.18)] sm:p-3`}
@@ -58,7 +58,7 @@ function TimelineCard({ item }: { item: TimelineItem }) {
 
 export function ExperienceTimeline() {
   return (
-    <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#0c0f17] py-16 sm:py-20">
+    <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#0c0f17] py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.header className="mb-8 text-center sm:mb-10" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.24em] text-[#8293bd]">A shared timeline</p>
@@ -68,7 +68,7 @@ export function ExperienceTimeline() {
 
         <div
           className="relative grid grid-cols-[minmax(0,1fr)_48px_minmax(0,1fr)] gap-2 sm:grid-cols-[minmax(0,1fr)_64px_minmax(0,1fr)] sm:gap-4"
-          style={{ gridTemplateRows: `repeat(${GRID_MONTHS}, 3px)` }}
+          style={{ gridTemplateRows: `repeat(${GRID_MONTHS}, 2px)` }}
         >
           <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-1/2 top-0 z-0 w-px -translate-x-1/2 bg-[#52698f]" />
           {years.map(([month, label]) => (

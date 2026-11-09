@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { ParticlesBackground } from "./ParticlesBackground";
 import blogHeroImg from "../../imports/1-3.jpg";
 
 // Import blog images
@@ -11,7 +10,6 @@ import blog3Img from "figma:asset/5310a1d936833a9c8391005bd7219b7b7b79a6d7.png";
 export function Blogs() {
   return (
     <section id="blogs" className="py-10 relative overflow-hidden bg-[#121212] border-t-2 border-[#fdfdfd]/15">
-      <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,8 +29,9 @@ export function Blogs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden mb-8 p-8 md:p-12 bg-[#121212] border-2 border-[#fdfdfd]/15"
-          style={{
+          className="relative overflow-hidden mb-8 p-5 sm:p-8 md:p-10 bg-[#121212] border border-[#fdfdfd]/15"
+          style={{ borderRadius: 8,
+            
             backgroundImage: `url(${blogHeroImg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -54,7 +53,8 @@ export function Blogs() {
               href="https://themariamparvez.medium.com/why-color-is-important-in-graphic-design-and-fashion-design-03096dfe57f9"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-[#3d38f5] text-[#fdfdfd] font-bold text-base md:text-lg px-6 py-3 rounded-full hover:scale-105 transition-all"
+              className="inline-flex items-center bg-[#3d38f5] text-[#fdfdfd] font-bold text-sm md:text-base px-4 py-2 hover:scale-[1.03] transition-all"
+              style={{ borderRadius: 4 }}
             >
               Continue reading
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -70,10 +70,18 @@ export function Blogs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-[#121212] border-2 border-[#fdfdfd]/15 rounded-2xl overflow-hidden hover:border-[#3d38f5] hover:scale-105 transition-all duration-300 group"
+          className="bg-[#121212] border border-[#fdfdfd]/15 overflow-hidden hover:border-[#3d38f5] hover:-translate-y-1 transition-all duration-300 group"
+          style={{ borderRadius: 8 }}
           >
-            <div className="flex flex-col md:flex-row h-full">
-              <div className="p-6 flex-1 flex flex-col">
+            <div className="flex h-full flex-col">
+              <div className="h-44 sm:h-52">
+                <img
+                  src={blog2Img}
+                  alt="Ice Cream Project"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-5 flex flex-1 flex-col sm:p-6">
                 <span className="inline-block px-3 py-1 bg-[#3d38f5]/10 text-[#9a96ff] text-sm font-semibold rounded-full mb-3 w-fit">
                   Rebranding
                 </span>
@@ -94,13 +102,6 @@ export function Blogs() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </div>
-              <div className="md:w-48 h-48 md:h-auto">
-                <img
-                  src={blog2Img}
-                  alt="Ice Cream Project"
-                  className="w-full h-full object-cover"
-                />
-              </div>
             </div>
           </motion.article>
 
@@ -110,10 +111,18 @@ export function Blogs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-[#121212] border-2 border-[#fdfdfd]/15 rounded-2xl overflow-hidden hover:border-[#3d38f5] hover:scale-105 transition-all duration-300 group"
+          className="bg-[#121212] border border-[#fdfdfd]/15 overflow-hidden hover:border-[#3d38f5] hover:-translate-y-1 transition-all duration-300 group"
+          style={{ borderRadius: 8 }}
           >
-            <div className="flex flex-col md:flex-row h-full">
-              <div className="p-6 flex-1 flex flex-col">
+            <div className="flex h-full flex-col">
+              <div className="h-44 sm:h-52">
+                <img
+                  src={blog3Img}
+                  alt="Simplicity in UX"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-5 flex flex-1 flex-col sm:p-6">
                 <span className="inline-block px-3 py-1 bg-[#3d38f5]/10 text-[#9a96ff] text-sm font-semibold rounded-full mb-3 w-fit">
                   UX Design
                 </span>
@@ -134,13 +143,6 @@ export function Blogs() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </div>
-              <div className="md:w-48 h-48 md:h-auto">
-                <img
-                  src={blog3Img}
-                  alt="Simplicity in UX"
-                  className="w-full h-full object-cover"
-                />
-              </div>
             </div>
           </motion.article>
         </div>
@@ -155,7 +157,8 @@ export function Blogs() {
             href="https://medium.com/@themariamparvez"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#3d38f5] text-[#fdfdfd] px-8 py-4 rounded-full font-bold hover:bg-[#2d28d5] hover:scale-105 transition-all"
+            className="inline-flex items-center gap-2 bg-[#3d38f5] text-[#fdfdfd] px-5 py-2.5 font-bold hover:bg-[#2d28d5] hover:scale-[1.03] transition-all"
+            style={{ borderRadius: 4 }}
           >
             View All Articles <ArrowRight className="w-5 h-5" />
           </a>
