@@ -75,7 +75,7 @@ export function ExperienceTimeline() {
     [items[7], items[5]], [items[8], items[9]],
   ];
   return (
-    <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#0c0f17] pb-16 pt-12 sm:pb-20 sm:pt-16">
+    <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#000104] pb-16 pt-12 sm:pb-20 sm:pt-16">
       <VantaWaves />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.header className="mb-6 text-center sm:mb-8" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -97,7 +97,7 @@ export function ExperienceTimeline() {
           <div className="relative mx-auto max-w-5xl" style={{ height: CANVAS_HEIGHT }}>
             <div aria-hidden="true" className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-[#52698f]" />
             {years.map(([month, label]) => (
-              <div key={label} className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 bg-[#0c0f17] px-1 text-[9px] font-black text-[#c7d4ed] sm:text-[10px]" style={{ top: month * SCALE }}>
+              <div key={label} className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 bg-[#000104] px-1 text-[9px] font-black text-[#c7d4ed] sm:text-[10px]" style={{ top: month * SCALE }}>
                 {label}
               </div>
             ))}

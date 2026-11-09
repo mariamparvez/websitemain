@@ -46,12 +46,12 @@ export function VantaWaves() {
           scale: 1,
           scaleMobile: 1,
           mouseEase: 0.08,
-          color: 0x07183f,
-          shininess: 12,
-          waveHeight: 14,
-          waveSpeed: 0.58,
-          zoom: 0.86,
-          backgroundColor: 0x01040c,
+          color: 0x050d22,
+          shininess: 4,
+          waveHeight: 10,
+          waveSpeed: 0.42,
+          zoom: 0.92,
+          backgroundColor: 0x000104,
         });
       } catch {
         // A browser that blocks WebGL still receives the near-black navy section base.
