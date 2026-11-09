@@ -9,6 +9,7 @@ type TimelineItem = {
   dateLabel: string;
   title: string;
   organisation: string;
+  roles?: { dateLabel: string; title: string }[];
 };
 
 // The canvas starts in May 2016. Eight pixels equals one month, keeping every
@@ -18,8 +19,13 @@ const CANVAS_HEIGHT = 992;
 
 const items: TimelineItem[] = [
   { kind: "education", lane: "left", start: 0, months: 36, dateLabel: "May 2016 - May 2019", title: "BSc Animation", organisation: "Vels University" },
-  { kind: "work", lane: "right", start: 28, months: 6, dateLabel: "Sep 2018 - Mar 2019", title: "Graphic Designer Intern", organisation: "Deloitte Digital" },
-  { kind: "work", lane: "right", start: 34, months: 18, dateLabel: "Mar 2019 - Sep 2020", title: "Graphic Designer", organisation: "Deloitte Digital · formerly 2adpro" },
+  {
+    kind: "work", lane: "right", start: 28, months: 24, dateLabel: "Sep 2018 - Sep 2020", title: "Deloitte Digital", organisation: "formerly 2adpro",
+    roles: [
+      { dateLabel: "Sep 2018 - Mar 2019", title: "Graphic Designer Intern" },
+      { dateLabel: "Mar 2019 - Sep 2020", title: "Graphic Designer" },
+    ],
+  },
   { kind: "education", lane: "left", start: 45, months: 27, dateLabel: "Feb 2020 - May 2022", title: "MBA in Technology Management", organisation: "Anna University · Centre for Distance Education" },
   { kind: "work", lane: "right", start: 52, months: 14, dateLabel: "Sep 2020 - Nov 2021", title: "Web Designer", organisation: "Netaxis IT Solutions" },
   { kind: "work", lane: "right", start: 66, months: 11, dateLabel: "Nov 2021 - Sep 2022", title: "UI/UX Designer & Developer", organisation: "YOCO Labs Private Limited" },
@@ -52,6 +58,12 @@ function TimelineCard({ item, compact = false }: { item: TimelineItem; compact?:
       <p className={`text-[10px] font-bold uppercase tracking-[0.08em] ${isEducation ? "text-[#9dcbbb]" : "text-[#9bb6dd]"}`}>{item.dateLabel}</p>
       <h3 className="mt-1 text-sm font-extrabold leading-tight text-[#fdfdfd]">{item.title}</h3>
       <p className="mt-1 leading-snug text-[#c2c9d7]">{item.organisation}</p>
+      {item.roles?.map((role, index) => (
+        <div key={role.dateLabel} className={`mt-2 ${index ? "border-t border-white/10 pt-2" : ""}`}>
+          <span className="block text-[10px] font-bold uppercase tracking-[0.06em] text-[#9bb6dd]">{role.dateLabel}</span>
+          <span className="block text-xs font-bold leading-snug text-[#fdfdfd]">{role.title}</span>
+        </div>
+      ))}
       <span className={`absolute inset-y-0 left-0 w-[3px] ${isEducation ? "bg-[#68a58f]" : "bg-[#6487b9]"}`} />
     </motion.article>
   );
@@ -68,9 +80,9 @@ export function ExperienceTimeline() {
     return () => media.removeEventListener("change", sync);
   }, []);
 
-  const compactRows: [TimelineItem, TimelineItem][] = [
-    [items[0], items[1]], [items[3], items[2]], [items[6], items[4]],
-    [items[7], items[5]], [items[8], items[9]],
+  const compactRows: [TimelineItem, TimelineItem | null][] = [
+    [items[0], items[1]], [items[2], items[3]], [items[5], items[4]],
+    [items[6], null], [items[7], items[8]],
   ];
   return (
     <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#000104] pb-16 pt-12 sm:pb-20 sm:pt-16">
@@ -84,9 +96,9 @@ export function ExperienceTimeline() {
           <div className="relative mx-auto grid max-w-5xl grid-cols-2 gap-2">
             <div aria-hidden="true" className="absolute inset-y-1 left-1/2 w-px -translate-x-1/2 bg-[#52698f]" />
             {compactRows.map(([left, right]) => (
-              <div key={`${left.title}-${right.title}`} className="col-span-2 grid grid-cols-2 gap-2">
+              <div key={`${left.title}-${right?.title ?? "empty"}`} className="col-span-2 grid grid-cols-2 gap-2">
                 <TimelineCard item={left} compact />
-                <TimelineCard item={right} compact />
+                {right ? <TimelineCard item={right} compact /> : <div aria-hidden="true" />}
               </div>
             ))}
           </div>
