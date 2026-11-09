@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useRef } from "react";
 import { ParticlesBackground } from "./ParticlesBackground";
-import { InteractiveSlats } from "./InteractiveSlats";
+import { VantaTrunk } from "./VantaTrunk";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 // Import testimonial images
@@ -71,7 +71,7 @@ export function Testimonials() {
 
   return (
     <section id="testimonials" className="relative py-8 overflow-hidden bg-[#121212] border-t-2 border-[#fdfdfd]/15">
-      <InteractiveSlats />
+      <VantaTrunk />
       <ParticlesBackground />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
