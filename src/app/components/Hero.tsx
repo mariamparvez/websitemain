@@ -14,7 +14,7 @@ export function Hero() {
     <>
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-16 sm:py-28">
         <VantaWaves />
-        <div className="absolute inset-0 bg-[#010104]/78" />
+        <div className="absolute inset-0 bg-[#010104]/48" />
         <ParticlesBackground />
         <div className="relative z-10 w-full max-w-6xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="space-y-2 sm:space-y-5">
