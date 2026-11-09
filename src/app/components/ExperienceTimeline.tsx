@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import { VantaWaves } from "./VantaWaves";
 
 type TimelineItem = {
@@ -35,14 +36,17 @@ const years = [
   [68, "2022"], [80, "2023"], [92, "2024"], [104, "2025"], [116, "2026"],
 ] as const;
 
-function TimelineCard({ item }: { item: TimelineItem }) {
+function TimelineCard({ item, compact = false }: { item: TimelineItem; compact?: boolean }) {
   const isEducation = item.kind === "education";
   const height = Math.max(item.months * SCALE, 96);
   const top = item.start * SCALE + (item.offset ?? 0);
+  const layoutStyle = compact
+    ? { borderRadius: 8 }
+    : { top, height, width: "calc(50% - 34px)", borderRadius: 8 };
   return (
     <motion.article
-      className={`absolute overflow-hidden border p-2 shadow-[0_10px_22px_rgba(0,0,0,.18)] ${item.lane === "left" ? "left-0" : "right-0"} ${isEducation ? "border-[#4f786b]/65 bg-[#142b25]" : "border-[#4f6f9a]/65 bg-[#111d32]"}`}
-      style={{ top, height, width: "calc(50% - 34px)", borderRadius: 8 }}
+      className={`${compact ? "relative min-w-0 overflow-visible" : `absolute overflow-hidden ${item.lane === "left" ? "left-0" : "right-0"}`} border p-2 shadow-[0_10px_22px_rgba(0,0,0,.18)] ${isEducation ? "border-[#4f786b]/65 bg-[#142b25]" : "border-[#4f6f9a]/65 bg-[#111d32]"}`}
+      style={layoutStyle}
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
@@ -56,6 +60,20 @@ function TimelineCard({ item }: { item: TimelineItem }) {
 }
 
 export function ExperienceTimeline() {
+  const [compact, setCompact] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 639px)");
+    const sync = () => setCompact(media.matches);
+    sync();
+    media.addEventListener("change", sync);
+    return () => media.removeEventListener("change", sync);
+  }, []);
+
+  const compactRows: [TimelineItem, TimelineItem][] = [
+    [items[0], items[1]], [items[3], items[2]], [items[6], items[4]],
+    [items[7], items[5]], [items[8], items[9]],
+  ];
   return (
     <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#0c0f17] pb-16 pt-12 sm:pb-20 sm:pt-16">
       <VantaWaves />
@@ -65,15 +83,27 @@ export function ExperienceTimeline() {
           <h2 className="text-3xl font-black tracking-tight text-[#fdfdfd] sm:text-5xl">My Experience Journey</h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#aeb6c8] sm:text-base">Education and work shown together, at their real dates.</p>
         </motion.header>
-        <div className="relative mx-auto max-w-5xl" style={{ height: CANVAS_HEIGHT }}>
-          <div aria-hidden="true" className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-[#52698f]" />
-          {years.map(([month, label]) => (
-            <div key={label} className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 bg-[#0c0f17] px-1 text-[9px] font-black text-[#c7d4ed] sm:text-[10px]" style={{ top: month * SCALE }}>
-              {label}
-            </div>
-          ))}
-          {items.map((item) => <TimelineCard key={`${item.title}-${item.start}`} item={item} />)}
-        </div>
+        {compact ? (
+          <div className="relative mx-auto grid max-w-5xl grid-cols-2 gap-2">
+            <div aria-hidden="true" className="absolute inset-y-1 left-1/2 w-px -translate-x-1/2 bg-[#52698f]" />
+            {compactRows.map(([left, right]) => (
+              <div key={`${left.title}-${right.title}`} className="col-span-2 grid grid-cols-2 gap-2">
+                <TimelineCard item={left} compact />
+                <TimelineCard item={right} compact />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="relative mx-auto max-w-5xl" style={{ height: CANVAS_HEIGHT }}>
+            <div aria-hidden="true" className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-[#52698f]" />
+            {years.map(([month, label]) => (
+              <div key={label} className="absolute left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 bg-[#0c0f17] px-1 text-[9px] font-black text-[#c7d4ed] sm:text-[10px]" style={{ top: month * SCALE }}>
+                {label}
+              </div>
+            ))}
+            {items.map((item) => <TimelineCard key={`${item.title}-${item.start}`} item={item} />)}
+          </div>
+        )}
       </div>
     </section>
   );
