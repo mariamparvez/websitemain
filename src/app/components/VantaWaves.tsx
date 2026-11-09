@@ -12,20 +12,21 @@ export function VantaWaves() {
       THREE,
       mouseControls: true,
       touchControls: true,
+      eventListenerTarget: window,
       gyroControls: false,
       minHeight: 200,
       minWidth: 200,
       scale: 1,
       scaleMobile: 0.75,
-      color: 0x101f55,
-      shininess: 18,
-      waveHeight: 11,
-      waveSpeed: 0.55,
+      color: 0x294cc0,
+      shininess: 30,
+      waveHeight: 16,
+      waveSpeed: 0.7,
       zoom: 0.85,
-      backgroundColor: 0x080d1d,
+      backgroundColor: 0x07163b,
     });
     return () => effect?.destroy();
   }, []);
 
-  return <div ref={hostRef} aria-hidden="true" className="absolute inset-0 opacity-75" />;
+  return <div ref={hostRef} aria-hidden="true" className="absolute inset-0 opacity-95" />;
 }

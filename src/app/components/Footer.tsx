@@ -30,7 +30,7 @@ export function Footer() {
               <span>© {currentYear} Mariam Parvez. All rights reserved.</span>
             </div>
 
-            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-[#a3a3a3]">
+            <div className="mt-6 hidden flex-wrap justify-center gap-4 text-sm text-[#a3a3a3] md:flex">
               <a
                 href="https://www.linkedin.com/in/themariamparvez/"
                 target="_blank"
@@ -77,7 +77,7 @@ export function Footer() {
               </a>
             </div>
 
-            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+            <div className="mt-6 hidden flex-wrap justify-center gap-4 text-sm md:flex">
               <Link
                 to="/terms"
                 className="text-[#a3a3a3] hover:text-[#9a96ff] transition-colors"
@@ -112,6 +112,23 @@ export function Footer() {
               >
                 CSR Policy
               </Link>
+            </div>
+
+            <div className="mt-6 grid grid-cols-2 divide-x divide-[#fdfdfd]/15 text-left text-sm md:hidden">
+              <div className="space-y-3 pr-4 text-[#a3a3a3]">
+                <a href="https://www.linkedin.com/in/themariamparvez/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#9a96ff]">LinkedIn</a>
+                <a href="https://www.behance.net/themariamparvez" target="_blank" rel="noopener noreferrer" className="block hover:text-[#9a96ff]">Behance</a>
+                <a href="https://dribbble.com/themariamparvez" target="_blank" rel="noopener noreferrer" className="block hover:text-[#9a96ff]">Dribbble</a>
+                <a href="https://www.instagram.com/themimpact/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#9a96ff]">Instagram</a>
+                <a href="https://medium.com/@themariamparvez" target="_blank" rel="noopener noreferrer" className="block hover:text-[#9a96ff]">Medium</a>
+              </div>
+              <div className="space-y-3 pl-4 text-[#a3a3a3]">
+                <Link to="/terms" className="block hover:text-[#9a96ff]">Terms & Conditions</Link>
+                <Link to="/privacy" className="block hover:text-[#9a96ff]">Privacy Policy</Link>
+                <Link to="/disclaimer" className="block hover:text-[#9a96ff]">Disclaimer</Link>
+                <Link to="/copyright" className="block hover:text-[#9a96ff]">Copyright</Link>
+                <Link to="/csr" className="block hover:text-[#9a96ff]">CSR Policy</Link>
+              </div>
             </div>
           </motion.div>
         </div>

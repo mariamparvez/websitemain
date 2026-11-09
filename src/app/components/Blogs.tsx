@@ -72,11 +72,11 @@ export function Blogs() {
           style={{ borderRadius: 8 }}
           >
             <div className="flex h-full flex-col md:flex-row">
-              <div className="h-40 shrink-0 bg-[#0b0d12] p-2 md:h-auto md:w-48 lg:w-52">
+              <div className="h-40 shrink-0 md:h-auto md:w-48 md:bg-[#0b0d12] md:p-2 lg:w-52">
                 <img
                   src={blog2Img}
                   alt="Ice Cream Project"
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-cover md:object-contain"
                 />
               </div>
               <div className="p-5 flex flex-1 flex-col sm:p-6">
@@ -113,11 +113,11 @@ export function Blogs() {
           style={{ borderRadius: 8 }}
           >
             <div className="flex h-full flex-col md:flex-row">
-              <div className="h-40 shrink-0 bg-[#0b0d12] p-2 md:h-auto md:w-48 lg:w-52">
+              <div className="h-40 shrink-0 md:h-auto md:w-48 md:bg-[#0b0d12] md:p-2 lg:w-52">
                 <img
                   src={blog3Img}
                   alt="Simplicity in UX"
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-cover md:object-contain"
                 />
               </div>
               <div className="p-5 flex flex-1 flex-col sm:p-6">

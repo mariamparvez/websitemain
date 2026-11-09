@@ -26,7 +26,7 @@ const items: TimelineItem[] = [
   { kind: "work", lane: "right", start: 66, months: 11, offset: 100, dateLabel: "Nov 2021 - Sep 2022", title: "UI/UX Designer & Developer", organisation: "YOCO Labs Private Limited" },
   { kind: "work", lane: "left", start: 76, months: 22, dateLabel: "Sep 2022 - Jul 2024", title: "Senior UI/UX Designer & Developer", organisation: "InSoft.com" },
   { kind: "work", lane: "left", start: 98, months: 6, dateLabel: "Jul 2024 - Jan 2025", title: "UI/UX Designer Coach & Trainer", organisation: "ACTE Technologies" },
-  { kind: "work", lane: "left", start: 104, months: 3, offset: 42, dateLabel: "Jan 2025 - Mar 2025", title: "Primary Web & Graphic Designer", organisation: "Catalyst Media FZE · Freelance" },
+  { kind: "work", lane: "left", start: 104, months: 3, offset: 92, dateLabel: "Jan 2025 - Mar 2025", title: "Primary Web & Graphic Designer", organisation: "Catalyst Media FZE · Freelance" },
   { kind: "work", lane: "right", start: 106, months: 20, dateLabel: "Mar 2025 - Present", title: "Lead UI/UX Designer, Developer & Product Designer", organisation: "Prodapt" },
 ];
 
@@ -37,7 +37,7 @@ const years = [
 
 function TimelineCard({ item }: { item: TimelineItem }) {
   const isEducation = item.kind === "education";
-  const height = Math.max(item.months * SCALE, 58);
+  const height = Math.max(item.months * SCALE, 78);
   const top = item.start * SCALE + (item.offset ?? 0);
   return (
     <motion.article
