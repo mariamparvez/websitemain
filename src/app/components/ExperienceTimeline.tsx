@@ -6,19 +6,20 @@ type TimelineItem = {
   organisation: string;
   location: string;
   kind: "education" | "work";
+  months: number;
   details: string;
 };
 
 const timeline: TimelineItem[] = [
-  { years: "2016–2019", title: "BSc Animation & Multimedia", organisation: "Vels University", location: "Chennai, India", kind: "education", details: "Built a foundation in visual storytelling, animation, multimedia production, and creative technology." },
-  { years: "2018–2020", title: "Graphic Designer", organisation: "Deloitte Digital (formerly Ad2Pro)", location: "Chennai, India", kind: "work", details: "Created production-ready creative assets for international brands including Macy’s and News Corp." },
-  { years: "2020–2022", title: "MBA in Technology Management", organisation: "Anna University", location: "Chennai, India", kind: "education", details: "Developed a strategic perspective on technology, operations, and digital business management." },
-  { years: "2020–2021", title: "Web Designer", organisation: "Netaxis IT Solutions", location: "Chennai, India", kind: "work", details: "Developed responsive web experiences and strengthened practical UX and frontend implementation skills." },
-  { years: "2021–2022", title: "UI/UX Designer & Developer", organisation: "YOCO Labs Private Limited", location: "Chennai, India", kind: "work", details: "Designed workflow-focused CCTV software interfaces that improved usability and product adoption." },
-  { years: "2022–2024", title: "Senior UI/UX Designer & Developer", organisation: "InSoft.com", location: "Chennai, India", kind: "work", details: "Led responsive redesign work across US and Belgium projects while mentoring designers and developers." },
-  { years: "2024–2025", title: "UI/UX Designer Coach & Trainer", organisation: "ACTE Technologies", location: "Chennai, India", kind: "work", details: "Taught hands-on UI/UX and frontend workflows through career-focused, real-world learning." },
-  { years: "2025", title: "Primary Web & Graphic Designer", organisation: "Catalyst Media FZE", location: "Sharjah, UAE", kind: "work", details: "Owned web design and visual direction as an independent creative contributor for an international client." },
-  { years: "2025–now", title: "Lead UI/UX Designer & Developer", organisation: "Prodapt", location: "Chennai, India", kind: "work", details: "Leading enterprise UX initiatives and design-to-development collaboration for strategic digital products." },
+  { years: "2016–2019", title: "BSc Animation & Multimedia", organisation: "Vels University", location: "Chennai, India", kind: "education", months: 36, details: "Built a foundation in visual storytelling, animation, multimedia production, and creative technology." },
+  { years: "2018–2020", title: "Graphic Designer", organisation: "Deloitte Digital (formerly Ad2Pro)", location: "Chennai, India", kind: "work", months: 24, details: "Created production-ready creative assets for international brands including Macy’s and News Corp." },
+  { years: "2020–2022", title: "MBA in Technology Management", organisation: "Anna University", location: "Chennai, India", kind: "education", months: 24, details: "Developed a strategic perspective on technology, operations, and digital business management." },
+  { years: "2020–2021", title: "Web Designer", organisation: "Netaxis IT Solutions", location: "Chennai, India", kind: "work", months: 14, details: "Developed responsive web experiences and strengthened practical UX and frontend implementation skills." },
+  { years: "2021–2022", title: "UI/UX Designer & Developer", organisation: "YOCO Labs Private Limited", location: "Chennai, India", kind: "work", months: 10, details: "Designed workflow-focused CCTV software interfaces that improved usability and product adoption." },
+  { years: "2022–2024", title: "Senior UI/UX Designer & Developer", organisation: "InSoft.com", location: "Chennai, India", kind: "work", months: 22, details: "Led responsive redesign work across US and Belgium projects while mentoring designers and developers." },
+  { years: "2024–2025", title: "UI/UX Designer Coach & Trainer", organisation: "ACTE Technologies", location: "Chennai, India", kind: "work", months: 7, details: "Taught hands-on UI/UX and frontend workflows through career-focused, real-world learning." },
+  { years: "2025", title: "Primary Web & Graphic Designer", organisation: "Catalyst Media FZE", location: "Sharjah, UAE", kind: "work", months: 3, details: "Owned web design and visual direction as an independent creative contributor for an international client." },
+  { years: "2025–now", title: "Lead UI/UX Designer & Developer", organisation: "Prodapt", location: "Chennai, India", kind: "work", months: 20, details: "Leading enterprise UX initiatives and design-to-development collaboration for strategic digital products." },
 ];
 
 export function ExperienceTimeline() {
@@ -39,7 +40,7 @@ export function ExperienceTimeline() {
               const tint = item.kind === "education" ? "bg-[#111b32]" : "bg-[#101522]";
               return (
                 <motion.li key={`${item.years}-${item.title}`} className="relative grid grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-6" initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.4, delay: Math.min(index * 0.035, 0.2) }}>
-                  <article className={`${left ? "col-start-1" : "col-start-3"} ${tint} relative min-w-0 border border-[#52658e]/45 p-4 shadow-[0_16px_32px_rgba(1,5,15,.18)] sm:p-5`} style={{ borderRadius: 8 }}>
+                  <article className={`${left ? "col-start-1" : "col-start-3"} ${tint} relative min-w-0 border border-[#52658e]/45 p-4 shadow-[0_16px_32px_rgba(1,5,15,.18)] sm:p-5`} style={{ borderRadius: 8, minHeight: `${Math.max(112, Math.min(240, 96 + item.months * 4))}px` }}>
                     <span className="mb-3 inline-flex border border-[#7184af]/45 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-[#aebce0]" style={{ borderRadius: 4 }}>{item.kind === "education" ? "Education" : "Experience"}</span>
                     <h3 className="text-base font-extrabold leading-tight text-[#fdfdfd] sm:text-xl">{item.title}</h3>
                     <p className="mt-2 text-sm font-semibold text-[#8fa1d4]">{item.organisation}</p>
