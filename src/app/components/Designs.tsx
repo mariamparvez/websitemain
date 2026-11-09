@@ -37,13 +37,13 @@ export function Designs() {
   return (
     <section id="designs" className="relative flex min-h-[100svh] overflow-hidden border-t-2 border-[#fdfdfd]/15 bg-[#121212] py-5 sm:py-6">
       <ParticlesBackground />
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto flex w-full max-w-none flex-col px-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-4 text-center"
+          className="mb-4 px-4 text-center sm:px-6 lg:px-8"
         >
           <h2 className="mb-2 text-3xl font-black text-[#fdfdfd] md:text-5xl">
             Creative{" "}
@@ -56,10 +56,10 @@ export function Designs() {
           </p>
         </motion.div>
 
-        <div className="relative mx-auto max-w-5xl flex-1 pt-1">
+        <div className="relative mx-auto w-full max-w-none flex-1 pt-1">
           <motion.a key={active.id} href="https://dribbble.com/themariamparvez" target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, rotateY: -18, scale: .96 }} animate={{ opacity: 1, rotateY: 0, scale: 1 }} transition={{ duration: .35 }} className="relative z-10 mx-auto block aspect-square w-[min(38svh,72vw,360px)] overflow-hidden border border-[#fdfdfd]/20 bg-[#121212] shadow-[0_28px_70px_-35px_rgba(77,93,255,.7)]"><img src={active.src} alt={active.alt} className="h-full w-full object-cover" /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#121212] to-transparent px-5 pb-4 pt-14"><p className="text-sm font-bold text-[#fdfdfd]">{active.alt}</p></div></motion.a>
           <div className="design-carousel mt-3 grid place-items-center" aria-label="Choose a graphic design">
-            <Carousel ref={carouselRef} items={carouselItems} itemWidth={128} showControls={false} slideOnClick />
+            <Carousel ref={carouselRef} items={carouselItems} itemWidth={104} showControls={false} slideOnClick />
           </div>
         </div>
 
@@ -68,7 +68,7 @@ export function Designs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-3 flex items-center justify-between gap-4"
+          className="mt-3 flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
         >
           <div className="flex gap-2"><button onClick={() => selectDesign(activeIndex - 1)} aria-label="Previous design" className="grid h-9 w-9 place-items-center border border-[#fdfdfd]/25 text-[#fdfdfd] transition-colors hover:border-[#4d5dff] hover:text-[#8e87ff]"><ChevronLeft className="h-4 w-4" /></button><button onClick={() => selectDesign(activeIndex + 1)} aria-label="Next design" className="grid h-9 w-9 place-items-center border border-[#fdfdfd]/25 text-[#fdfdfd] transition-colors hover:border-[#4d5dff] hover:text-[#8e87ff]"><ChevronRight className="h-4 w-4" /></button></div>
           <motion.a

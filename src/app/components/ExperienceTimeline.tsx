@@ -15,7 +15,7 @@ type TimelineItem = {
 // The canvas starts in May 2016. Four pixels equals one month: dates remain
 // proportional without turning the timeline into a long scrolling wall.
 const SCALE = 4;
-const CANVAS_HEIGHT = 520;
+const CANVAS_HEIGHT = 620;
 
 const items: TimelineItem[] = [
   { kind: "education", lane: "left", start: 0, months: 36, dateLabel: "May 2016 - May 2019", title: "BSc Animation", organisation: "Vels University" },
@@ -57,7 +57,7 @@ function TimelineCard({ item }: { item: TimelineItem }) {
 
 export function ExperienceTimeline() {
   return (
-    <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#0c0f17] py-12 sm:py-16">
+    <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#0c0f17] pb-16 pt-12 sm:pb-20 sm:pt-16">
       <VantaWaves />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.header className="mb-6 text-center sm:mb-8" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
