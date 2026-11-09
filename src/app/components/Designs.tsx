@@ -4,44 +4,19 @@ import { Carousel, type CarouselItem, type CarouselRef } from "react-round-carou
 import "react-round-carousel/dist/index.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ParticlesBackground } from "./ParticlesBackground";
-import img1 from "figma:asset/3a6fd584cba573c439db70b5abacd46376caf688.png";
-import img2 from "figma:asset/d98cf614ccdae81c7dbebc1fe013460fe19bdb11.png";
-import img3 from "figma:asset/a21bc0583f5a3b8e2007b7c18d61fe7cf9973a63.png";
-import img4 from "figma:asset/ecc574b52fac21c6d77bf4c93af5f35aba164d4b.png";
-import img5 from "figma:asset/86481626d7156767a3faa452fa7e29d4e1224fe1.png";
-import img6 from "figma:asset/065005bd3014367941197ecd15d897b2a50c5568.png";
-import img7 from "figma:asset/442ff1bfed857c44ef347ec914d92663a9418156.png";
-import img8 from "figma:asset/5a2b8d3c64a4e574bbfef9a822ea10ff8da02e43.png";
-import img9 from "figma:asset/9c1da59c1b917171a8ad2797f7f5901b5be714dc.png";
-import img10 from "figma:asset/dbb384bb2bb3f8fa2763851d2821e27a695c5632.png";
-import img11 from "figma:asset/43222878cecab0e26082e440edc117051654e8c8.png";
-import img12 from "figma:asset/49fcad8a5b60055d26881600d453409bcdb9e1a8.png";
-import img13 from "figma:asset/37cdbb7dafb692f2b40d67da5a5d4451277220a3.png";
-import img14 from "figma:asset/ef68e327a52ce6bc07cfe66a1ac24d34ef2bd719.png";
-import img15 from "figma:asset/ad0120f925abce67e9da4bc0b9129f2f6a36a46f.png";
-import img16 from "figma:asset/1261fb59b3224f9c03add8a9120a3116a1a4666a.png";
-import img17 from "figma:asset/7ee57d02c0d97de0e360f94e0e44e75bd15c4ec9.png";
-import img18 from "figma:asset/83c35228d09af0e79abd658b65d11c1d674e4e55.png";
-
+const mediaRoot = "https://raw.githubusercontent.com/mariamparvez/designs/master/src/components/bestdesigns";
 const designs = [
-  { id: 1, src: img1, alt: "Weather Location Design" },
-  { id: 2, src: img2, alt: "Mountain Landscape" },
-  { id: 3, src: img3, alt: "Sunset Mountain House" },
-  { id: 4, src: img4, alt: "Hills Home Design" },
-  { id: 5, src: img5, alt: "Thai Lotus Food" },
-  { id: 6, src: img6, alt: "Diwali Snacks" },
-  { id: 7, src: img7, alt: "Gorilla Character" },
-  { id: 8, src: img8, alt: "Sumangali Silks Saree" },
-  { id: 9, src: img9, alt: "Elampillai Silks Craftsmanship" },
-  { id: 10, src: img10, alt: "Portrait Illustration" },
-  { id: 11, src: img11, alt: "Furniture Expo Poster" },
-  { id: 12, src: img12, alt: "Beauty of Black Saree" },
-  { id: 13, src: img13, alt: "Bharani Silks Collection" },
-  { id: 14, src: img14, alt: "Bharani Silks Golden Classics" },
-  { id: 15, src: img15, alt: "Bharani Silks Ethnic Menswear" },
-  { id: 16, src: img16, alt: "Sumangali Silks Eid Mubarak" },
-  { id: 17, src: img17, alt: "Konika Jewellery Kundan" },
-  { id: 18, src: img18, alt: "Geometric Portrait Art" },
+  { id: 1, src: `${mediaRoot}/1.gif`, alt: "Animated graphic design 01" },
+  { id: 2, src: `${mediaRoot}/2.gif`, alt: "Animated graphic design 02" },
+  { id: 3, src: `${mediaRoot}/3.gif`, alt: "Animated graphic design 03" },
+  { id: 4, src: `${mediaRoot}/4.gif`, alt: "Animated graphic design 04" },
+  { id: 5, src: `${mediaRoot}/5.gif`, alt: "Animated graphic design 05" },
+  { id: 6, src: `${mediaRoot}/6.gif`, alt: "Animated graphic design 06" },
+  ...[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22].map((id) => ({
+    id,
+    src: `${mediaRoot}/${id}${id === 10 || id === 11 ? ".JPG" : ".jpg"}`,
+    alt: `Graphic design ${String(id).padStart(2, "0")}`,
+  })),
 ];
 
 export function Designs() {
@@ -104,7 +79,7 @@ export function Designs() {
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 bg-[#3d38f5] text-[#fdfdfd] font-bold hover:bg-[#2d28d5] transition-all"
           >
-            View More on Dribbble
+            View More
           </motion.a>
         </motion.div>
       </div>

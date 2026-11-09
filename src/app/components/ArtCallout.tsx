@@ -35,10 +35,10 @@ export function ArtCallout() {
       />
 
       {/* Dark Blue Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a237e]/90 via-[#283593]/90 to-[#3949ab]/90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#050914]/78 via-[#0c1735]/74 to-[#14224a]/76" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col items-start justify-between gap-5 lg:flex-row lg:items-center lg:gap-8">
           {/* Content - LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -67,7 +67,7 @@ export function ArtCallout() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="flex-shrink-0"
+            className="self-start flex-shrink-0"
           >
             <a
               href="https://instagram.com/themimpact"
