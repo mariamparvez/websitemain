@@ -1,224 +1,56 @@
-import { motion, useMotionValue, useTransform, PanInfo } from "motion/react";
-import { useState } from "react";
-import { ParticlesBackground } from "./ParticlesBackground";
-import { SwipeGuideAnimation } from "./SwipeGuideAnimation";
-import { BigSwipeIndicator } from "./BigSwipeIndicator";
+import { motion } from "motion/react";
 
-const experiences = [
-  {
-    role: "Lead UI UX Designer and Developer",
-    company: "Prodapt",
-    location: "Chennai, India",
-    duration: "Mar 2025 – Present",
-    achievements: [
-      "Led enterprise-level UX initiatives for BT SRIMS stakeholders, collaborating with business analysts to deliver strategic digital experiences",
-      "Mentored junior designers and improved cross-functional collaboration to optimize usability and product workflows",
-      "Contributed to frontend-aware UX execution, ensuring seamless design-to-development handoffs for responsive digital products"
-    ]
-  },
-  {
-    role: "Primary Web & Graphic Designer (Freelance)",
-    company: "Catalyst Media FZE",
-    location: "Sharjah, UAE",
-    duration: "Jan 2025 – Mar 2025",
-    achievements: [
-      "Designed and developed the company website, strengthening digital brand visibility and UI consistency",
-      "Managed visual direction and web presence independently as freelance creative contributor for international client"
-    ]
-  },
-  {
-    role: "UI/UX Designer Coach and Trainer",
-    company: "ACTE Technologies",
-    location: "Chennai, India",
-    duration: "Jul 2024 – Jan 2025",
-    achievements: [
-      "Mentored aspiring designers and developers through structured UI/UX coaching and career-focused educational content",
-      "Conducted frontend workflow training, guiding students through practical, real-world design challenges"
-    ]
-  },
-  {
-    role: "Senior UI UX Designer and Developer",
-    company: "InSoft.com",
-    location: "Chennai, India",
-    duration: "Sep 2022 – Jul 2024",
-    achievements: [
-      "Led website redesign initiatives for US and Belgium projects, delivering responsive UX workflows and frontend-aware design execution",
-      "Mentored junior designers and developers, improving team collaboration and design-to-code workflows"
-    ]
-  },
-  {
-    role: "UI UX Designer and Developer",
-    company: "YOCO Labs Private Limited",
-    location: "Chennai, India",
-    duration: "Nov 2021 – Sep 2022",
-    achievements: [
-      "Designed CCTV software interfaces focused on usability optimization, workflow efficiency, and product adoption",
-      "Contributed to interaction-focused product experiences that enhanced user engagement and operational clarity"
-    ]
-  },
-  {
-    role: "Web Designer",
-    company: "Netaxis IT Solutions",
-    location: "Chennai, India",
-    duration: "Sep 2020 – Nov 2021",
-    achievements: [
-      "Developed responsive web experiences using HTML, CSS, and JavaScript",
-      "Built foundational UX and frontend implementation skills through practical project execution"
-    ]
-  },
-  {
-    role: "Graphic Designer",
-    company: "Deloitte Digital (formerly Ad2Pro Media Solutions)",
-    location: "Chennai, India",
-    duration: "Sep 2018 – Sep 2020",
-    achievements: [
-      "Designed creative assets for international clients including Macy's and News Corp",
-      "Strengthened branding, visual hierarchy, and production-ready design execution across print and digital campaigns"
-    ]
-  },
-  {
-    role: "Graphic Designer Intern",
-    company: "Deloitte Digital",
-    location: "Chennai, India",
-    duration: "Mar 2018 – Sep 2018",
-    achievements: [
-      "Selected among 400 applicants to contribute to enterprise design production workflows",
-      "Assisted creative teams while learning branding standards and large-scale design execution"
-    ]
-  }
+type TimelineItem = {
+  years: string;
+  title: string;
+  organisation: string;
+  location: string;
+  kind: "education" | "work";
+  details: string;
+};
+
+const timeline: TimelineItem[] = [
+  { years: "2016–2019", title: "BSc Animation & Multimedia", organisation: "Vels University", location: "Chennai, India", kind: "education", details: "Built a foundation in visual storytelling, animation, multimedia production, and creative technology." },
+  { years: "2018–2020", title: "Graphic Designer", organisation: "Deloitte Digital (formerly Ad2Pro)", location: "Chennai, India", kind: "work", details: "Created production-ready creative assets for international brands including Macy’s and News Corp." },
+  { years: "2020–2022", title: "MBA in Technology Management", organisation: "Anna University", location: "Chennai, India", kind: "education", details: "Developed a strategic perspective on technology, operations, and digital business management." },
+  { years: "2020–2021", title: "Web Designer", organisation: "Netaxis IT Solutions", location: "Chennai, India", kind: "work", details: "Developed responsive web experiences and strengthened practical UX and frontend implementation skills." },
+  { years: "2021–2022", title: "UI/UX Designer & Developer", organisation: "YOCO Labs Private Limited", location: "Chennai, India", kind: "work", details: "Designed workflow-focused CCTV software interfaces that improved usability and product adoption." },
+  { years: "2022–2024", title: "Senior UI/UX Designer & Developer", organisation: "InSoft.com", location: "Chennai, India", kind: "work", details: "Led responsive redesign work across US and Belgium projects while mentoring designers and developers." },
+  { years: "2024–2025", title: "UI/UX Designer Coach & Trainer", organisation: "ACTE Technologies", location: "Chennai, India", kind: "work", details: "Taught hands-on UI/UX and frontend workflows through career-focused, real-world learning." },
+  { years: "2025", title: "Primary Web & Graphic Designer", organisation: "Catalyst Media FZE", location: "Sharjah, UAE", kind: "work", details: "Owned web design and visual direction as an independent creative contributor for an international client." },
+  { years: "2025–now", title: "Lead UI/UX Designer & Developer", organisation: "Prodapt", location: "Chennai, India", kind: "work", details: "Leading enterprise UX initiatives and design-to-development collaboration for strategic digital products." },
 ];
 
 export function ExperienceTimeline() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const x = useMotionValue(0);
-
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    const offset = info.offset.x;
-    const velocity = info.velocity.x;
-
-    if (offset > 50 || velocity > 200) {
-      // Swipe right - previous
-      setCurrentIndex((prev) => Math.max(0, prev - 1));
-    } else if (offset < -50 || velocity < -200) {
-      // Swipe left - next
-      setCurrentIndex((prev) => Math.min(experiences.length - 1, prev + 1));
-    }
-  };
-
   return (
-    <section id="experience" className="relative py-10 overflow-hidden bg-[#1b1b1b] border-t-2 border-[#fdfdfd]/15">
-      <ParticlesBackground />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          className="text-center mb-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-4xl font-black text-[#fdfdfd] mb-3">
-            My Experience Journey
-          </h2>
-          <p className="text-[#b8b8b8] text-base max-w-2xl mx-auto">
-            Swipe to explore my professional timeline
-          </p>
-        </motion.div>
+    <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#0c0f17] py-16 sm:py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <motion.header className="mb-12 text-center sm:mb-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }}>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.24em] text-[#8090bd]">Career & education</p>
+          <h2 className="text-3xl font-black tracking-tight text-[#fdfdfd] sm:text-5xl">My Experience Journey</h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#abb1c2] sm:text-base">A visual timeline of the work, study, and craft that shape how I design.</p>
+        </motion.header>
 
-        {/* Card Stack Container */}
-        <div className="relative h-[400px] md:h-[350px]">
-          {experiences.map((exp, index) => {
-            const isActive = index === currentIndex;
-            const offset = index - currentIndex;
-
-            return (
-              <motion.div
-                key={index}
-                drag={isActive ? "x" : false}
-                dragConstraints={{ left: 0, right: 0 }}
-                onDragEnd={isActive ? handleDragEnd : undefined}
-                style={{ x: isActive ? x : 0 }}
-                animate={{
-                  scale: isActive ? 1 : 0.95 - Math.abs(offset) * 0.05,
-                  opacity: Math.max(0, 1 - Math.abs(offset) * 0.3),
-                  y: Math.abs(offset) * 20,
-                  zIndex: experiences.length - Math.abs(offset)
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 30
-                }}
-                className="absolute inset-0 bg-[#121212] rounded-2xl border-2 border-[#fdfdfd]/15 p-6 md:p-8 cursor-grab active:cursor-grabbing"
-              >
-                <div className="flex flex-col h-full">
-                  {/* Header */}
-                  <div className="mb-4">
-                    <h3 className="text-xl md:text-2xl font-bold text-[#fdfdfd] mb-2">
-                      {exp.role}
-                    </h3>
-                    <div className="flex flex-wrap gap-2 text-sm text-[#b8b8b8]">
-                      <span className="font-semibold text-[#9a96ff]">{exp.company}</span>
-                      <span>•</span>
-                      <span>{exp.location}</span>
-                      <span>•</span>
-                      <span>{exp.duration}</span>
-                    </div>
-                  </div>
-
-                  {/* Achievements */}
-                  <div className="flex-1 overflow-y-auto">
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm md:text-base text-[#d6d6d6]">
-                          <span className="text-[#9a96ff] mt-1">•</span>
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Footer */}
-                  <div className="mt-4 pt-4 border-t border-[#fdfdfd]/15 flex justify-between items-center">
-                    <span className="text-sm text-[#a3a3a3]">
-                      {currentIndex + 1} / {experiences.length}
-                    </span>
-                    <div className="flex gap-2">
-                      <button
-                        onClick={() => setCurrentIndex((prev) => Math.max(0, prev - 1))}
-                        disabled={currentIndex === 0}
-                        className="px-4 py-2 bg-[#232323] text-[#d6d6d6] rounded-full text-sm font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#2e2e2e] transition-all"
-                      >
-                        Previous
-                      </button>
-                      <button
-                        onClick={() => setCurrentIndex((prev) => Math.min(experiences.length - 1, prev + 1))}
-                        disabled={currentIndex === experiences.length - 1}
-                        className="px-4 py-2 bg-[#3d38f5] text-[#fdfdfd] rounded-full text-sm font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#2d28d5] transition-all"
-                      >
-                        Next
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-          <SwipeGuideAnimation />
-          <BigSwipeIndicator />
-        </div>
-
-        {/* Dots Indicator */}
-        <div className="relative z-20 flex justify-center gap-2 mt-8">
-          {experiences.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              aria-label={`Go to experience ${index + 1}`}
-              className={`w-2 h-2 rounded-full transition-all ${
-                index === currentIndex ? "bg-[#3d38f5] w-8" : "bg-[#2e2e2e]"
-              }`}
-            />
-          ))}
+        <div className="relative">
+          <div aria-hidden="true" className="absolute bottom-0 left-1/2 top-0 w-[3px] -translate-x-1/2 bg-gradient-to-b from-[#20335f] via-[#344b80] to-[#152344]" />
+          <ol className="relative space-y-8 sm:space-y-12">
+            {timeline.map((item, index) => {
+              const left = index % 2 === 0;
+              const tint = item.kind === "education" ? "bg-[#111b32]" : "bg-[#101522]";
+              return (
+                <motion.li key={`${item.years}-${item.title}`} className="relative grid grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-6" initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.4, delay: Math.min(index * 0.035, 0.2) }}>
+                  <article className={`${left ? "col-start-1" : "col-start-3"} ${tint} relative min-w-0 border border-[#52658e]/45 p-4 shadow-[0_16px_32px_rgba(1,5,15,.18)] sm:p-5`} style={{ borderRadius: 8 }}>
+                    <span className="mb-3 inline-flex border border-[#7184af]/45 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-[#aebce0]" style={{ borderRadius: 4 }}>{item.kind === "education" ? "Education" : "Experience"}</span>
+                    <h3 className="text-base font-extrabold leading-tight text-[#fdfdfd] sm:text-xl">{item.title}</h3>
+                    <p className="mt-2 text-sm font-semibold text-[#8fa1d4]">{item.organisation}</p>
+                    <p className="mt-1 text-xs text-[#9ea6b9]">{item.location}</p>
+                    <p className="mt-3 hidden text-sm leading-6 text-[#ccd0da] sm:block">{item.details}</p>
+                  </article>
+                  <div className="col-start-2 z-10 flex h-14 w-14 shrink-0 items-center justify-center border-4 border-[#0c0f17] bg-[#253a68] text-center text-[11px] font-black leading-3 text-[#fdfdfd] shadow-[0_0_0_1px_#6275a0] sm:h-16 sm:w-16 sm:text-xs" style={{ borderRadius: 9999 }}>{item.years}</div>
+                </motion.li>
+              );
+            })}
+          </ol>
         </div>
       </div>
     </section>
