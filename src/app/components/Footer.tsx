@@ -1,137 +1,47 @@
 import { motion } from "motion/react";
-import { Heart } from "lucide-react";
-import { useLocation, Link } from "react-router";
+import { Dribbble, Heart, Instagram, Linkedin } from "lucide-react";
+import { Link } from "react-router";
+
+const socials = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/themariamparvez/", icon: <Linkedin /> },
+  { label: "Behance", href: "https://www.behance.net/themariamparvez", icon: <span className="text-[11px] font-black leading-none">Bē</span> },
+  { label: "Dribbble", href: "https://dribbble.com/themariamparvez", icon: <Dribbble /> },
+  { label: "Instagram", href: "https://www.instagram.com/themimpact/", icon: <Instagram /> },
+  { label: "Medium", href: "https://medium.com/@themariamparvez", icon: <span className="text-[11px] font-black leading-none">M</span> },
+];
+
+const legal = [
+  ["Terms & Conditions", "/terms"],
+  ["Privacy Policy", "/privacy"],
+  ["Disclaimer", "/disclaimer"],
+  ["Copyright", "/copyright"],
+  ["CSR Policy", "/csr"],
+] as const;
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const location = useLocation();
-  const isArtPage = location.pathname === "/art";
-
   return (
-    <footer className="relative py-12 overflow-hidden border-t border-[#fdfdfd]/15 bg-[#1b1b1b]">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] bg-clip-text text-transparent">
-              Mariam Parvez
-            </h3>
-            <p className="text-[#b8b8b8] mb-6 font-medium">
-              Web Designer | UI/UX Expert | Graphic Designer | Artist | Coach
-            </p>
+    <footer className="relative overflow-hidden border-t border-[#fdfdfd]/15 bg-[#1b1b1b] py-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }} className="text-center">
+          <h3 className="mb-2 text-2xl font-bold text-[#5b58f7] md:text-3xl">Mariam Parvez</h3>
+          <p className="mx-auto max-w-3xl text-sm font-medium text-[#b8b8b8]">Web Designer · UI/UX Expert · Graphic Designer · Artist · Coach</p>
+          <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-[#b8b8b8]">
+            <span>© {currentYear} Mariam Parvez</span><Heart className="h-3 w-3 fill-red-400 text-red-400" aria-label="Made with care" />
+          </div>
 
-            <div className="hidden md:flex items-center justify-center gap-2 text-[#b8b8b8]">
-              <span>Made with</span>
-              <Heart className="w-4 h-4 text-red-400 fill-red-400" />
-              <span>© {currentYear} Mariam Parvez. All rights reserved.</span>
-            </div>
+          <nav aria-label="Social links" className="mt-5 flex justify-center gap-2">
+            {socials.map((social) => (
+              <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} title={social.label} className="grid h-8 w-8 place-items-center rounded-[4px] border border-[#fdfdfd]/20 text-[#d7d5ff] transition hover:border-[#8e87ff] hover:bg-[#3d38f5] hover:text-white">
+                <span className="[&>svg]:h-4 [&>svg]:w-4">{social.icon}</span>
+              </a>
+            ))}
+          </nav>
 
-            <div className="mt-6 hidden flex-wrap justify-center gap-4 text-sm text-[#a3a3a3] md:flex">
-              <a
-                href="https://www.linkedin.com/in/themariamparvez/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#9a96ff] transition-colors"
-              >
-                LinkedIn
-              </a>
-              <span>•</span>
-              <a
-                href="https://www.behance.net/themariamparvez"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#9a96ff] transition-colors"
-              >
-                Behance
-              </a>
-              <span>•</span>
-              <a
-                href="https://dribbble.com/themariamparvez"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#9a96ff] transition-colors"
-              >
-                Dribbble
-              </a>
-              <span>•</span>
-              <a
-                href="https://www.instagram.com/themimpact/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#9a96ff] transition-colors"
-              >
-                Instagram
-              </a>
-              <span>•</span>
-              <a
-                href="https://medium.com/@themariamparvez"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#9a96ff] transition-colors"
-              >
-                Medium
-              </a>
-            </div>
-
-            <div className="mt-6 hidden flex-wrap justify-center gap-4 text-sm md:flex">
-              <Link
-                to="/terms"
-                className="text-[#a3a3a3] hover:text-[#9a96ff] transition-colors"
-              >
-                Terms & Conditions
-              </Link>
-              <span className="text-[#999999]">•</span>
-              <Link
-                to="/privacy"
-                className="text-[#a3a3a3] hover:text-[#9a96ff] transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <span className="text-[#999999]">•</span>
-              <Link
-                to="/disclaimer"
-                className="text-[#a3a3a3] hover:text-[#9a96ff] transition-colors"
-              >
-                Disclaimer
-              </Link>
-              <span className="text-[#999999]">•</span>
-              <Link
-                to="/copyright"
-                className="text-[#a3a3a3] hover:text-[#9a96ff] transition-colors"
-              >
-                Copyright
-              </Link>
-              <span className="text-[#999999]">•</span>
-              <Link
-                to="/csr"
-                className="text-[#a3a3a3] hover:text-[#9a96ff] transition-colors"
-              >
-                CSR Policy
-              </Link>
-            </div>
-
-            <div className="mt-6 grid grid-cols-2 divide-x divide-[#fdfdfd]/15 text-left text-sm md:hidden">
-              <div className="space-y-3 pr-4 text-[#a3a3a3]">
-                <a href="https://www.linkedin.com/in/themariamparvez/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#9a96ff]">LinkedIn</a>
-                <a href="https://www.behance.net/themariamparvez" target="_blank" rel="noopener noreferrer" className="block hover:text-[#9a96ff]">Behance</a>
-                <a href="https://dribbble.com/themariamparvez" target="_blank" rel="noopener noreferrer" className="block hover:text-[#9a96ff]">Dribbble</a>
-                <a href="https://www.instagram.com/themimpact/" target="_blank" rel="noopener noreferrer" className="block hover:text-[#9a96ff]">Instagram</a>
-                <a href="https://medium.com/@themariamparvez" target="_blank" rel="noopener noreferrer" className="block hover:text-[#9a96ff]">Medium</a>
-              </div>
-              <div className="space-y-3 pl-4 text-[#a3a3a3]">
-                <Link to="/terms" className="block hover:text-[#9a96ff]">Terms & Conditions</Link>
-                <Link to="/privacy" className="block hover:text-[#9a96ff]">Privacy Policy</Link>
-                <Link to="/disclaimer" className="block hover:text-[#9a96ff]">Disclaimer</Link>
-                <Link to="/copyright" className="block hover:text-[#9a96ff]">Copyright</Link>
-                <Link to="/csr" className="block hover:text-[#9a96ff]">CSR Policy</Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+          <nav aria-label="Legal links" className="mx-auto mt-4 flex max-w-xl flex-wrap justify-center gap-x-3 gap-y-2 text-[8px] font-medium leading-none text-[#969696] sm:text-[9px]">
+            {legal.map(([label, to]) => <Link key={to} to={to} className="transition hover:text-[#9a96ff]">{label}</Link>)}
+          </nav>
+        </motion.div>
       </div>
     </footer>
   );
