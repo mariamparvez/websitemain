@@ -35,20 +35,22 @@ const GRID_MONTHS = 122;
 
 function TimelineCard({ item }: { item: TimelineItem }) {
   const lane = item.kind === "education" ? "col-start-1" : "col-start-3";
-  const bg = item.kind === "education" ? "bg-[#121d35]" : "bg-[#111725]";
-  const visualMonths = Math.max(item.months, 6);
+  const palette = item.kind === "education"
+    ? { card: "bg-[#142b25] border-[#4f786b]/65", date: "text-[#9dcbbb]", rail: "bg-[#68a58f]" }
+    : { card: "bg-[#111d32] border-[#4f6f9a]/65", date: "text-[#9bb6dd]", rail: "bg-[#6487b9]" };
+  const visualMonths = Math.max(item.months, 10);
   return (
     <motion.article
-      className={`${lane} ${bg} relative z-10 overflow-hidden border border-[#60749d]/45 p-3 shadow-[0_12px_28px_rgba(0,0,0,.22)] sm:p-4`}
+      className={`${lane} ${palette.card} relative z-10 overflow-hidden border p-2.5 shadow-[0_10px_22px_rgba(0,0,0,.18)] sm:p-3`}
       style={{ gridRow: `${item.start + 1} / span ${visualMonths}`, borderRadius: 8 }}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
     >
-      <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#8fa1cf] sm:text-xs">{item.dateLabel}</p>
-      <h3 className="mt-2 text-sm font-extrabold leading-tight text-[#fdfdfd] sm:text-lg">{item.title}</h3>
-      <p className="mt-1 text-xs leading-snug text-[#bdc5d8] sm:text-sm">{item.organisation}</p>
-      <span className="absolute bottom-0 left-0 top-0 w-[3px] bg-[#4a5f91]" />
+      <p className={`text-[9px] font-bold uppercase tracking-[0.1em] ${palette.date} sm:text-[10px]`}>{item.dateLabel}</p>
+      <h3 className="mt-1 text-xs font-extrabold leading-tight text-[#fdfdfd] sm:text-base">{item.title}</h3>
+      <p className="mt-1 text-[10px] leading-snug text-[#c2c9d7] sm:text-xs">{item.organisation}</p>
+      <span className={`absolute bottom-0 left-0 top-0 w-[3px] ${palette.rail}`} />
     </motion.article>
   );
 }
@@ -57,25 +59,19 @@ export function ExperienceTimeline() {
   return (
     <section id="experience" className="relative overflow-hidden border-t border-white/10 bg-[#0c0f17] py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.header className="mb-10 text-center sm:mb-14" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.24em] text-[#8293bd]">Career & education</p>
+        <motion.header className="mb-8 text-center sm:mb-10" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.24em] text-[#8293bd]">A shared timeline</p>
           <h2 className="text-3xl font-black tracking-tight text-[#fdfdfd] sm:text-5xl">My Experience Journey</h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#aeb6c8] sm:text-base">One real timeline: studies on the left, work on the right.</p>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#aeb6c8] sm:text-base">Education and work shown together, at their real dates.</p>
         </motion.header>
 
-        <div className="mb-4 grid grid-cols-[minmax(0,1fr)_56px_minmax(0,1fr)] gap-3 text-[10px] font-bold uppercase tracking-[0.14em] sm:grid-cols-[minmax(0,1fr)_80px_minmax(0,1fr)] sm:gap-6 sm:text-xs">
-          <span className="text-right text-[#9eafda]">Education</span>
-          <span />
-          <span className="text-[#9eafda]">Experience</span>
-        </div>
-
         <div
-          className="relative grid grid-cols-[minmax(0,1fr)_56px_minmax(0,1fr)] gap-3 sm:grid-cols-[minmax(0,1fr)_80px_minmax(0,1fr)] sm:gap-6"
-          style={{ gridTemplateRows: `repeat(${GRID_MONTHS}, 10px)` }}
+          className="relative grid grid-cols-[minmax(0,1fr)_48px_minmax(0,1fr)] gap-2 sm:grid-cols-[minmax(0,1fr)_64px_minmax(0,1fr)] sm:gap-4"
+          style={{ gridTemplateRows: `repeat(${GRID_MONTHS}, 6px)` }}
         >
-          <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-1/2 top-0 z-0 w-[2px] -translate-x-1/2 bg-[#516891]" />
+          <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-1/2 top-0 z-0 w-px -translate-x-1/2 bg-[#52698f]" />
           {years.map(([month, label]) => (
-            <div key={label} className="col-start-2 z-10 -translate-y-1/2 justify-self-center border border-[#66799f] bg-[#0c0f17] px-1.5 py-1 text-[10px] font-black text-[#dce5ff] sm:px-2 sm:text-xs" style={{ gridRow: month + 1, borderRadius: 4 }}>
+            <div key={label} className="col-start-2 z-10 -translate-y-1/2 justify-self-center bg-[#0c0f17] px-1 text-[9px] font-black text-[#c7d4ed] sm:text-[10px]" style={{ gridRow: month + 1 }}>
               {label}
             </div>
           ))}
