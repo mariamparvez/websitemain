@@ -59,7 +59,7 @@ export function Designs() {
         <div className="relative mx-auto w-full max-w-none flex-1 pt-1">
           <motion.a key={active.id} href="https://dribbble.com/themariamparvez" target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, rotateY: -18, scale: .96 }} animate={{ opacity: 1, rotateY: 0, scale: 1 }} transition={{ duration: .35 }} className="relative z-10 mx-auto block aspect-square w-[min(38svh,72vw,360px)] overflow-hidden border border-[#fdfdfd]/20 bg-[#121212] shadow-[0_28px_70px_-35px_rgba(77,93,255,.7)]"><img src={active.src} alt={active.alt} className="h-full w-full object-cover" /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#121212] to-transparent px-5 pb-4 pt-14"><p className="text-sm font-bold text-[#fdfdfd]">{active.alt}</p></div></motion.a>
           <div className="design-carousel mt-3 grid place-items-center" aria-label="Choose a graphic design">
-            <Carousel ref={carouselRef} items={carouselItems} itemWidth={104} showControls={false} slideOnClick />
+            <Carousel ref={carouselRef} items={carouselItems} itemWidth={148} showControls={false} slideOnClick />
           </div>
         </div>
 

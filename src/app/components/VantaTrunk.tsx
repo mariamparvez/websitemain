@@ -17,8 +17,8 @@ export function VantaTrunk() {
       minWidth: 200,
       scale: 1,
       scaleMobile: 0.8,
-      color: 0x111c68,
-      backgroundColor: 0x050817,
+      color: 0x1e3d9d,
+      backgroundColor: 0x061333,
       spacing: 5,
       chaos: 1.7,
     });
