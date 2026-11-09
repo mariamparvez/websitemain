@@ -24,7 +24,7 @@ const work: TimelineItem[] = [
   { kind: "work", lane: "left", start: 76, months: 22, dateLabel: "Sep 2022 - Jul 2024", title: "Senior UI/UX Designer & Developer", organisation: "InSoft.com" },
   { kind: "work", lane: "left", start: 98, months: 6, dateLabel: "Jul 2024 - Jan 2025", title: "UI/UX Designer Coach & Trainer", organisation: "ACTE Technologies" },
   { kind: "work", lane: "left", start: 104, months: 3, dateLabel: "Jan 2025 - Mar 2025", title: "Primary Web & Graphic Designer", organisation: "Catalyst Media FZE · Freelance" },
-  { kind: "work", lane: "right", start: 92, months: 34, dateLabel: "2024 - Present", title: "Lead UI/UX Designer, Developer & Product Designer", organisation: "Prodapt" },
+  { kind: "work", lane: "right", start: 106, months: 20, dateLabel: "Mar 2025 - Present", title: "Lead UI/UX Designer, Developer & Product Designer", organisation: "Prodapt" },
 ];
 
 const years = [
