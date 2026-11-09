@@ -36,21 +36,22 @@ const GRID_MONTHS = 128;
 
 function TimelineCard({ item }: { item: TimelineItem }) {
   const lane = item.lane === "left" ? "col-start-1" : "col-start-3";
+  const compact = item.months < 12;
   const palette = item.kind === "education"
     ? { card: "bg-[#142b25] border-[#4f786b]/65", date: "text-[#9dcbbb]", rail: "bg-[#68a58f]" }
     : { card: "bg-[#111d32] border-[#4f6f9a]/65", date: "text-[#9bb6dd]", rail: "bg-[#6487b9]" };
-  const visualMonths = Math.max(item.months, 12);
+  const visualMonths = Math.max(item.months, compact ? 10 : 12);
   return (
     <motion.article
-      className={`${lane} ${palette.card} relative z-10 overflow-hidden border p-2.5 shadow-[0_10px_22px_rgba(0,0,0,.18)] sm:p-3`}
+      className={`${lane} ${palette.card} relative z-10 min-h-0 overflow-hidden border p-1.5 shadow-[0_10px_22px_rgba(0,0,0,.18)] sm:p-2`}
       style={{ gridRow: `${item.start + 1} / span ${visualMonths}`, borderRadius: 8 }}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
     >
-      <p className={`text-[9px] font-bold uppercase tracking-[0.1em] ${palette.date} sm:text-[10px]`}>{item.dateLabel}</p>
-      <h3 className="mt-1 text-xs font-extrabold leading-tight text-[#fdfdfd] sm:text-base">{item.title}</h3>
-      <p className="mt-1 text-[10px] leading-snug text-[#c2c9d7] sm:text-xs">{item.organisation}</p>
+      <p className={`truncate text-[8px] font-bold uppercase tracking-[0.08em] ${palette.date} sm:text-[9px]`}>{item.dateLabel}</p>
+      <h3 className={`mt-0.5 text-[10px] font-extrabold leading-tight text-[#fdfdfd] sm:text-sm ${compact ? "truncate" : "line-clamp-2"}`}>{item.title}</h3>
+      {!compact && <p className="mt-0.5 line-clamp-2 text-[9px] leading-snug text-[#c2c9d7] sm:text-[10px]">{item.organisation}</p>}
       <span className={`absolute bottom-0 left-0 top-0 w-[3px] ${palette.rail}`} />
     </motion.article>
   );
@@ -68,7 +69,7 @@ export function ExperienceTimeline() {
 
         <div
           className="relative grid grid-cols-[minmax(0,1fr)_48px_minmax(0,1fr)] gap-2 sm:grid-cols-[minmax(0,1fr)_64px_minmax(0,1fr)] sm:gap-4"
-          style={{ gridTemplateRows: `repeat(${GRID_MONTHS}, 2px)` }}
+          style={{ gridTemplateRows: `repeat(${GRID_MONTHS}, minmax(0, 2px))` }}
         >
           <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-1/2 top-0 z-0 w-px -translate-x-1/2 bg-[#52698f]" />
           {years.map(([month, label]) => (
