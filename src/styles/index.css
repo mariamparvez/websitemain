@@ -49,3 +49,34 @@ body {
 }
 html { color-scheme: dark; background: #121212; }
 body { background: #121212; color: #fdfdfd; }
+
+:root { --ink: #121212; --paper: #fdfdfd; --blue: #4d5dff; --blue-deep: #2838c9; --grey: #b8b8b8; }
+section > .relative { transform: translateY(var(--parallax-offset, 0)); transition: transform 180ms linear; }
+.hero-slats { background: linear-gradient(115deg, rgba(77,93,255,.18), transparent 42%), repeating-linear-gradient(108deg, rgba(253,253,253,.045) 0 1px, transparent 1px 8px), linear-gradient(#121212, #161826); background-size: auto, 12px 12px, auto; animation: slats-drift 18s linear infinite; }
+@keyframes slats-drift { to { background-position: 0 0, 96px 96px, 0 0; } }
+.scroll-cue { width: 28px; height: 56px; position: relative; }
+.scroll-cue span { width: 8px; height: 8px; background: var(--paper); border-radius: 999px; animation: dot-to-line 1.9s ease-in-out infinite; }
+.scroll-cue i { position: absolute; bottom: 0; width: 1px; height: 20px; background: rgba(253,253,253,.5); }
+@keyframes dot-to-line { 0%,20% { transform: translateY(-10px) scale(1); } 55% { transform: translateY(8px) scaleY(3.5); border-radius: 8px; } 100% { transform: translateY(20px) scaleY(.4); opacity: 0; } }
+
+/* Shared 8px interface grid: surfaces use 8px, actions use 4px. */
+[class*="rounded-"] { border-radius: 8px !important; }
+button, [role="button"], a.inline-flex[class*="bg-"], a.inline-flex[class*="border-"] { border-radius: 4px !important; }
+img.rounded-full, .slick-dots li button { border-radius: 999px !important; }
+a.inline-flex[class*="bg-"] { padding: 8px 12px !important; font-size: .875rem !important; line-height: 1.25rem; }
+
+/* 3D artwork carousel — package geometry, restyled for the portfolio system. */
+.design-carousel .carousel { width: 12rem; height: 12rem; perspective: 62rem; }
+.design-carousel .carousel__container { transition: transform 700ms cubic-bezier(.22,.8,.25,1); }
+.design-carousel .carousel__slide { width: 11rem; height: 11rem; left: .5rem; top: .5rem; overflow: hidden; border: 1px solid rgba(253,253,253,.28); border-radius: 8px; background: #121212; box-shadow: 0 12px 28px rgba(0,0,0,.38); cursor: pointer; }
+.design-carousel .carousel__slide img { width: 100%; height: 100%; object-fit: cover; }
+.design-carousel .carousel__slide-overlay { padding: 12px; background: linear-gradient(to top, rgba(18,18,18,.92), transparent); align-content: flex-end; font: 700 .7rem/1.2 'Be Vietnam Pro', sans-serif; }
+@media (min-width: 640px) { .design-carousel .carousel { transform: scaleX(1.5) scaleY(1.08); margin-block: .7rem; } }
+
+/* Pointer-led technical outlines for the hero wordmark. */
+.tech-hero { --tech-x: -240px; --tech-y: -240px; cursor: crosshair; }
+.tech-text-line { position: relative; display: block; width: fit-content; margin-inline: auto; }
+.tech-text-line::after { content: attr(data-tech); position: absolute; inset: 0; color: transparent; -webkit-text-stroke: 1px rgba(253,253,253,.95); background: repeating-linear-gradient(90deg, rgba(253,253,253,.96) 0 5px, transparent 5px 10px); -webkit-background-clip: text; background-clip: text; clip-path: circle(0 at var(--tech-x) var(--tech-y)); transition: clip-path 140ms ease-out; pointer-events: none; }
+.tech-hero:hover .tech-text-line::after { clip-path: circle(150px at var(--tech-x) var(--tech-y)); }
+.tech-text-line--accent::after { -webkit-text-stroke-color: #b5b1ff; background: repeating-linear-gradient(90deg, #c6c3ff 0 5px, transparent 5px 10px); -webkit-background-clip: text; background-clip: text; }
+@media (prefers-reduced-motion: reduce) { .tech-text-line::after { display: none; } }

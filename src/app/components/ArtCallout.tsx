@@ -72,10 +72,10 @@ export function ArtCallout() {
           >
             <Link
               to="/art"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-[#121212] text-[#9a96ff] rounded-full font-bold text-lg hover:scale-105 transition-all"
+              className="group inline-flex items-center gap-2 text-[#fdfdfd] font-semibold hover:text-[#9a96ff] transition-colors"
             >
               <span>Ready for Art?</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>

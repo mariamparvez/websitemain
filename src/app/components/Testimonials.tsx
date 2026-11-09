@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useRef } from "react";
 import { ParticlesBackground } from "./ParticlesBackground";
+import { InteractiveSlats } from "./InteractiveSlats";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 // Import testimonial images
 import rajeevImg from "figma:asset/c36a1a4faf91b7365b04df6f3a9bed203a782d09.png";
@@ -66,30 +66,21 @@ const testimonials = [
 ];
 
 export function Testimonials() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    pauseOnFocus: true,
-    arrows: false
-  };
+  const trackRef = useRef<HTMLDivElement>(null);
+  const scroll = (direction: number) => trackRef.current?.scrollBy({ left: direction * 432, behavior: "smooth" });
 
   return (
-    <section id="testimonials" className="relative py-10 overflow-hidden bg-[#1b1b1b] border-t-2 border-[#fdfdfd]/15">
+    <section id="testimonials" className="relative py-8 overflow-hidden bg-[#121212] border-t-2 border-[#fdfdfd]/15">
+      <InteractiveSlats />
       <ParticlesBackground />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-6 md:mb-16">
+        <div className="text-center mb-6 md:mb-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-[#fdfdfd] mb-3"
+            className="text-3xl md:text-5xl font-black tracking-tight text-[#fdfdfd] mb-3"
           >
             Testimonials
           </motion.h2>
@@ -104,46 +95,13 @@ export function Testimonials() {
           </motion.p>
         </div>
 
-        {/* Carousel */}
-        <div className="relative max-w-5xl mx-auto pb-4">
-          <Slider {...settings}>
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="px-2 md:px-4">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="relative p-4 md:p-10 rounded-3xl bg-[#121212] border-2 border-[#fdfdfd]/15 hover:border-[#3d38f5] shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  {/* Header with Image, Name, and Role */}
-                  <div className="flex items-start gap-4 mb-3 md:mb-6">
-                    {/* Image */}
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover border-2 border-[#3d38f5]/20 flex-shrink-0"
-                    />
-                    
-                    {/* Name and Role */}
-                    <div className="flex-1 min-w-0">
-                      <h4 className="text-lg md:text-xl font-bold text-[#fdfdfd] mb-1 break-words">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-[#b8b8b8] text-xs md:text-sm break-words">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Testimonial Text */}
-                  <p className="text-[#d6d6d6] text-sm md:text-lg leading-relaxed text-left break-words">
-                    {testimonial.text}
-                  </p>
-                </motion.div>
-              </div>
-            ))}
-          </Slider>
+        <div className="relative max-w-6xl mx-auto">
+          <div ref={trackRef} className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {testimonials.map((testimonial, index) => <motion.article key={testimonial.name} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .04 }} className="relative flex h-[240px] w-[min(82vw,400px)] shrink-0 snap-start flex-col overflow-hidden border border-[#fdfdfd]/20 bg-[#121212] p-4">
+              <Quote className="absolute right-4 top-4 h-9 w-9 text-[#4d5dff]/15" strokeWidth={1.2} /><div className="flex items-center gap-3"><img src={testimonial.image} alt={testimonial.name} className="h-10 w-10 rounded-full border-2 border-[#4d5dff] object-cover" /><div><h4 className="font-bold text-[#fdfdfd]">{testimonial.name}</h4><p className="mt-1 text-xs text-[#b8b8b8]">{testimonial.role}</p></div></div><p className="mt-4 line-clamp-4 text-[15px] leading-6 text-[#d6d6d6]">{testimonial.text}</p>
+            </motion.article>)}
+          </div>
+          <div className="mt-5 flex justify-end gap-2"><button onClick={() => scroll(-1)} aria-label="Previous testimonials" className="grid h-9 w-9 place-items-center border border-[#fdfdfd]/20 text-[#fdfdfd]"><ChevronLeft className="h-4 w-4" /></button><button onClick={() => scroll(1)} aria-label="Next testimonials" className="grid h-9 w-9 place-items-center border border-[#fdfdfd]/20 text-[#fdfdfd]"><ChevronRight className="h-4 w-4" /></button></div>
         </div>
       </div>
     </section>

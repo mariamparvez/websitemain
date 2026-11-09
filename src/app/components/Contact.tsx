@@ -168,7 +168,7 @@ export function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#3d38f5] text-[#fdfdfd] rounded-xl font-bold hover:bg-[#2d28d5] hover:scale-105 transition-all"
+                className="self-end flex items-center justify-center gap-2 px-4 py-2 bg-[#3d38f5] text-[#fdfdfd] rounded font-bold text-sm hover:bg-[#2d28d5] transition-all"
               >
                 <span>Send Message</span>
                 <Send className="w-5 h-5" />

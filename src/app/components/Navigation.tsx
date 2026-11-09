@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useLocation, Link } from "react-router";
+import { MLoader } from "./MLoader";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,6 +51,8 @@ export function Navigation() {
   };
 
   return (
+    <>
+    <MLoader />
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -61,7 +64,7 @@ export function Navigation() {
             <Link
               to="/"
               className="text-2xl lg:text-3xl font-black text-[#fdfdfd]"
-              style={{ fontFamily: isArtPage ? "'Balsamiq Sans', sans-serif" : "'Balsamiq Sans', sans-serif", fontWeight: 700 }}
+              style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontWeight: 700 }}
             >
               {isArtPage ? "The M Impact" : "Mariam Parvez"}
             </Link>
@@ -142,5 +145,6 @@ export function Navigation() {
         )}
       </AnimatePresence>
     </motion.nav>
+    </>
   );
 }

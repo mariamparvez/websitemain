@@ -52,7 +52,7 @@ const platforms = [
 
 export function InfiniteMarquee() {
   return (
-    <section className="relative py-8 overflow-hidden bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] border-y-2 border-[#fdfdfd]/15">
+    <section className="relative py-4 overflow-hidden bg-gradient-to-r from-[#3d38f5] to-[#6b63f7] border-y-2 border-[#fdfdfd]/15">
       <div className="relative flex">
         {/* First set */}
         <motion.div

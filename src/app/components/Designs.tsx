@@ -1,4 +1,8 @@
 import { motion } from "motion/react";
+import { useMemo, useRef, useState } from "react";
+import { Carousel, type CarouselItem, type CarouselRef } from "react-round-carousel";
+import "react-round-carousel/dist/index.css";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ParticlesBackground } from "./ParticlesBackground";
 import img1 from "figma:asset/3a6fd584cba573c439db70b5abacd46376caf688.png";
 import img2 from "figma:asset/d98cf614ccdae81c7dbebc1fe013460fe19bdb11.png";
@@ -41,8 +45,22 @@ const designs = [
 ];
 
 export function Designs() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const carouselRef = useRef<CarouselRef>(null);
+  const active = designs[activeIndex];
+  const selectDesign = (index: number) => {
+    const next = (index + designs.length) % designs.length;
+    setActiveIndex(next);
+    carouselRef.current?.setSelectedIndex(next);
+  };
+  const carouselItems = useMemo<CarouselItem[]>(() => designs.map((design, index) => ({
+    image: design.src,
+    alt: design.alt,
+    content: <strong>{design.alt}</strong>,
+    onClick: () => setActiveIndex(index),
+  })), []);
   return (
-    <section id="designs" className="py-10 relative overflow-hidden bg-[#121212] border-t-2 border-[#fdfdfd]/15">
+    <section id="designs" className="py-12 md:py-16 relative overflow-hidden bg-[#121212] border-t-2 border-[#fdfdfd]/15">
       <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -52,7 +70,7 @@ export function Designs() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#fdfdfd]">
+          <h2 className="text-3xl md:text-5xl font-black mb-3 text-[#fdfdfd]">
             Creative{" "}
             <span className="bg-gradient-to-r from-[#3d38f5] via-sky-400 to-[#6b63f7] bg-clip-text text-transparent">
               Graphic Designs
@@ -63,28 +81,11 @@ export function Designs() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
-          {designs.map((design, index) => (
-            <motion.a
-              key={design.id}
-              href="https://dribbble.com/themariamparvez"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              className="group relative aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-[#3d38f5]/20 to-[#6b63f7]/20 backdrop-blur-sm border border-[#3d38f5]/20 hover:border-[#3d38f5]/20 transition-all duration-300"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#3d38f5]/0 to-[#6b63f7]/0 group-hover:from-[#3d38f5]/20 group-hover:to-[#6b63f7]/20 transition-all duration-300 z-10" />
-              <img
-                src={design.src}
-                alt={design.alt}
-                className="w-full h-full object-cover"
-              />
-            </motion.a>
-          ))}
+        <div className="relative mx-auto max-w-5xl pt-1">
+          <motion.a key={active.id} href="https://dribbble.com/themariamparvez" target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, rotateY: -18, scale: .96 }} animate={{ opacity: 1, rotateY: 0, scale: 1 }} transition={{ duration: .35 }} className="relative z-10 mx-auto block aspect-[4/3] w-[min(76vw,510px)] overflow-hidden border border-[#fdfdfd]/20 bg-[#121212] shadow-[0_28px_70px_-35px_rgba(77,93,255,.7)]"><img src={active.src} alt={active.alt} className="h-full w-full object-cover" /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#121212] to-transparent px-5 pb-4 pt-14"><p className="text-sm font-bold text-[#fdfdfd]">{active.alt}</p></div></motion.a>
+          <div className="design-carousel mt-7 grid place-items-center" aria-label="Choose a graphic design">
+            <Carousel ref={carouselRef} items={carouselItems} itemWidth={190} showControls={false} slideOnClick />
+          </div>
         </div>
 
         <motion.div
@@ -92,15 +93,16 @@ export function Designs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="text-center mt-8"
+          className="mt-6 flex items-center justify-between gap-4"
         >
+          <div className="flex gap-2"><button onClick={() => selectDesign(activeIndex - 1)} aria-label="Previous design" className="grid h-9 w-9 place-items-center border border-[#fdfdfd]/25 text-[#fdfdfd] transition-colors hover:border-[#4d5dff] hover:text-[#8e87ff]"><ChevronLeft className="h-4 w-4" /></button><button onClick={() => selectDesign(activeIndex + 1)} aria-label="Next design" className="grid h-9 w-9 place-items-center border border-[#fdfdfd]/25 text-[#fdfdfd] transition-colors hover:border-[#4d5dff] hover:text-[#8e87ff]"><ChevronRight className="h-4 w-4" /></button></div>
           <motion.a
             href="https://dribbble.com/themariamparvez"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3d38f5] text-[#fdfdfd] rounded-full font-bold text-lg hover:bg-[#2d28d5] transition-all"
+            className="inline-flex items-center gap-2 bg-[#3d38f5] text-[#fdfdfd] font-bold hover:bg-[#2d28d5] transition-all"
           >
             View More on Dribbble
           </motion.a>

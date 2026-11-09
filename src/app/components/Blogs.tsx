@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { ParticlesBackground } from "./ParticlesBackground";
-import bgImage from "../../imports/1.jpg";
 import blogHeroImg from "../../imports/1-3.jpg";
 
 // Import blog images
@@ -11,17 +10,7 @@ import blog3Img from "figma:asset/5310a1d936833a9c8391005bd7219b7b7b79a6d7.png";
 
 export function Blogs() {
   return (
-    <section
-      id="blogs"
-      className="py-10 relative overflow-hidden bg-[#121212] border-t-2 border-[#fdfdfd]/15"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      <div className="absolute inset-0 bg-[#121212]/90" />
+    <section id="blogs" className="py-10 relative overflow-hidden bg-[#121212] border-t-2 border-[#fdfdfd]/15">
       <ParticlesBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

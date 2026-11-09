@@ -50,24 +50,24 @@ export function CaseStudies() {
               href={study.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block"
+              className="group block h-full"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="bg-[#121212] rounded-2xl overflow-hidden transition-all duration-300 border-2 border-[#fdfdfd]/15 hover:border-[#3d38f5] hover:scale-105">
-                <div className="relative h-56 overflow-hidden">
+              <div className="flex h-full flex-col bg-[#121212] rounded-2xl overflow-hidden transition-all duration-300 border-2 border-[#fdfdfd]/15 hover:border-[#3d38f5] hover:scale-105">
+                <div className="relative h-56 shrink-0 overflow-hidden">
                   <img
                     src={study.bgImage}
                     alt={study.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-xl font-bold text-[#fdfdfd] mb-2">{study.title}</h3>
                   <p className="text-[#b8b8b8] text-sm mb-4">{study.description}</p>
-                  <div className="inline-flex items-center gap-2 text-[#9a96ff] font-semibold group-hover:gap-3 transition-all">
+                  <div className="mt-auto inline-flex items-center gap-2 text-[#9a96ff] font-semibold group-hover:gap-3 transition-all">
                     View Case Study <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
