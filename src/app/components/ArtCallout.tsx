@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router";
 import { useRef } from "react";
 import artBg from "../../imports/art-bg.jpg";
 
@@ -70,13 +69,15 @@ export function ArtCallout() {
             transition={{ delay: 0.3 }}
             className="flex-shrink-0"
           >
-            <Link
-              to="/art"
+            <a
+              href="https://instagram.com/themimpact"
+              target="_blank"
+              rel="noreferrer"
               className="group inline-flex items-center gap-2 text-[#fdfdfd] font-semibold hover:text-[#9a96ff] transition-colors"
             >
               <span>Ready for Art?</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </div>
