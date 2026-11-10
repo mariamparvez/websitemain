@@ -49,7 +49,7 @@ export function Contact() {
                     <p className="text-[#b8b8b8] mb-1">Email</p>
                     <a
                       href="mailto:designwithmariam@gmail.com"
-                      className="text-lg text-[#9a96ff] hover:text-[#6b63f7] transition-colors break-all"
+                      className="text-[8px] text-[#9a96ff] hover:text-[#6b63f7] transition-colors break-all"
                     >
                       designwithmariam@gmail.com
                     </a>

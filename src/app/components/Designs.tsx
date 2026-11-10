@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Carousel, type CarouselItem, type CarouselRef } from "react-round-carousel";
 import "react-round-carousel/dist/index.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -22,6 +22,7 @@ const designs = [
 export function Designs() {
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef<CarouselRef>(null);
+  const carouselAreaRef = useRef<HTMLDivElement>(null);
   const active = designs[activeIndex];
   const selectDesign = (index: number) => {
     const next = (index + designs.length) % designs.length;
@@ -34,6 +35,23 @@ export function Designs() {
     content: <strong>{design.alt}</strong>,
     onClick: () => setActiveIndex(index),
   })), []);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => selectDesign(activeIndex + 1), 4200);
+    return () => window.clearInterval(timer);
+  }, [activeIndex]);
+
+  useEffect(() => {
+    const area = carouselAreaRef.current;
+    if (!area) return;
+    const handleWheel = (event: WheelEvent) => {
+      if (Math.abs(event.deltaX) < 8) return;
+      event.preventDefault();
+      selectDesign(activeIndex + (event.deltaX > 0 ? 1 : -1));
+    };
+    area.addEventListener("wheel", handleWheel, { passive: false });
+    return () => area.removeEventListener("wheel", handleWheel);
+  }, [activeIndex]);
   return (
     <section id="designs" className="relative flex min-h-[100svh] overflow-hidden border-t-2 border-[#fdfdfd]/15 bg-[#121212] py-5 sm:py-6">
       <ParticlesBackground />
@@ -57,9 +75,9 @@ export function Designs() {
         </motion.div>
 
         <div className="relative mx-auto w-full max-w-none flex-1 pt-1">
-          <motion.a key={active.id} href="https://dribbble.com/themariamparvez" target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, rotateY: -18, scale: .96 }} animate={{ opacity: 1, rotateY: 0, scale: 1 }} transition={{ duration: .35 }} className="relative z-10 mx-auto block aspect-square w-[min(38svh,72vw,360px)] overflow-hidden border border-[#fdfdfd]/20 bg-[#121212] shadow-[0_28px_70px_-35px_rgba(77,93,255,.7)]"><img src={active.src} alt={active.alt} className="h-full w-full object-cover" /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#121212] to-transparent px-5 pb-4 pt-14"><p className="text-sm font-bold text-[#fdfdfd]">{active.alt}</p></div></motion.a>
-          <div className="design-carousel mt-3 grid place-items-center" aria-label="Choose a graphic design">
-            <Carousel ref={carouselRef} items={carouselItems} itemWidth={200} showControls={false} slideOnClick />
+          <motion.a key={active.id} href="https://dribbble.com/themariamparvez" target="_blank" rel="noopener noreferrer" initial={{ opacity: 0, rotateY: -18, scale: .96 }} animate={{ opacity: 1, rotateY: 0, scale: 1 }} transition={{ duration: .35 }} className="relative z-10 mx-auto block aspect-square w-[min(38svh,72vw,360px)] overflow-hidden rounded-lg border border-[#fdfdfd]/20 bg-[#121212] shadow-[0_28px_70px_-35px_rgba(77,93,255,.7)]"><img src={active.src} alt={active.alt} className="h-full w-full object-cover" /><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#121212] to-transparent px-5 pb-4 pt-14"><p className="text-sm font-bold text-[#fdfdfd]">{active.alt}</p></div></motion.a>
+          <div ref={carouselAreaRef} className="design-carousel mt-3 grid place-items-center" aria-label="Choose a graphic design">
+            <Carousel ref={carouselRef} items={carouselItems} itemWidth={250} showControls={false} slideOnClick />
           </div>
         </div>
 

@@ -69,7 +69,7 @@ export function Testimonials() {
   const scroll = (direction: number) => trackRef.current?.scrollBy({ left: direction * 432, behavior: "smooth" });
 
   return (
-    <section id="testimonials" className="relative overflow-hidden border-t-2 border-[#fdfdfd]/15 bg-[#061333] py-8">
+    <section id="testimonials" className="relative overflow-hidden border-t-2 border-[#fdfdfd]/15 bg-[#020814] py-8">
       <VantaTrunk />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -94,8 +94,8 @@ export function Testimonials() {
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          <div ref={trackRef} className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {testimonials.map((testimonial, index) => <motion.article key={testimonial.name} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .04 }} className="relative flex h-[240px] w-[min(82vw,400px)] shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-[#5575be]/70 bg-[#0b1b3d] p-4">
+          <div ref={trackRef} className="flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-visible scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {testimonials.map((testimonial, index) => <motion.article key={testimonial.name} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .04 }} className="relative flex h-[240px] w-[min(82vw,400px)] shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-[#334b79]/80 bg-[#071127] p-4">
               <Quote className="absolute right-4 top-4 h-9 w-9 text-[#4d5dff]/15" strokeWidth={1.2} /><div className="flex items-center gap-3"><img src={testimonial.image} alt={testimonial.name} className="h-10 w-10 rounded-full border-2 border-[#4d5dff] object-cover" /><div><h4 className="font-bold text-[#fdfdfd]">{testimonial.name}</h4><p className="mt-1 text-xs text-[#b8b8b8]">{testimonial.role}</p></div></div><p className="mt-4 line-clamp-4 text-[15px] leading-6 text-[#d6d6d6]">{testimonial.text}</p>
             </motion.article>)}
           </div>

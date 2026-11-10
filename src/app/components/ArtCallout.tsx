@@ -38,7 +38,7 @@ export function ArtCallout() {
       <div className="absolute inset-0 bg-gradient-to-br from-[#050914]/78 via-[#0c1735]/74 to-[#14224a]/76" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-start justify-between gap-5 lg:flex-row lg:items-center lg:gap-8">
+        <div className="flex flex-col items-start">
           {/* Content - LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -59,25 +59,19 @@ export function ArtCallout() {
               <span className="font-semibold text-[#fdfdfd]">Sketching</span>, and{" "}
               <span className="font-semibold text-[#fdfdfd]">Mandala Art</span>
             </p>
-          </motion.div>
-
-          {/* CTA - RIGHT */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="self-start flex-shrink-0"
-          >
-            <a
+            <motion.a
               href="https://instagram.com/themimpact"
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-2 text-[#fdfdfd] font-semibold hover:text-[#9a96ff] transition-colors"
+              initial={{ opacity: 0, x: -12 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="group mt-5 inline-flex items-center gap-2 text-[#fdfdfd] font-semibold hover:text-[#9a96ff] transition-colors"
             >
               <span>Ready for Art?</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </motion.a>
           </motion.div>
         </div>
       </div>

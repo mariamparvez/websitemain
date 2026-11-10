@@ -7,6 +7,7 @@ import { MLoader } from "./MLoader";
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const location = useLocation();
   const isArtPage = location.pathname === "/art";
 
@@ -17,6 +18,26 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("section[id]"));
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActiveSection(visible.target.id);
+    }, { rootMargin: "-25% 0px -60% 0px", threshold: [0.05, 0.2, 0.45] });
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  const navColors: Record<string, string> = {
+    home: "rgba(1, 3, 10, .60)",
+    experience: "rgba(0, 1, 4, .76)",
+    testimonials: "rgba(4, 13, 38, .72)",
+    designs: "rgba(10, 10, 13, .70)",
+    blogs: "rgba(14, 14, 17, .72)",
+    contact: "rgba(15, 15, 18, .75)",
+  };
+  const navBackground = navColors[activeSection] ?? "rgba(10, 11, 16, .70)";
 
   const navItems = [
     { label: "Home", href: "#home" },
@@ -56,7 +77,8 @@ export function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-[#121212]/95 backdrop-blur-md border-b border-[#fdfdfd]/15 shadow-sm transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,.16)] transition-colors duration-500"
+      style={{ backgroundColor: scrolled ? navBackground : "rgba(1, 3, 10, .48)" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
@@ -116,7 +138,8 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#121212]/95 backdrop-blur-lg border-t border-[#fdfdfd]/15"
+            className="lg:hidden border-t border-white/10 backdrop-blur-xl"
+            style={{ backgroundColor: navBackground }}
           >
             <div className="px-4 py-4 space-y-3">
               {navItems.map((item) => (
